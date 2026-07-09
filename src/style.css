@@ -1,0 +1,76 @@
+@import url('/src/styles/reset.css');
+@import url('/src/styles/font.css');
+@import url('/src/styles/bluelabel.css');
+
+
+body {
+    background: var(--bg-color-1);
+    background: radial-gradient(
+            circle,
+            var(--bg-color-1) 0%,
+            var(--bg-color-3) 100%
+    );
+    color: var(--tx-color-1);
+    height: 100dvh;
+}
+
+.header {
+    margin: var(--space-100);
+    margin-top: var(--space-200);
+
+    .logo {
+        width: var(--size-9);
+        fill: var(--tx-color-1);
+    }
+
+    .nav-link {
+        display: inline-block;
+        text-decoration: none;
+        font-size: var(--size-5);
+        color: var(--tx-color-3);
+        padding: var(--space-075) var(--space-150);
+
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-3);
+        outline: var(--solid-1) transparent;
+        box-shadow: 0 0 0 transparent;
+        transition:
+                background-color .4s ease-in-out,
+                color .4s ease-in-out,
+                outline .4s ease-in-out,
+                box-shadow .4s ease-in-out;
+
+        &:hover {
+            background-color: var(--bg-color-2);
+            color: var(--tx-color-1);
+            outline: var(--solid-1) #fff;
+            box-shadow:
+                    0 1px 1px 0 var(--bg-color-4),
+                    0 1px 10px 0 var(--bg-color-3),
+                    inset 0 -1px 10px 1px var(--bg-color-1);
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: -4em;
+            width: 4em;
+            height: 100%;
+            top: 0;
+            transition: transform .4s ease-in-out;
+        }
+
+        &:hover:before {
+            background: linear-gradient(
+                    to right,
+                    transparent 1%,
+                    var(--bg-color-1) 50%,
+                    transparent 100%);
+            transform: translateX(14em);
+        }
+    }
+}
+
+
+
