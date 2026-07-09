@@ -77,6 +77,7 @@
     --tx-color-1: #123;
     --tx-color-2: #345;
     --tx-color-3: #567;
+    --tx-cut-out: #fff;
 
     /* Electric */
     --color: #0077FF;
@@ -116,6 +117,7 @@
     --tx-color-1: #def;
     --tx-color-2: #abc;
     --tx-color-3: #7899;
+    --tx-cut-out: #000;
 
     /* Aqua */
     --color: #00EEFF;

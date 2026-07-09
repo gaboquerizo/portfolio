@@ -9,8 +9,8 @@ initTheme();
 // Slot text motion
 import { createSlotText } from './shared/text-motion/slot-text.js';
 
-
-
+// Profile photo
+import profilePhoto from './assets/images/profile_photo.webp'
 
 document.querySelector('#app').innerHTML = `
     <header class="fx-jsc_sa header">
@@ -63,7 +63,7 @@ document.querySelector('#app').innerHTML = `
           <span class="tooltip">
             @gaboquerizo
           </span>
-          <img class="profile-photo" src="../public/profile_photo.webp" alt="">
+          <img src="${profilePhoto}" class="profile-photo" alt="Me">
         </div>
         
         <div class="hero-title">
@@ -87,7 +87,7 @@ document.querySelector('#app').innerHTML = `
         
         <div class="hero-cta fx gap-4">
           <a class="btn-cta-1" href="#about_me">
-            Sobre mi
+            Acerca de mi
           </a>
           <a class="btn-cta-2" href="https://drive.google.com/file/d/1q0n7vRciyBmYrKfLThf9tGTQliNS2caU/view?usp=drive_link" target="_blank" data-btn-download="">
             Descargar CV
@@ -118,7 +118,7 @@ document.querySelector('#app').innerHTML = `
     <footer>
 
     </footer>
-`;
+`
 
 createSlotText(
     '.primary',
