@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "vite": "8.1.1"
+  },
+  "dependencies": {
+    "slot-text": "^0.3.2"
   }
 }

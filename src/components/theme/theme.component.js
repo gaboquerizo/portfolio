@@ -76,10 +76,14 @@ export class ThemeToggle extends HTMLElement {
             }
             .light {
                 display: block;
+                transform-origin: center;
+                animation: animation-rotate var(--transition-2);
             }
             &:has( :checked ) {
                 .dark {
                     display: block;
+                    transform-origin: center;
+                    animation: animation-rotate var(--transition-2);
                 }
                 .light {
                     display: none;
@@ -93,7 +97,16 @@ export class ThemeToggle extends HTMLElement {
             }
             svg {
                 width: 2em;
+                transform: rotate(-90deg);
             }
+        }
+        @keyframes animation-rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(-30deg);
+          }
         }
       </style>
 
