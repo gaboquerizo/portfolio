@@ -92,6 +92,12 @@ body {
         width: var(--size-photo);
         border-radius: 50%;
         aspect-ratio: 1;
+        outline: var(--solid-1) transparent;
+        transition: outline var(--transition-1);
+        &:hover {
+
+            outline: var(--solid-2) white;
+        }
     }
     .tooltip {
         position: absolute;
