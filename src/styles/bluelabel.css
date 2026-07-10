@@ -7,10 +7,10 @@
     --font-family-main: 'Exo 2';
 
     /* Sizes */
-    --size-1: 4px;
-    --size-2: 8px;
-    --size-3: 12px;
-    --size-4: 16px;
+    --size-1: 8px;
+    --size-2: 12px;
+    --size-3: 16px;
+    --size-4: 18px;
     --size-5: 20px;
     --size-6: 24px;
     --size-7: 28px;
@@ -45,13 +45,20 @@
     --radius-5: 2rem;
 
     /* Box Shadow */
-    --shadow-color: #0005;
-    --shadow-low:    0px 0px 4px 2px var(--shadow-color);
-    --shadow-medium: 0px 3px 6px 1px var(--shadow-color);
-    --shadow-high:   0px 4px 8px 2px var(--shadow-color);
+    --shadow-color-1: #2342;
+    --shadow-color-2: #abc1;
+    --shadow-color-3: #7891;
+
+    --shadow-low:    0 1px 1px 0 var(--bg-color-4);
+    --shadow-medium: 0 1px 10px 0 var(--bg-color-3);
+    --shadow-high:   0 3px 20px 2px var(--shadow-color-3);
+
+    --shadow-high-color: 0 1px 20px 5px var(--color-light);
+    --shadow-inset-light: inset 0 -1px 10px 1px var(--bg-color-1);
+    --shadow-inset-color: inset 0 -1px 10px 1px var(--secondary-color);
 
     /* Transitions */
-    --transition-1: .25s ease;
+    --transition-1: .2s ease-in-out;
     --transition-2: .50s ease;
     --transition-3: .75s ease;
     --transition-4:   1s ease;
@@ -77,12 +84,16 @@
     --tx-color-1: #123;
     --tx-color-2: #345;
     --tx-color-3: #567;
+    --tx-color-4: #789;
     --tx-cut-out: #fff;
 
-    /* Electric */
+    /* Colors */
     --color: #0077FF;
+    --primary-color: #0077FF;
+    --secondary-color: #11BBFF;
     --color-light: #AACCFF;
     --color-dark: #0040AA;
+    --glass-effect-color: #F2F4F6;
 
     /* Browser */
 
@@ -117,6 +128,7 @@
     --tx-color-1: #def;
     --tx-color-2: #abc;
     --tx-color-3: #7899;
+    --tx-color-4: #abcd;
     --tx-cut-out: #000;
 
     /* Aqua */

@@ -2,6 +2,10 @@
 @import url('/src/styles/font.css');
 @import url('/src/styles/bluelabel.css');
 
+:root {
+    --glass-effect-color: #F2F4F6;
+}
+
 body {
     background: var(--bg-color-1);
     background: radial-gradient(
@@ -20,7 +24,7 @@ body {
     .logo {
         width: var(--size-9);
         max-width: max-content;
-        fill: var(--tx-color-1);
+        fill: var(--tx-color-4);
     }
 
     .nav-link {
@@ -28,7 +32,7 @@ body {
         text-decoration: none;
         font-size: var(--size-5);
         color: var(--tx-color-3);
-        padding: var(--space-075) var(--space-150);
+        padding: var(--space-050) var(--space-100);
 
         position: relative;
         overflow: hidden;
@@ -70,6 +74,10 @@ body {
             transform: translateX(14em);
         }
     }
+
+    .header-theme-toggle {
+        color: var(--tx-color-3);
+    }
 }
 
 .hero {
@@ -89,8 +97,8 @@ body {
         position: absolute;
         display: inline-block;
         /*background: linear-gradient(to bottom, #1bf , #06d 70%);*/
-        background-color: var(--bg-color-9);
-        color: var(--tx-cut-out);
+        background-color: var(--bg-color-1);
+        color: var(--tx-color-3);
         top: 0;
         left: 50%;
         transform: translateX(-50%);
@@ -99,9 +107,13 @@ body {
         pointer-events: none;
         transition: all 0.3s;
         border-radius: 50px;
+        box-shadow:
+                0 1px 1px 0 var(--bg-color-3),
+                0 2px 10px 0 var(--bg-color-3);
+
     }
     .tooltip::before {
-        background-color: var(--bg-color-9);
+        background-color: var(--bg-color-1);
         position: absolute;
         content: "";
         height: 0.6em;
@@ -118,18 +130,16 @@ body {
     }
 
     .hero-title {
-
         .greeting {
             font-size: var(--size-7);
             color: var(--tx-color-3);
             font-weight: normal;
         }
-
         .specialties{
             font-size: 52px;
             .primary{
                 .char-face {
-                    background: linear-gradient(to bottom, #1bf, #06d);
+                    background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
                     background-clip: text;
                     color: transparent;
                 }
@@ -142,95 +152,6 @@ body {
 
     .hero-cta {
         margin-top: var(--space-300);
-
-        .btn-cta-1 {
-            display: inline-block;
-            text-decoration: none;
-            font-size: var(--size-5);
-            color: var(--tx-color-3);
-            padding: var(--space-075) var(--space-150);
-
-            position: relative;
-            overflow: hidden;
-            background-color: var(--bg-color-2);
-            border-radius: var(--radius-3);
-            outline: var(--solid-1) var(--bg-color-5);
-            box-shadow: 0 0 0 transparent;
-            transition:
-                    background-color .4s ease-in-out,
-                    color .4s ease-in-out,
-                    box-shadow .4s ease-in-out;
-
-            &:hover {
-                background-color: var(--bg-color-3);
-                color: var(--tx-color-1);
-                box-shadow:
-                        0 1px 1px 0 var(--bg-color-4),
-                        0 1px 10px 0 var(--bg-color-3),
-                        inset 0 -1px 10px 1px var(--bg-color-4);
-            }
-            &:before {
-                content: "";
-                position: absolute;
-                left: -4em;
-                width: 4em;
-                height: 100%;
-                top: 0;
-                transition: transform .4s ease-in-out;
-            }
-            &:hover:before {
-                background: linear-gradient(
-                        to right,
-                        transparent 1%,
-                        var(--bg-color-1) 50%,
-                        transparent 100%);
-                transform: translateX(14em);
-            }
-        }
-
-        .btn-cta-2 {
-            display: inline-block;
-            text-decoration: none;
-            font-size: var(--size-5);
-            color: var(--tx-cut-out);
-            padding: var(--space-075) var(--space-150);
-
-            position: relative;
-            overflow: hidden;
-            background-color: var(--color);
-            border-radius: var(--radius-3);
-            outline: var(--solid-1) var(--color);
-            box-shadow: 0 0 0 transparent;
-            transition:
-                    background-color .4s ease-in-out,
-                    box-shadow .4s ease-in-out;
-
-            &:hover {
-                background-color: var(--color);
-                box-shadow:
-                        0 1px 1px 0 var(--bg-color-4),
-                        0 1px 20px 5px var(--color-light),
-                        inset 0 -1px 10px 1px #1bf;
-            }
-            &:before {
-                content: "";
-                position: absolute;
-                left: -4em;
-                width: 4em;
-                height: 100%;
-                top: 0;
-                transition: transform .4s ease-in-out;
-            }
-            &:hover:before {
-                background: linear-gradient(
-                        to right,
-                        transparent 1%,
-                        var(--bg-color-1) 50%,
-                        transparent 100%);
-                transform: translateX(14em);
-            }
-        }
-
     }
 }
 

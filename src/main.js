@@ -1,15 +1,16 @@
-// Global styles
+// Styles
 import './style.css'
 
-// Dark mode
-import { initTheme } from './shared/theme/theme.js';
+// Components
+import './components/app-button/app-button.js';
 import './components/theme/theme.component.js';
+
+// Utilities
+import { createSlotText } from './shared/text-motion/slot-text.js';
+import { initTheme } from './shared/theme/theme.js';
 initTheme();
 
-// Slot text motion
-import { createSlotText } from './shared/text-motion/slot-text.js';
-
-// Profile photo
+// Resources
 import profilePhoto from './assets/images/profile_photo.webp'
 
 document.querySelector('#app').innerHTML = `
@@ -27,29 +28,29 @@ document.querySelector('#app').innerHTML = `
       <nav class="fx-ali_c">
         <ul class="list-none fx-jsc_se gap-2">
           <li>
-            <a href="#projects" class="nav-link">
+            <app-button ghost href="#projects">
               Proyectos
-            </a>
+            </app-button>
           </li>
           <li>
-            <a href="#experience" class="nav-link">
+            <app-button ghost href="#experience">
               Experiencia
-            </a>
+            </app-button>
           </li>
           <li>
-            <a href="#skills" class="nav-link">
+            <app-button ghost href="#skills">
               Habilidades
-            </a>
+            </app-button>
           </li>
           <li>
-            <a href="#contact" class="nav-link">
+            <app-button ghost href="#contact">
               Contacto
-            </a>
+            </app-button>
           </li>
         </ul>
       </nav>
 
-      <div class="fx-ali_c">
+      <div class="fx-ali_c header-theme-toggle">
         <theme-toggle></theme-toggle>
       </div>
 
@@ -86,12 +87,12 @@ document.querySelector('#app').innerHTML = `
         </div>
         
         <div class="hero-cta fx gap-4">
-          <a class="btn-cta-1" href="#about_me">
+          <app-button outline href="#about_me">
             Acerca de mi
-          </a>
-          <a class="btn-cta-2" href="https://drive.google.com/file/d/1q0n7vRciyBmYrKfLThf9tGTQliNS2caU/view?usp=drive_link" target="_blank" data-btn-download="">
+          </app-button>
+          <app-button primary href="https://drive.google.com/file/d/1q0n7vRciyBmYrKfLThf9tGTQliNS2caU/view?usp=drive_link" target="_blank" data-btn-download="">
             Descargar CV
-          </a>
+          </app-button>
         </div>
 
       </section>
@@ -116,7 +117,7 @@ document.querySelector('#app').innerHTML = `
       
     </main>
     <footer>
-
+        
     </footer>
 `
 
