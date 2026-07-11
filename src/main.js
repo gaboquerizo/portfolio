@@ -14,8 +14,8 @@ initTheme();
 import profilePhoto from './assets/images/profile_photo.webp'
 
 document.querySelector('#app').innerHTML = `
+  <div class="h-dfull fx-col fx-jsc_sb">
     <header class="fx-jsc_sa header">
-
       <div>
         <svg class="logo" viewBox="0 0 461.00 675.00">
           <g transform="translate(0.0,675.0) scale(0.1,-0.1)" fill="" stroke="none">
@@ -24,7 +24,6 @@ document.querySelector('#app').innerHTML = `
           </g>
         </svg>
       </div>
-
       <nav class="fx-ali_c">
         <ul class="list-none fx-jsc_se gap-2">
           <li>
@@ -49,55 +48,51 @@ document.querySelector('#app').innerHTML = `
           </li>
         </ul>
       </nav>
-
       <div class="fx-ali_c header-theme-toggle">
         <theme-toggle></theme-toggle>
       </div>
-
     </header>
-    
-    <main class="w-full fx-col fx-ali_c">
-
-      <section class="hero fx-col fx-ali_c">
-
-        <div class="hero-photo fx">
-          <span class="tooltip">
-            @gaboquerizo
+    <main class="main h-full fx-col fx-ali_c fx-jsc_se">
+      <div class="profile-photo fx">
+        <span class="profile-tooltip">
+          @gaboquerizo
+        </span>
+        <img src="${profilePhoto}" class="profile-photo_img" alt="Me">
+      </div>
+      <div class="profile">
+        <h1 class="txt-center">
+          <span class="username">
+            Gabriel Baquerizo Palacios
           </span>
-          <img src="${profilePhoto}" class="profile-photo" alt="Me">
-        </div>
-        
-        <div class="hero-title">
-          <h1 class="txt-center">
-            
-            <span class="greeting">
-              Gabriel Baquerizo Palacios
+          <br>
+          <span class="profession">
+            <span class="primary">
+              Software
             </span>
-            <br>
-            
-            <span class="specialties">
-              <span class="primary">
-                Front-end
-              </span>
-              <span class="secondary">
-                Development
-              </span>
+            <span class="secondary">
+              Development
             </span>
-          </h1>
+          </span>
+        </h1>
+      </div>
+      <div class="main-cta_btn fx gap-4">
+        <app-button outline href="#about_me">
+          Acerca de mi
+        </app-button>
+        <app-button primary href="https://drive.google.com/file/d/1q0n7vRciyBmYrKfLThf9tGTQliNS2caU/view?usp=drive_link" target="_blank" data-btn-download="">
+          Descargar CV
+        </app-button>
+      </div>
+    </main>
+    <footer class="footer w-full fx-ctr">
+        <div class="scroll-animation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m7 10l5 5l5-5"></path>
+          </svg>
         </div>
-        
-        <div class="hero-cta fx gap-4">
-          <app-button outline href="#about_me">
-            Acerca de mi
-          </app-button>
-          <app-button primary href="https://drive.google.com/file/d/1q0n7vRciyBmYrKfLThf9tGTQliNS2caU/view?usp=drive_link" target="_blank" data-btn-download="">
-            Descargar CV
-          </app-button>
-        </div>
-
-      </section>
-
-      <!--
+    </footer>
+  </div>
+          <!--
       <section id="projects">
         <h2>Proyectos</h2>
       </section>
@@ -114,11 +109,6 @@ document.querySelector('#app').innerHTML = `
         <h2>Contacto</h2>
       </section>
       -->
-      
-    </main>
-    <footer>
-        
-    </footer>
 `
 
 createSlotText(

@@ -204,12 +204,12 @@ export class appButton extends HTMLElement {
         }
 
         .app-button[data-variant="primary"] {
-          background-color: var(--color);
+          background-color: var(--primary-color);
           color: var(--tx-cut-out);
         }
 
         .app-button[data-variant="primary"]:hover {
-          background-color: var(--color);
+          background-color: var(--primary-color);
           outline: var(--solid-1) var(--secondary-color);
           box-shadow:
                 var(--shadow-high-color),

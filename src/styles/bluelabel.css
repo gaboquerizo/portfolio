@@ -53,7 +53,7 @@
     --shadow-medium: 0 1px 10px 0 var(--bg-color-3);
     --shadow-high:   0 3px 20px 2px var(--shadow-color-3);
 
-    --shadow-high-color: 0 1px 20px 5px var(--color-light);
+    --shadow-high-color: 0 1px 20px 5px var(--light-color);
     --shadow-inset-light: inset 0 -1px 10px 1px var(--bg-color-1);
     --shadow-inset-color: inset 0 -1px 10px 1px var(--secondary-color);
 
@@ -81,18 +81,16 @@
     --bg-color-8: #456;
     --bg-color-9: #234;
 
-    --tx-color-1: #123;
-    --tx-color-2: #345;
-    --tx-color-3: #567;
-    --tx-color-4: #789;
+    --tx-color-1: #2f3f4f;
+    --tx-color-2: #456;
+    --tx-color-3: #789;
     --tx-cut-out: #fff;
 
     /* Colors */
-    --color: #0077FF;
     --primary-color: #0077FF;
     --secondary-color: #11BBFF;
-    --color-light: #AACCFF;
-    --color-dark: #0040AA;
+    --light-color: #AACCFF;
+    --dark-color: #0040AA;
     --glass-effect-color: #F2F4F6;
 
     /* Browser */
@@ -106,7 +104,7 @@
         border-radius: 4px;
     }
     ::selection {
-        background-color: var(--color);
+        background-color: var(--primary-color);
         color: white;
     }
 }
@@ -127,14 +125,15 @@
 
     --tx-color-1: #def;
     --tx-color-2: #abc;
-    --tx-color-3: #7899;
-    --tx-color-4: #abcd;
+    --tx-color-3: #789;
     --tx-cut-out: #000;
 
-    /* Aqua */
-    --color: #00EEFF;
-    --color-light: #88FFFF;
-    --color-dark: #00BBEE;
+    /* Colors */
+    --primary-color: #00EEFF;
+    --secondary-color: #11BBFF;
+    --light-color: #88FFFF;
+    --dark-color: #00BBEE;
+    --glass-effect-color: #F2F4F6;
 
     /* Browser */
 
@@ -147,7 +146,7 @@
         border-radius: 4px;
     }
     ::selection {
-        background-color: var(--color);
+        background-color: var(--primary-color);
         color: black;
     }
 
@@ -190,6 +189,10 @@
 
 .h-full {
     height: 100%;
+}
+
+.h-dfull {
+    height: 100dvh;
 }
 
 .w-full {

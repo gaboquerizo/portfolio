@@ -73,12 +73,12 @@
         }
 
         .app-button[data-variant="primary"] {
-          background-color: var(--color);
+          background-color: var(--primary-color);
           color: var(--tx-cut-out);
         }
 
         .app-button[data-variant="primary"]:hover {
-          background-color: var(--color);
+          background-color: var(--primary-color);
           outline: var(--solid-1) var(--secondary-color);
           box-shadow:
                 var(--shadow-high-color),
@@ -205,8 +205,8 @@
         </svg>
       </label>
     `}};customElements.define(`theme-toggle`,l);var u={direction:`down`,stagger:45,duration:300,exitOffset:50,easing:`cubic-bezier(0.34, 1.56, 0.64, 1)`,bounce:.6,colorFade:280,skipUnchanged:!0,interrupt:!0},d=`\xA0`,f=e=>e===` `?d:e,p=new WeakMap;function m(e){let t=p.get(e);t&&(t.timers.forEach(e=>window.clearTimeout(e)),p.delete(e),_(e,t.target))}function h(e){let t=document.createElement(`span`);return t.className=`char-face`,t.textContent=f(e),t}function g(e){let t=document.createElement(`span`);t.className=`char-slot`,t.dataset.char=e;let n=document.createElement(`span`);return n.className=`char-sizer`,n.textContent=f(e),t.append(n,h(e)),t}function _(e,t){e.classList.add(`slot-text`),e.replaceChildren(...Array.from(t,g))}function v(e,t,n={}){let{direction:r,stagger:i,duration:a,exitOffset:o,easing:s,bounce:c,color:l,colorFade:d,skipUnchanged:y,interrupt:b}={...u,...n},x=p.get(e);if(x&&!b){t!==x.target&&(x.pending={text:t,options:n});return}if(m(e),!e.querySelector(`.char-slot`)){_(e,t);return}let S=Array.from(e.querySelectorAll(`.char-slot`)),C=S.map(e=>e.dataset.char??``).join(``);if(!b&&C===t)return;let w=Math.max(C.length,t.length),T=S.find(e=>(e.dataset.char??``)!==``)??S[0],E=getComputedStyle(e),D=Math.ceil(T?.getBoundingClientRect().height||T?.offsetHeight||e.getBoundingClientRect().height||parseFloat(E.lineHeight)||0)||Math.ceil(parseFloat(E.fontSize)*1.3)||18,O=l?E.color:``;for(let t=S.length;t<w;t++){let t=g(``);e.appendChild(t),S.push(t)}let k=[],A={timers:k,target:t};p.set(e,A);let j=r===`down`?D:-D,M=r===`down`?-D:D,N=(e,t)=>{let n=Math.sin((e+1)*12.9898+t*78.233)*43758.5453;return(n-Math.floor(n))*2-1},P=0;for(let e=0;e<w;e++){let n=C[e]||``,r=t[e]||``;if(n===r&&(y||n===``))continue;let u=S[e],p=u.querySelector(`.char-sizer`),m=u.querySelector(`.char-face`),g=u.getBoundingClientRect().width;p.textContent=f(r);let _=p.getBoundingClientRect().width,v=Math.abs(_-g)>.5;v&&(u.style.width=`${g}px`),(n===``||r===``)&&u.classList.add(`is-resizing`);let b=typeof l==`function`?l(e,w):l,x=r===``,T=Math.round(a*(x?.75:1)*(1+c*.45*N(e,1))),E=x?t.length*.5+(e-t.length)*.25:e,D=Math.round(E*i*(1+c*.25*N(e,2))),A=(c*5*N(e,3)).toFixed(2),F=`transform ${T}ms ${s}`,I=l?`${F}, color ${d}ms linear ${T}ms`:F,L=h(r);if(L.style.transformOrigin=`50% 50%`,L.style.transform=`translateY(${M}px) rotate(${A}deg)`,b&&(L.style.color=b),u.appendChild(L),u.offsetWidth,v){let e=D,t=T;x?(e=D+Math.round(T*.55),t=Math.max(140,Math.round(T*.6))):n===``&&(t=Math.max(140,Math.round(T*.45))),k.push(window.setTimeout(()=>{u.style.transition=`width ${t}ms cubic-bezier(0.2, 0, 0, 1)`,u.style.width=`${_}px`},e)),P=Math.max(P,e+t)}P=Math.max(P,D+o+T+(l?d:0)),m&&k.push(window.setTimeout(()=>{m.style.transition=F,m.style.transform=`translateY(${j}px) rotate(${-Number(A)}deg)`},D)),k.push(window.setTimeout(()=>{L.style.transition=I,L.style.transform=`translateY(0) rotate(0deg)`,l&&(L.style.color=O);let e=t=>{t.propertyName===`transform`&&(L.removeEventListener(`transitionend`,e),u.dataset.char=r,u.style.removeProperty(`transition`),u.style.removeProperty(`width`),u.classList.remove(`is-resizing`),u.querySelectorAll(`.char-face`).forEach(e=>{e!==L&&e.remove()}))};L.addEventListener(`transitionend`,e)},D+o))}let F=P+80;k.push(window.setTimeout(()=>{let n=A.pending;p.delete(e),_(e,t),n&&v(e,n.text,n.options)},F))}function y(e,t=``){m(e),e.classList.remove(`slot-text`),e.textContent=t}function b(e,t,n={}){let r=t,i,a;return _(e,t),{element:e,get value(){return r},set(t,o={}){clearTimeout(i),a=void 0,r=t,v(e,t,{...n,...o})},flash(t,{revertAfter:o=1400,enter:s,exit:c}={}){a===void 0&&(a=r),r=t,v(e,t,{...n,interrupt:!1,...s}),clearTimeout(i),i=window.setTimeout(()=>{let t=a;a=void 0,i=void 0,r=t,v(e,t,{...n,interrupt:!1,...c})},o)},destroy(){clearTimeout(i),y(e,r)}}}function x(e,t,n={}){let{interval:r=5e3,direction:i=`up`,stagger:a=45,duration:o=300,interrupt:s=!0}=n,c=document.querySelector(e);if(!c)throw Error(`No se encontró el elemento con el selector: ${e}`);if(!Array.isArray(t)||t.length===0)throw Error(`La lista de palabras debe contener al menos una palabra.`);let l=0,u=b(c,t[l],{direction:i,stagger:a,duration:o,interrupt:s}),d=setInterval(()=>{l=(l+1)%t.length,u.set(t[l],{direction:i,stagger:a,duration:o,interrupt:s})},r);return{stop(){clearInterval(d)},destroy(){clearInterval(d),u.destroy()},getCurrentWord(){return t[l]}}}var S=`/portfolio/assets/profile_photo-4VQzsoEu.webp`;c(),document.querySelector(`#app`).innerHTML=`
+  <div class="h-dfull fx-col fx-jsc_sb">
     <header class="fx-jsc_sa header">
-
       <div>
         <svg class="logo" viewBox="0 0 461.00 675.00">
           <g transform="translate(0.0,675.0) scale(0.1,-0.1)" fill="" stroke="none">
@@ -215,7 +215,6 @@
           </g>
         </svg>
       </div>
-
       <nav class="fx-ali_c">
         <ul class="list-none fx-jsc_se gap-2">
           <li>
@@ -240,55 +239,51 @@
           </li>
         </ul>
       </nav>
-
       <div class="fx-ali_c header-theme-toggle">
         <theme-toggle></theme-toggle>
       </div>
-
     </header>
-    
-    <main class="w-full fx-col fx-ali_c">
-
-      <section class="hero fx-col fx-ali_c">
-
-        <div class="hero-photo fx">
-          <span class="tooltip">
-            @gaboquerizo
+    <main class="main h-full fx-col fx-ali_c fx-jsc_se">
+      <div class="profile-photo fx">
+        <span class="profile-tooltip">
+          @gaboquerizo
+        </span>
+        <img src="${S}" class="profile-photo_img" alt="Me">
+      </div>
+      <div class="profile">
+        <h1 class="txt-center">
+          <span class="username">
+            Gabriel Baquerizo Palacios
           </span>
-          <img src="${S}" class="profile-photo" alt="Me">
-        </div>
-        
-        <div class="hero-title">
-          <h1 class="txt-center">
-            
-            <span class="greeting">
-              Gabriel Baquerizo Palacios
+          <br>
+          <span class="profession">
+            <span class="primary">
+              Software
             </span>
-            <br>
-            
-            <span class="specialties">
-              <span class="primary">
-                Front-end
-              </span>
-              <span class="secondary">
-                Development
-              </span>
+            <span class="secondary">
+              Development
             </span>
-          </h1>
+          </span>
+        </h1>
+      </div>
+      <div class="main-cta_btn fx gap-4">
+        <app-button outline href="#about_me">
+          Acerca de mi
+        </app-button>
+        <app-button primary href="https://drive.google.com/file/d/1q0n7vRciyBmYrKfLThf9tGTQliNS2caU/view?usp=drive_link" target="_blank" data-btn-download="">
+          Descargar CV
+        </app-button>
+      </div>
+    </main>
+    <footer class="footer w-full fx-ctr">
+        <div class="scroll-animation">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m7 10l5 5l5-5"></path>
+          </svg>
         </div>
-        
-        <div class="hero-cta fx gap-4">
-          <app-button outline href="#about_me">
-            Acerca de mi
-          </app-button>
-          <app-button primary href="https://drive.google.com/file/d/1q0n7vRciyBmYrKfLThf9tGTQliNS2caU/view?usp=drive_link" target="_blank" data-btn-download="">
-            Descargar CV
-          </app-button>
-        </div>
-
-      </section>
-
-      <!--
+    </footer>
+  </div>
+          <!--
       <section id="projects">
         <h2>Proyectos</h2>
       </section>
@@ -305,9 +300,4 @@
         <h2>Contacto</h2>
       </section>
       -->
-      
-    </main>
-    <footer>
-        
-    </footer>
 `,x(`.primary`,[`UI/UX`,`Frontend`,`Backend`,`Database`,`QA`,`Dev`],{interval:4e3,direction:`up`,stagger:100,duration:500,interrupt:!0}),x(`.secondary`,[`designer`,`developer`,`developer`,`admin`,`testing`,`Ops`],{interval:4e3,direction:`up`,stagger:100,duration:500,interrupt:!0});
