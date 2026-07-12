@@ -11,7 +11,13 @@ import { initTheme } from './shared/theme/theme.js';
 initTheme();
 
 // Resources
-import profilePhoto from './assets/images/profile_photo.webp'
+import profilePhoto from './assets/images/profile_photo.webp';
+
+const url = {
+        linkedin: 'https://www.linkedin.com/in/gaboquerizo/',
+        github: 'https://github.com/gaboquerizo/',
+        pinterest : "https://es.pinterest.com/gaboquerizo/",
+}
 
 document.querySelector('#app').innerHTML = `
 <div class="h-dfull fx-col fx-jsc_sb">
@@ -93,17 +99,17 @@ document.querySelector('#app').innerHTML = `
     </footer>
   </div>
 <div>
-<div>
-  <section class="">
-    <div>
-        <img src="" alt="">
-        <nav class="fx presentation__nav">
-          <a href="" class="fx" alt="linkedin" title="LinkedIn">
+<div class="fx-ctr">
+  <section class="about-me gap-8">
+    <div class="about-me_img fx-col gap-6">
+        <img src="${profilePhoto}">
+        <nav class="about-me_links fx-jsc_se">
+          <a href="${url.linkedin}" class="fx" alt="linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 9.5H4c-.943 0-1.414 0-1.707.293S2 10.557 2 11.5V20c0 .943 0 1.414.293 1.707S3.057 22 4 22h.5c.943 0 1.414 0 1.707-.293S6.5 20.943 6.5 20v-8.5c0-.943 0-1.414-.293-1.707S5.443 9.5 4.5 9.5m2-5.25a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m5.826 5.25H11.5c-.943 0-1.414 0-1.707.293S9.5 10.557 9.5 11.5V20c0 .943 0 1.414.293 1.707S10.557 22 11.5 22h.5c.943 0 1.414 0 1.707-.293S14 20.943 14 20v-3.5c0-1.657.528-3 2.088-3c.78 0 1.412.672 1.412 1.5v4.5c0 .943 0 1.414.293 1.707s.764.293 1.707.293h.499c.942 0 1.414 0 1.707-.293c.292-.293.293-.764.293-1.706L22 14c0-2.486-2.364-4.5-4.703-4.5c-1.332 0-2.52.652-3.297 1.673c0-.63 0-.945-.137-1.179a1 1 0 0 0-.358-.358c-.234-.137-.549-.137-1.179-.137" color="currentColor"></path>
             </svg>
           </a>
-          <a href="" class="fx" alt="github" title="GitHub">
+          <a href="${url.github}" class="fx" alt="github" title="GitHub" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
                 <path d="M10 20.568c-3.429 1.157-6.286 0-8-3.568"></path>
@@ -111,7 +117,7 @@ document.querySelector('#app').innerHTML = `
               </g>
             </svg>
           </a>
-          <a href="" class="fx" alt="dribbble" title="Dribbble">
+          <a href="" class="fx" alt="dribbble" title="Dribbble" style="display: none;" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -120,7 +126,7 @@ document.querySelector('#app').innerHTML = `
               </g>
             </svg>
           </a>
-          <a href="" class="fx" alt="pinterest" title="Pinterest">
+          <a href="${url.pinterest}" class="fx" alt="pinterest" title="Pinterest" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
                 <path d="M12 11L8 21m1.974-4.428A5 5 0 1 0 7.67 14.5"></path>
@@ -130,13 +136,14 @@ document.querySelector('#app').innerHTML = `
           </a>
         </nav>
     </div>
-    <div>
+    <div class="about-me_greeting fx-col gap-6">
         <h2>
-            👋 Un cordial saludo!
+            Un cordial saludo 👋
         </h2>
         <p>
-            Soy Gabriel, un desarrollador de software especializado en el desarrollo web de lado Frontend. También en diseño de interfaces UI y experiencia de usuario UX.
-            <br>
+            Mi nombre es Gabriel, soy un desarrollador de software especializado en el desarrollo web de lado Frontend. También en diseño de interfaces UI y experiencia de usuario UX.
+        </p>
+        <p>            
             Me gusta promover la innovación tecnológica, ya que tengo la capacidad de identificar problemas y crear soluciones que permitan mejorar la productividad y optimizar los tiempos que demandan los procesos, aportando al crecimiento del negocio o la empresa.
         </p>
     </div>

@@ -204,7 +204,7 @@
             <path class="dark" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9 9 0 0 0 8.997-9.252a7 7 0 0 1-10.371-8.643A9 9 0 0 0 12 21"></path>
         </svg>
       </label>
-    `}};customElements.define(`theme-toggle`,l);var u={direction:`down`,stagger:45,duration:300,exitOffset:50,easing:`cubic-bezier(0.34, 1.56, 0.64, 1)`,bounce:.6,colorFade:280,skipUnchanged:!0,interrupt:!0},d=`\xA0`,f=e=>e===` `?d:e,p=new WeakMap;function m(e){let t=p.get(e);t&&(t.timers.forEach(e=>window.clearTimeout(e)),p.delete(e),_(e,t.target))}function h(e){let t=document.createElement(`span`);return t.className=`char-face`,t.textContent=f(e),t}function g(e){let t=document.createElement(`span`);t.className=`char-slot`,t.dataset.char=e;let n=document.createElement(`span`);return n.className=`char-sizer`,n.textContent=f(e),t.append(n,h(e)),t}function _(e,t){e.classList.add(`slot-text`),e.replaceChildren(...Array.from(t,g))}function v(e,t,n={}){let{direction:r,stagger:i,duration:a,exitOffset:o,easing:s,bounce:c,color:l,colorFade:d,skipUnchanged:y,interrupt:b}={...u,...n},x=p.get(e);if(x&&!b){t!==x.target&&(x.pending={text:t,options:n});return}if(m(e),!e.querySelector(`.char-slot`)){_(e,t);return}let S=Array.from(e.querySelectorAll(`.char-slot`)),C=S.map(e=>e.dataset.char??``).join(``);if(!b&&C===t)return;let w=Math.max(C.length,t.length),T=S.find(e=>(e.dataset.char??``)!==``)??S[0],E=getComputedStyle(e),D=Math.ceil(T?.getBoundingClientRect().height||T?.offsetHeight||e.getBoundingClientRect().height||parseFloat(E.lineHeight)||0)||Math.ceil(parseFloat(E.fontSize)*1.3)||18,O=l?E.color:``;for(let t=S.length;t<w;t++){let t=g(``);e.appendChild(t),S.push(t)}let k=[],A={timers:k,target:t};p.set(e,A);let j=r===`down`?D:-D,M=r===`down`?-D:D,N=(e,t)=>{let n=Math.sin((e+1)*12.9898+t*78.233)*43758.5453;return(n-Math.floor(n))*2-1},P=0;for(let e=0;e<w;e++){let n=C[e]||``,r=t[e]||``;if(n===r&&(y||n===``))continue;let u=S[e],p=u.querySelector(`.char-sizer`),m=u.querySelector(`.char-face`),g=u.getBoundingClientRect().width;p.textContent=f(r);let _=p.getBoundingClientRect().width,v=Math.abs(_-g)>.5;v&&(u.style.width=`${g}px`),(n===``||r===``)&&u.classList.add(`is-resizing`);let b=typeof l==`function`?l(e,w):l,x=r===``,T=Math.round(a*(x?.75:1)*(1+c*.45*N(e,1))),E=x?t.length*.5+(e-t.length)*.25:e,D=Math.round(E*i*(1+c*.25*N(e,2))),A=(c*5*N(e,3)).toFixed(2),F=`transform ${T}ms ${s}`,I=l?`${F}, color ${d}ms linear ${T}ms`:F,L=h(r);if(L.style.transformOrigin=`50% 50%`,L.style.transform=`translateY(${M}px) rotate(${A}deg)`,b&&(L.style.color=b),u.appendChild(L),u.offsetWidth,v){let e=D,t=T;x?(e=D+Math.round(T*.55),t=Math.max(140,Math.round(T*.6))):n===``&&(t=Math.max(140,Math.round(T*.45))),k.push(window.setTimeout(()=>{u.style.transition=`width ${t}ms cubic-bezier(0.2, 0, 0, 1)`,u.style.width=`${_}px`},e)),P=Math.max(P,e+t)}P=Math.max(P,D+o+T+(l?d:0)),m&&k.push(window.setTimeout(()=>{m.style.transition=F,m.style.transform=`translateY(${j}px) rotate(${-Number(A)}deg)`},D)),k.push(window.setTimeout(()=>{L.style.transition=I,L.style.transform=`translateY(0) rotate(0deg)`,l&&(L.style.color=O);let e=t=>{t.propertyName===`transform`&&(L.removeEventListener(`transitionend`,e),u.dataset.char=r,u.style.removeProperty(`transition`),u.style.removeProperty(`width`),u.classList.remove(`is-resizing`),u.querySelectorAll(`.char-face`).forEach(e=>{e!==L&&e.remove()}))};L.addEventListener(`transitionend`,e)},D+o))}let F=P+80;k.push(window.setTimeout(()=>{let n=A.pending;p.delete(e),_(e,t),n&&v(e,n.text,n.options)},F))}function y(e,t=``){m(e),e.classList.remove(`slot-text`),e.textContent=t}function b(e,t,n={}){let r=t,i,a;return _(e,t),{element:e,get value(){return r},set(t,o={}){clearTimeout(i),a=void 0,r=t,v(e,t,{...n,...o})},flash(t,{revertAfter:o=1400,enter:s,exit:c}={}){a===void 0&&(a=r),r=t,v(e,t,{...n,interrupt:!1,...s}),clearTimeout(i),i=window.setTimeout(()=>{let t=a;a=void 0,i=void 0,r=t,v(e,t,{...n,interrupt:!1,...c})},o)},destroy(){clearTimeout(i),y(e,r)}}}function x(e,t,n={}){let{interval:r=5e3,direction:i=`up`,stagger:a=45,duration:o=300,interrupt:s=!0}=n,c=document.querySelector(e);if(!c)throw Error(`No se encontró el elemento con el selector: ${e}`);if(!Array.isArray(t)||t.length===0)throw Error(`La lista de palabras debe contener al menos una palabra.`);let l=0,u=b(c,t[l],{direction:i,stagger:a,duration:o,interrupt:s}),d=setInterval(()=>{l=(l+1)%t.length,u.set(t[l],{direction:i,stagger:a,duration:o,interrupt:s})},r);return{stop(){clearInterval(d)},destroy(){clearInterval(d),u.destroy()},getCurrentWord(){return t[l]}}}var S=`/portfolio/assets/profile_photo-4VQzsoEu.webp`;c(),document.querySelector(`#app`).innerHTML=`
+    `}};customElements.define(`theme-toggle`,l);var u={direction:`down`,stagger:45,duration:300,exitOffset:50,easing:`cubic-bezier(0.34, 1.56, 0.64, 1)`,bounce:.6,colorFade:280,skipUnchanged:!0,interrupt:!0},d=`\xA0`,f=e=>e===` `?d:e,p=new WeakMap;function m(e){let t=p.get(e);t&&(t.timers.forEach(e=>window.clearTimeout(e)),p.delete(e),_(e,t.target))}function h(e){let t=document.createElement(`span`);return t.className=`char-face`,t.textContent=f(e),t}function g(e){let t=document.createElement(`span`);t.className=`char-slot`,t.dataset.char=e;let n=document.createElement(`span`);return n.className=`char-sizer`,n.textContent=f(e),t.append(n,h(e)),t}function _(e,t){e.classList.add(`slot-text`),e.replaceChildren(...Array.from(t,g))}function v(e,t,n={}){let{direction:r,stagger:i,duration:a,exitOffset:o,easing:s,bounce:c,color:l,colorFade:d,skipUnchanged:y,interrupt:b}={...u,...n},x=p.get(e);if(x&&!b){t!==x.target&&(x.pending={text:t,options:n});return}if(m(e),!e.querySelector(`.char-slot`)){_(e,t);return}let S=Array.from(e.querySelectorAll(`.char-slot`)),C=S.map(e=>e.dataset.char??``).join(``);if(!b&&C===t)return;let w=Math.max(C.length,t.length),T=S.find(e=>(e.dataset.char??``)!==``)??S[0],E=getComputedStyle(e),D=Math.ceil(T?.getBoundingClientRect().height||T?.offsetHeight||e.getBoundingClientRect().height||parseFloat(E.lineHeight)||0)||Math.ceil(parseFloat(E.fontSize)*1.3)||18,O=l?E.color:``;for(let t=S.length;t<w;t++){let t=g(``);e.appendChild(t),S.push(t)}let k=[],A={timers:k,target:t};p.set(e,A);let j=r===`down`?D:-D,M=r===`down`?-D:D,N=(e,t)=>{let n=Math.sin((e+1)*12.9898+t*78.233)*43758.5453;return(n-Math.floor(n))*2-1},P=0;for(let e=0;e<w;e++){let n=C[e]||``,r=t[e]||``;if(n===r&&(y||n===``))continue;let u=S[e],p=u.querySelector(`.char-sizer`),m=u.querySelector(`.char-face`),g=u.getBoundingClientRect().width;p.textContent=f(r);let _=p.getBoundingClientRect().width,v=Math.abs(_-g)>.5;v&&(u.style.width=`${g}px`),(n===``||r===``)&&u.classList.add(`is-resizing`);let b=typeof l==`function`?l(e,w):l,x=r===``,T=Math.round(a*(x?.75:1)*(1+c*.45*N(e,1))),E=x?t.length*.5+(e-t.length)*.25:e,D=Math.round(E*i*(1+c*.25*N(e,2))),A=(c*5*N(e,3)).toFixed(2),F=`transform ${T}ms ${s}`,I=l?`${F}, color ${d}ms linear ${T}ms`:F,L=h(r);if(L.style.transformOrigin=`50% 50%`,L.style.transform=`translateY(${M}px) rotate(${A}deg)`,b&&(L.style.color=b),u.appendChild(L),u.offsetWidth,v){let e=D,t=T;x?(e=D+Math.round(T*.55),t=Math.max(140,Math.round(T*.6))):n===``&&(t=Math.max(140,Math.round(T*.45))),k.push(window.setTimeout(()=>{u.style.transition=`width ${t}ms cubic-bezier(0.2, 0, 0, 1)`,u.style.width=`${_}px`},e)),P=Math.max(P,e+t)}P=Math.max(P,D+o+T+(l?d:0)),m&&k.push(window.setTimeout(()=>{m.style.transition=F,m.style.transform=`translateY(${j}px) rotate(${-Number(A)}deg)`},D)),k.push(window.setTimeout(()=>{L.style.transition=I,L.style.transform=`translateY(0) rotate(0deg)`,l&&(L.style.color=O);let e=t=>{t.propertyName===`transform`&&(L.removeEventListener(`transitionend`,e),u.dataset.char=r,u.style.removeProperty(`transition`),u.style.removeProperty(`width`),u.classList.remove(`is-resizing`),u.querySelectorAll(`.char-face`).forEach(e=>{e!==L&&e.remove()}))};L.addEventListener(`transitionend`,e)},D+o))}let F=P+80;k.push(window.setTimeout(()=>{let n=A.pending;p.delete(e),_(e,t),n&&v(e,n.text,n.options)},F))}function y(e,t=``){m(e),e.classList.remove(`slot-text`),e.textContent=t}function b(e,t,n={}){let r=t,i,a;return _(e,t),{element:e,get value(){return r},set(t,o={}){clearTimeout(i),a=void 0,r=t,v(e,t,{...n,...o})},flash(t,{revertAfter:o=1400,enter:s,exit:c}={}){a===void 0&&(a=r),r=t,v(e,t,{...n,interrupt:!1,...s}),clearTimeout(i),i=window.setTimeout(()=>{let t=a;a=void 0,i=void 0,r=t,v(e,t,{...n,interrupt:!1,...c})},o)},destroy(){clearTimeout(i),y(e,r)}}}function x(e,t,n={}){let{interval:r=5e3,direction:i=`up`,stagger:a=45,duration:o=300,interrupt:s=!0}=n,c=document.querySelector(e);if(!c)throw Error(`No se encontró el elemento con el selector: ${e}`);if(!Array.isArray(t)||t.length===0)throw Error(`La lista de palabras debe contener al menos una palabra.`);let l=0,u=b(c,t[l],{direction:i,stagger:a,duration:o,interrupt:s}),d=setInterval(()=>{l=(l+1)%t.length,u.set(t[l],{direction:i,stagger:a,duration:o,interrupt:s})},r);return{stop(){clearInterval(d)},destroy(){clearInterval(d),u.destroy()},getCurrentWord(){return t[l]}}}var S=`/portfolio/assets/profile_photo-4VQzsoEu.webp`;c();var C={linkedin:`https://www.linkedin.com/in/gaboquerizo/`,github:`https://github.com/gaboquerizo/`,pinterest:`https://es.pinterest.com/gaboquerizo/`};document.querySelector(`#app`).innerHTML=`
 <div class="h-dfull fx-col fx-jsc_sb">
     <header class="fx-jsc_sa header">
       <div>
@@ -284,17 +284,17 @@
     </footer>
   </div>
 <div>
-<div>
-  <section class="">
-    <div>
-        <img src="" alt="">
-        <nav class="fx presentation__nav">
-          <a href="" class="fx" alt="linkedin" title="LinkedIn">
+<div class="fx-ctr">
+  <section class="about-me gap-8">
+    <div class="about-me_img fx-col gap-6">
+        <img src="${S}">
+        <nav class="about-me_links fx-jsc_se">
+          <a href="${C.linkedin}" class="fx" alt="linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 9.5H4c-.943 0-1.414 0-1.707.293S2 10.557 2 11.5V20c0 .943 0 1.414.293 1.707S3.057 22 4 22h.5c.943 0 1.414 0 1.707-.293S6.5 20.943 6.5 20v-8.5c0-.943 0-1.414-.293-1.707S5.443 9.5 4.5 9.5m2-5.25a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m5.826 5.25H11.5c-.943 0-1.414 0-1.707.293S9.5 10.557 9.5 11.5V20c0 .943 0 1.414.293 1.707S10.557 22 11.5 22h.5c.943 0 1.414 0 1.707-.293S14 20.943 14 20v-3.5c0-1.657.528-3 2.088-3c.78 0 1.412.672 1.412 1.5v4.5c0 .943 0 1.414.293 1.707s.764.293 1.707.293h.499c.942 0 1.414 0 1.707-.293c.292-.293.293-.764.293-1.706L22 14c0-2.486-2.364-4.5-4.703-4.5c-1.332 0-2.52.652-3.297 1.673c0-.63 0-.945-.137-1.179a1 1 0 0 0-.358-.358c-.234-.137-.549-.137-1.179-.137" color="currentColor"></path>
             </svg>
           </a>
-          <a href="" class="fx" alt="github" title="GitHub">
+          <a href="${C.github}" class="fx" alt="github" title="GitHub" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
                 <path d="M10 20.568c-3.429 1.157-6.286 0-8-3.568"></path>
@@ -302,7 +302,7 @@
               </g>
             </svg>
           </a>
-          <a href="" class="fx" alt="dribbble" title="Dribbble">
+          <a href="" class="fx" alt="dribbble" title="Dribbble" style="display: none;" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -311,7 +311,7 @@
               </g>
             </svg>
           </a>
-          <a href="" class="fx" alt="pinterest" title="Pinterest">
+          <a href="${C.pinterest}" class="fx" alt="pinterest" title="Pinterest" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
                 <path d="M12 11L8 21m1.974-4.428A5 5 0 1 0 7.67 14.5"></path>
@@ -321,13 +321,14 @@
           </a>
         </nav>
     </div>
-    <div>
+    <div class="about-me_greeting fx-col gap-6">
         <h2>
-            👋 Un cordial saludo!
+            Un cordial saludo 👋
         </h2>
         <p>
-            Soy Gabriel, un desarrollador de software especializado en el desarrollo web de lado Frontend. También en diseño de interfaces UI y experiencia de usuario UX.
-            <br>
+            Mi nombre es Gabriel, soy un desarrollador de software especializado en el desarrollo web de lado Frontend. También en diseño de interfaces UI y experiencia de usuario UX.
+        </p>
+        <p>            
             Me gusta promover la innovación tecnológica, ya que tengo la capacidad de identificar problemas y crear soluciones que permitan mejorar la productividad y optimizar los tiempos que demandan los procesos, aportando al crecimiento del negocio o la empresa.
         </p>
     </div>

@@ -18,6 +18,14 @@ body {
     height: 100dvh;
 }
 
+.scroll-animation,
+.about-me_links
+svg
+{
+    width: 2rem;
+    height: 2rem;
+}
+
 .header {
     margin-block: var(--space-200) var(--space-100);
 
@@ -97,6 +105,9 @@ body {
         &:hover {
             outline: var(--solid-2) white;
         }
+        box-shadow:
+                var(--shadow-low),
+                var(--shadow-medium);
     }
     .profile-tooltip {
         position: absolute;
@@ -191,3 +202,57 @@ body {
     }
 }
 
+.about-me {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "area1 area2 area2";
+
+    width: 90dvw;
+    max-width: 800px;
+    gap: 4rem;
+    margin-block: var(--space-600);
+
+    .about-me_img {
+        grid-area: area1;
+
+        img {
+            border-radius: var(--radius-3);
+            box-shadow:
+                    var(--shadow-low),
+                    var(--shadow-medium);
+        }
+    }
+
+    .about-me_links a {
+        color: var(--tx-color-3);
+        padding: var(--space-050);
+        border-radius: var(--radius-3);
+        transition:
+                background var(--transition-1),
+                color var(--transition-1);
+
+        &[alt="linkedin"]:hover {
+            background-color: #0a66c2;
+        }
+        &[alt="github"]:hover {
+            background-color: #010409;
+        }
+        &[alt="dribbble"]:hover {
+            background-color: #e04a82;
+        }
+        &[alt="pinterest"]:hover {
+            background-color: #e60023;
+        }
+        &:hover {
+            color: white;
+        }
+    }
+
+    .about-me_greeting {
+        grid-area: area2;
+
+        p {
+            margin: 0;
+        }
+    }
+}
