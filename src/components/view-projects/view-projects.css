@@ -1,0 +1,357 @@
+app-view-projects {
+    --view-projects-background: #dfe7f4;
+    --view-projects-text: #24364a;
+    --view-projects-muted-text: #52667d;
+    --view-projects-surface: rgb(255 255 255 / 60%);
+    --view-projects-border: rgb(255 255 255 / 70%);
+    --view-projects-shadow: 0 24px 60px rgb(69 89 116 / 12%);
+    --view-projects-radius: 1.25rem;
+    --project-duration: 5000ms;
+}
+
+app-view-projects .view-projects {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: clamp(2.5rem, 5vw, 5.5rem);
+
+    min-height: 46rem;
+    padding:
+            clamp(3rem, 8vw, 8rem)
+            clamp(1.5rem, 7vw, 7rem)
+            clamp(2rem, 5vw, 4rem);
+
+    overflow: hidden;
+
+}
+
+app-view-projects .view-projects__slide {
+    display: grid;
+    grid-template-columns:
+        minmax(17rem, 0.85fr)
+        minmax(28rem, 1.35fr);
+    align-items: center;
+    gap: clamp(3rem, 8vw, 8rem);
+
+    width: min(100%, 88rem);
+    margin-inline: auto;
+
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+            opacity 300ms ease,
+            transform 300ms ease;
+}
+
+app-view-projects .view-projects__slide.is-leaving {
+    opacity: 0;
+    transform: translateY(0.75rem);
+}
+
+app-view-projects .view-projects__slide.is-entering {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+}
+
+app-view-projects .view-projects__information {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+app-view-projects .view-projects__title {
+    margin: 0;
+    color: var(--view-projects-text);
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+app-view-projects .view-projects__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    margin: 2rem 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+app-view-projects .view-projects__technology {
+    min-width: 7rem;
+    padding: 0.65rem 1.35rem;
+
+    border: 1px solid var(--view-projects-border);
+    border-radius: 999rem;
+
+    color: #677b91;
+    background: var(--view-projects-surface);
+    box-shadow:
+            inset 0 1px 0 rgb(255 255 255 / 65%),
+            0 8px 20px rgb(82 104 132 / 6%);
+
+    font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+    line-height: 1;
+    text-align: center;
+}
+
+app-view-projects .view-projects__description {
+    max-width: 34rem;
+    margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+
+    color: var(--view-projects-muted-text);
+    font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+    line-height: 1.45;
+}
+
+app-view-projects .view-projects__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: clamp(2.5rem, 5vw, 5rem);
+}
+
+app-view-projects .view-projects__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 4rem;
+
+    border: 1px solid var(--view-projects-border);
+    border-radius: 1.25rem;
+
+    color: #6a7e93;
+    background: var(--view-projects-surface);
+    box-shadow:
+            inset 0 1px 0 rgb(255 255 255 / 70%),
+            0 12px 25px rgb(64 85 112 / 8%);
+
+    text-decoration: none;
+
+    transition:
+            transform 180ms ease,
+            color 180ms ease,
+            background-color 180ms ease,
+            box-shadow 180ms ease;
+}
+
+app-view-projects .view-projects__action:hover {
+    color: var(--view-projects-text);
+    background: rgb(255 255 255 / 80%);
+    box-shadow:
+            inset 0 1px 0 rgb(255 255 255 / 85%),
+            0 16px 30px rgb(64 85 112 / 12%);
+
+    transform: translateY(-0.125rem);
+}
+
+app-view-projects .view-projects__action:focus-visible {
+    outline: 0.1875rem solid rgb(36 54 74 / 30%);
+    outline-offset: 0.25rem;
+}
+
+app-view-projects .view-projects__action--primary {
+    padding-inline: 1.75rem;
+    font-size: 1.25rem;
+}
+
+app-view-projects .view-projects__action--repository {
+    width: 4rem;
+    padding: 0;
+}
+
+app-view-projects .view-projects__preview {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin: 0;
+    padding: clamp(0.75rem, 1.5vw, 1.25rem);
+
+    overflow: hidden;
+
+    border: 1px solid rgb(255 255 255 / 50%);
+    border-radius: var(--view-projects-radius);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgb(230 244 255 / 80%),
+                    rgb(255 238 248 / 65%)
+            );
+
+    box-shadow: var(--view-projects-shadow);
+}
+
+app-view-projects .view-projects__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+
+    border-radius: calc(var(--view-projects-radius) - 0.4rem);
+    background: #f5f7fa;
+}
+
+app-view-projects .view-projects__indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    width: 100%;
+}
+
+app-view-projects .view-projects__indicator {
+    display: flex;
+    align-items: center;
+
+    width: 4.5rem;
+    min-height: 2rem;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+app-view-projects .view-projects__indicator-track {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    height: 0.55rem;
+
+    overflow: hidden;
+    border-radius: 999rem;
+
+    background: rgb(255 255 255 / 42%);
+    box-shadow:
+            inset 0 1px 2px rgb(59 78 103 / 8%),
+            0 1px 0 rgb(255 255 255 / 60%);
+}
+
+app-view-projects .view-projects__indicator-progress {
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+    background: rgb(255 255 255 / 92%);
+
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+
+app-view-projects
+.view-projects__indicator.is-active.is-running
+.view-projects__indicator-progress {
+    animation:
+            view-projects-progress
+            var(--project-duration)
+            linear
+            forwards;
+}
+
+app-view-projects
+.view-projects__indicator.is-active.is-complete
+.view-projects__indicator-progress {
+    transform: scaleX(1);
+}
+
+app-view-projects .view-projects__indicator:focus-visible {
+    outline: 0.1875rem solid rgb(36 54 74 / 25%);
+    outline-offset: 0.2rem;
+    border-radius: 999rem;
+}
+
+app-view-projects .view-projects__visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border: 0;
+}
+
+@keyframes view-projects-progress {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@media (max-width: 64rem) {
+    app-view-projects .view-projects {
+        min-height: auto;
+    }
+
+    app-view-projects .view-projects__slide {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    app-view-projects .view-projects__information {
+        align-items: center;
+        text-align: center;
+    }
+
+    app-view-projects .view-projects__technologies {
+        justify-content: center;
+    }
+
+    app-view-projects .view-projects__description {
+        max-width: 42rem;
+    }
+
+    app-view-projects .view-projects__actions {
+        margin-top: 2.5rem;
+    }
+}
+
+@media (max-width: 36rem) {
+    app-view-projects .view-projects {
+        padding-inline: 1.25rem;
+    }
+
+    app-view-projects .view-projects__technology {
+        min-width: auto;
+        padding-inline: 1rem;
+    }
+
+    app-view-projects .view-projects__indicator {
+        width: 3.25rem;
+    }
+
+    app-view-projects .view-projects__action--primary {
+        font-size: 1.05rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    app-view-projects .view-projects__slide,
+    app-view-projects .view-projects__action {
+        transition: none;
+    }
+
+    app-view-projects
+    .view-projects__indicator.is-active
+    .view-projects__indicator-progress {
+        animation: none;
+        transform: scaleX(1);
+    }
+}
