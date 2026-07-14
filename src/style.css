@@ -202,6 +202,19 @@ svg
     }
 }
 
+.heading-2 {
+    color: var(--tx-color-3);
+    text-transform: uppercase;
+    letter-spacing: var(--space-100);
+    padding-block: var(--space-600) var(--space-300);
+    font-size: var(--size-8);
+    opacity: 0.5;
+}
+
+section[id="about_me"] {
+    background-color: var(--bg-color-3);
+}
+
 .about-me {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -209,8 +222,8 @@ svg
 
     width: 90dvw;
     max-width: 800px;
+    padding-block: var(--space-300) var(--space-600);
     gap: 4rem;
-    margin-block: var(--space-600);
 
     .about-me_img {
         grid-area: area1;
@@ -225,8 +238,8 @@ svg
 
     .about-me_links a {
         color: var(--tx-color-3);
-        padding: var(--space-050);
-        border-radius: var(--radius-3);
+        padding: var(--space-075);
+        border-radius: var(--radius-5);
         transition:
                 background var(--transition-1),
                 color var(--transition-1);
@@ -246,6 +259,11 @@ svg
         &:hover {
             color: white;
         }
+
+        svg {
+            width: var(--size-7);
+            height: var(--size-7);
+        }
     }
 
     .about-me_greeting {
@@ -255,4 +273,10 @@ svg
             margin: 0;
         }
     }
+}
+
+section[id="projects"] {
+    background-color: var(--bg-color-3);
+
+    padding-bottom: 100em;
 }

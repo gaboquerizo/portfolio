@@ -20,7 +20,7 @@ const url = {
 }
 
 document.querySelector('#app').innerHTML = `
-<div class="h-dfull fx-col fx-jsc_sb">
+<section class="h-dfull fx-col fx-jsc_sb">
     <header class="fx-jsc_sa header">
       <div>
         <svg class="logo" viewBox="0 0 461.00 675.00">
@@ -97,12 +97,12 @@ document.querySelector('#app').innerHTML = `
         </svg>
       </div>
     </footer>
-  </div>
-<div>
-<div class="fx-ctr">
-  <section class="about-me gap-8">
-    <div class="about-me_img fx-col gap-6">
-        <img src="${profilePhoto}">
+</section>
+<section id="about_me" class="fx-ctr fx-col">
+    <h2 class="heading-2"> Quien soy </h2>
+    <div class="about-me gap-6">
+      <div class="about-me_img fx-col gap-4">
+        <img src="${profilePhoto}" alt="Foto de Gabriel">
         <nav class="about-me_links fx-jsc_se">
           <a href="${url.linkedin}" class="fx" alt="linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -135,25 +135,24 @@ document.querySelector('#app').innerHTML = `
             </svg>
           </a>
         </nav>
-    </div>
-    <div class="about-me_greeting fx-col gap-6">
-        <h2>
+      </div>
+      <div class="about-me_greeting fx-col gap-6">
+        <h3>
             Un cordial saludo 👋
-        </h2>
+        </h3>
         <p>
             Mi nombre es Gabriel, soy un desarrollador de software especializado en el desarrollo web de lado Frontend. También en diseño de interfaces UI y experiencia de usuario UX.
         </p>
         <p>            
             Me gusta promover la innovación tecnológica, ya que tengo la capacidad de identificar problemas y crear soluciones que permitan mejorar la productividad y optimizar los tiempos que demandan los procesos, aportando al crecimiento del negocio o la empresa.
         </p>
+      </div>
     </div>
-  </section>
-</div>
-
+</section>
+<section id="projects" class="fx-ctr fx-col">
+    <h2 class="heading-2">Proyectos</h2>
+</section>
           <!--
-      <section id="projects">
-        <h2>Proyectos</h2>
-      </section>
 
       <section id="experience">
         <h2>Experiencia</h2>

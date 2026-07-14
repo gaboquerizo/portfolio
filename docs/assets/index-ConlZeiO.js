@@ -205,7 +205,7 @@
         </svg>
       </label>
     `}};customElements.define(`theme-toggle`,l);var u={direction:`down`,stagger:45,duration:300,exitOffset:50,easing:`cubic-bezier(0.34, 1.56, 0.64, 1)`,bounce:.6,colorFade:280,skipUnchanged:!0,interrupt:!0},d=`\xA0`,f=e=>e===` `?d:e,p=new WeakMap;function m(e){let t=p.get(e);t&&(t.timers.forEach(e=>window.clearTimeout(e)),p.delete(e),_(e,t.target))}function h(e){let t=document.createElement(`span`);return t.className=`char-face`,t.textContent=f(e),t}function g(e){let t=document.createElement(`span`);t.className=`char-slot`,t.dataset.char=e;let n=document.createElement(`span`);return n.className=`char-sizer`,n.textContent=f(e),t.append(n,h(e)),t}function _(e,t){e.classList.add(`slot-text`),e.replaceChildren(...Array.from(t,g))}function v(e,t,n={}){let{direction:r,stagger:i,duration:a,exitOffset:o,easing:s,bounce:c,color:l,colorFade:d,skipUnchanged:y,interrupt:b}={...u,...n},x=p.get(e);if(x&&!b){t!==x.target&&(x.pending={text:t,options:n});return}if(m(e),!e.querySelector(`.char-slot`)){_(e,t);return}let S=Array.from(e.querySelectorAll(`.char-slot`)),C=S.map(e=>e.dataset.char??``).join(``);if(!b&&C===t)return;let w=Math.max(C.length,t.length),T=S.find(e=>(e.dataset.char??``)!==``)??S[0],E=getComputedStyle(e),D=Math.ceil(T?.getBoundingClientRect().height||T?.offsetHeight||e.getBoundingClientRect().height||parseFloat(E.lineHeight)||0)||Math.ceil(parseFloat(E.fontSize)*1.3)||18,O=l?E.color:``;for(let t=S.length;t<w;t++){let t=g(``);e.appendChild(t),S.push(t)}let k=[],A={timers:k,target:t};p.set(e,A);let j=r===`down`?D:-D,M=r===`down`?-D:D,N=(e,t)=>{let n=Math.sin((e+1)*12.9898+t*78.233)*43758.5453;return(n-Math.floor(n))*2-1},P=0;for(let e=0;e<w;e++){let n=C[e]||``,r=t[e]||``;if(n===r&&(y||n===``))continue;let u=S[e],p=u.querySelector(`.char-sizer`),m=u.querySelector(`.char-face`),g=u.getBoundingClientRect().width;p.textContent=f(r);let _=p.getBoundingClientRect().width,v=Math.abs(_-g)>.5;v&&(u.style.width=`${g}px`),(n===``||r===``)&&u.classList.add(`is-resizing`);let b=typeof l==`function`?l(e,w):l,x=r===``,T=Math.round(a*(x?.75:1)*(1+c*.45*N(e,1))),E=x?t.length*.5+(e-t.length)*.25:e,D=Math.round(E*i*(1+c*.25*N(e,2))),A=(c*5*N(e,3)).toFixed(2),F=`transform ${T}ms ${s}`,I=l?`${F}, color ${d}ms linear ${T}ms`:F,L=h(r);if(L.style.transformOrigin=`50% 50%`,L.style.transform=`translateY(${M}px) rotate(${A}deg)`,b&&(L.style.color=b),u.appendChild(L),u.offsetWidth,v){let e=D,t=T;x?(e=D+Math.round(T*.55),t=Math.max(140,Math.round(T*.6))):n===``&&(t=Math.max(140,Math.round(T*.45))),k.push(window.setTimeout(()=>{u.style.transition=`width ${t}ms cubic-bezier(0.2, 0, 0, 1)`,u.style.width=`${_}px`},e)),P=Math.max(P,e+t)}P=Math.max(P,D+o+T+(l?d:0)),m&&k.push(window.setTimeout(()=>{m.style.transition=F,m.style.transform=`translateY(${j}px) rotate(${-Number(A)}deg)`},D)),k.push(window.setTimeout(()=>{L.style.transition=I,L.style.transform=`translateY(0) rotate(0deg)`,l&&(L.style.color=O);let e=t=>{t.propertyName===`transform`&&(L.removeEventListener(`transitionend`,e),u.dataset.char=r,u.style.removeProperty(`transition`),u.style.removeProperty(`width`),u.classList.remove(`is-resizing`),u.querySelectorAll(`.char-face`).forEach(e=>{e!==L&&e.remove()}))};L.addEventListener(`transitionend`,e)},D+o))}let F=P+80;k.push(window.setTimeout(()=>{let n=A.pending;p.delete(e),_(e,t),n&&v(e,n.text,n.options)},F))}function y(e,t=``){m(e),e.classList.remove(`slot-text`),e.textContent=t}function b(e,t,n={}){let r=t,i,a;return _(e,t),{element:e,get value(){return r},set(t,o={}){clearTimeout(i),a=void 0,r=t,v(e,t,{...n,...o})},flash(t,{revertAfter:o=1400,enter:s,exit:c}={}){a===void 0&&(a=r),r=t,v(e,t,{...n,interrupt:!1,...s}),clearTimeout(i),i=window.setTimeout(()=>{let t=a;a=void 0,i=void 0,r=t,v(e,t,{...n,interrupt:!1,...c})},o)},destroy(){clearTimeout(i),y(e,r)}}}function x(e,t,n={}){let{interval:r=5e3,direction:i=`up`,stagger:a=45,duration:o=300,interrupt:s=!0}=n,c=document.querySelector(e);if(!c)throw Error(`No se encontró el elemento con el selector: ${e}`);if(!Array.isArray(t)||t.length===0)throw Error(`La lista de palabras debe contener al menos una palabra.`);let l=0,u=b(c,t[l],{direction:i,stagger:a,duration:o,interrupt:s}),d=setInterval(()=>{l=(l+1)%t.length,u.set(t[l],{direction:i,stagger:a,duration:o,interrupt:s})},r);return{stop(){clearInterval(d)},destroy(){clearInterval(d),u.destroy()},getCurrentWord(){return t[l]}}}var S=`/portfolio/assets/profile_photo-4VQzsoEu.webp`;c();var C={linkedin:`https://www.linkedin.com/in/gaboquerizo/`,github:`https://github.com/gaboquerizo/`,pinterest:`https://es.pinterest.com/gaboquerizo/`};document.querySelector(`#app`).innerHTML=`
-<div class="h-dfull fx-col fx-jsc_sb">
+<section class="h-dfull fx-col fx-jsc_sb">
     <header class="fx-jsc_sa header">
       <div>
         <svg class="logo" viewBox="0 0 461.00 675.00">
@@ -282,12 +282,12 @@
         </svg>
       </div>
     </footer>
-  </div>
-<div>
-<div class="fx-ctr">
-  <section class="about-me gap-8">
-    <div class="about-me_img fx-col gap-6">
-        <img src="${S}">
+</section>
+<section id="about_me" class="fx-ctr fx-col">
+    <h2 class="heading-2"> Quien soy </h2>
+    <div class="about-me gap-6">
+      <div class="about-me_img fx-col gap-4">
+        <img src="${S}" alt="Foto de Gabriel">
         <nav class="about-me_links fx-jsc_se">
           <a href="${C.linkedin}" class="fx" alt="linkedin" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -320,8 +320,8 @@
             </svg>
           </a>
         </nav>
-    </div>
-    <div class="about-me_greeting fx-col gap-6">
+      </div>
+      <div class="about-me_greeting fx-col gap-6">
         <h2>
             Un cordial saludo 👋
         </h2>
@@ -331,14 +331,13 @@
         <p>            
             Me gusta promover la innovación tecnológica, ya que tengo la capacidad de identificar problemas y crear soluciones que permitan mejorar la productividad y optimizar los tiempos que demandan los procesos, aportando al crecimiento del negocio o la empresa.
         </p>
+      </div>
     </div>
-  </section>
-</div>
-
+</section>
+<section id="projects" class="fx-ctr fx-col">
+    <h2 class="heading-2">Proyectos</h2>
+</section>
           <!--
-      <section id="projects">
-        <h2>Proyectos</h2>
-      </section>
 
       <section id="experience">
         <h2>Experiencia</h2>
