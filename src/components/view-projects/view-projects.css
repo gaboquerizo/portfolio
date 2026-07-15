@@ -1,242 +1,223 @@
 app-view-projects {
-    --view-projects-background: #dfe7f4;
-    --view-projects-text: #24364a;
-    --view-projects-muted-text: #52667d;
-    --view-projects-surface: rgb(255 255 255 / 60%);
-    --view-projects-border: rgb(255 255 255 / 70%);
-    --view-projects-shadow: 0 24px 60px rgb(69 89 116 / 12%);
-    --view-projects-radius: 1.25rem;
     --project-duration: 5000ms;
-}
 
-app-view-projects .view-projects {
-    display: grid;
-    grid-template-rows: minmax(0, 1fr) auto;
-    overflow: hidden;
-    padding:
-            var(--space-300)
-            var(--space-600)
-            var(--space-600);
-}
+    .view-projects {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
+        overflow: hidden;
+        padding:
+                var(--space-300)
+                var(--space-600)
+                var(--space-600);
+    }
 
-app-view-projects .view-projects__slide {
-    display: grid;
-    grid-template-columns:
+    .slide {
+        display: grid;
+        grid-template-columns:
         minmax(17rem, 0.85fr)
         minmax(28rem, 1.35fr);
-    align-items: center;
-    gap: clamp(3rem, 8vw, 8rem);
+        align-items: center;
+        gap: clamp(3rem, 8vw, 8rem);
 
-    width: min(100%, 88rem);
-    margin-inline: auto;
+        width: min(100%, 88rem);
+        margin-inline: auto;
 
-    opacity: 1;
-    transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
 
-    transition:
-            opacity 300ms ease,
-            transform 300ms ease;
-}
-
-app-view-projects .view-projects__slide.is-leaving {
-    opacity: 0;
-    transform: translateY(0.75rem);
-}
-
-app-view-projects .view-projects__slide.is-entering {
-    opacity: 0;
-    transform: translateY(-0.75rem);
-}
-
-app-view-projects .view-projects__title {
-    margin: 0;
-    color: var(--tx-color-1);
-    font-size: var(--size-6);
-    font-weight: 500;
-}
-
-app-view-projects .view-projects__technologies {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: var(--space-200);
-    padding: 0;
-    list-style: none;
-}
-
-app-view-projects .view-projects__technology {
-    font-size: var(--size-2);
-    line-height: 1;
-    text-align: center;
-
-    min-width: var(--space-500);
-    padding: var(--space-050) var(--space-100);
-
-    border: var(--solid-1) var(--bg-color-1);
-    border-radius: var(--radius-5);
-
-    color: var(--tx-color-3);
-    background: var(--bg-color-2);
-    box-shadow:
-            var(--shadow-low),
-            var(--shadow-medium),
-            var(--shadow-high);
-}
-
-app-view-projects .view-projects__description {
-    max-width: 32rem;
-    margin-top: var(--space-200);
-
-    color: var(--tx-color-2);
-    font-size: var(--size-3);
-    line-height: 1.5;
-}
-
-app-view-projects .view-projects__actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: var(--space-400);
-}
-
-app-view-projects .view-projects__action--repository svg {
-    display: block;
-    width: var(--size-5);
-    height: var(--size-5);
-}
-
-app-view-projects app-button[hidden] {
-    display: none;
-}
-
-app-view-projects .view-projects__preview {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    margin: 0;
-    padding: clamp(0.75rem, 1.5vw, 1.25rem);
-
-    overflow: hidden;
-
-    border: 1px solid rgb(255 255 255 / 50%);
-    border-radius: var(--view-projects-radius);
-
-    background:
-            linear-gradient(
-                    135deg,
-                    rgb(230 244 255 / 80%),
-                    rgb(255 238 248 / 65%)
-            );
-
-    box-shadow: var(--view-projects-shadow);
-}
-
-app-view-projects .view-projects__image {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-
-    border-radius: calc(var(--view-projects-radius) - 0.4rem);
-    background: #f5f7fa;
-}
-
-app-view-projects .view-projects__indicators {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-
-    width: 100%;
-}
-
-app-view-projects .view-projects__indicator {
-    display: flex;
-    align-items: center;
-
-    width: 4.5rem;
-    min-height: 2rem;
-    padding: 0;
-
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-}
-
-app-view-projects .view-projects__indicator-track {
-    position: relative;
-
-    display: block;
-    width: 100%;
-    height: 4px;
-
-    overflow: hidden;
-    border-radius: var(--radius-5);
-
-    background: var(--bg-color-4);
-    box-shadow:
-            var(--shadow-low),
-            var(--shadow-medium);
-
-    transition:
-            height var(--transition-1),
-            background var(--transition-1);
-
-    &:hover {
-        height: 12px;
-        background: var(--primary-color);
+        transition:
+                opacity 300ms ease,
+                transform 300ms ease;
     }
-}
 
-app-view-projects .view-projects__indicator-progress {
-    position: absolute;
-    inset: 0;
+    .slide.is-leaving {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
 
-    border-radius: inherit;
-    background: var(--bg-color-1);
+    .slide.is-entering {
+        opacity: 0;
+        transform: translateY(-0.75rem);
+    }
 
-    transform: scaleX(0);
-    transform-origin: left center;
-}
+    .title {
+        margin: 0;
+        color: var(--tx-color-1);
+        font-size: var(--size-6);
+        font-weight: 500;
+    }
 
-app-view-projects
-.view-projects__indicator.is-active.is-running
-.view-projects__indicator-progress {
-    animation:
-            view-projects-progress
-            var(--project-duration)
-            linear
-            forwards;
-}
+    .technologies {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: var(--space-200);
+        padding: 0;
+        list-style: none;
+    }
 
-app-view-projects
-.view-projects__indicator.is-active.is-complete
-.view-projects__indicator-progress {
-    transform: scaleX(1);
-}
+    .technology {
+        font-size: var(--size-2);
+        line-height: 1;
+        text-align: center;
 
-app-view-projects .view-projects__indicator:focus-visible {
-    outline: 0.1875rem solid rgb(36 54 74 / 25%);
-    outline-offset: 0.2rem;
-    border-radius: 999rem;
-}
+        min-width: var(--space-500);
+        padding: var(--space-050) var(--space-100);
 
-app-view-projects .view-projects__visually-hidden {
-    position: absolute;
+        border: var(--solid-1) var(--bg-color-1);
+        border-radius: var(--radius-5);
 
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
+        color: var(--tx-color-3);
+        background: var(--bg-color-2);
+        box-shadow:
+                var(--shadow-low),
+                var(--shadow-medium),
+                var(--shadow-high);
+    }
 
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
+    .description {
+        max-width: 32rem;
+        margin-top: var(--space-200);
 
-    border: 0;
+        color: var(--tx-color-2);
+        font-size: var(--size-3);
+        line-height: 1.5;
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: var(--space-400);
+    }
+
+    .action--repository svg {
+        display: block;
+        width: var(--size-5);
+        height: var(--size-5);
+    }
+
+    app-button[hidden] {
+        display: none;
+    }
+
+    .preview {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+
+        border: var(--solid-1) white;
+        border-radius: var(--radius-5);
+        box-shadow:
+                var(--shadow-low),
+                var(--shadow-medium),
+                var(--shadow-high);
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: var(--radius-5);
+        background: var(--bg-color-2);
+    }
+
+    .indicators {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+
+        width: 100%;
+    }
+
+    .indicator {
+        display: flex;
+        align-items: center;
+
+        width: 4.5rem;
+        min-height: 2rem;
+        padding: 0;
+
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .indicator-track {
+        position: relative;
+
+        display: block;
+        width: 100%;
+        height: 4px;
+
+        overflow: hidden;
+        border-radius: var(--radius-5);
+
+        background: var(--bg-color-4);
+        box-shadow:
+                var(--shadow-low),
+                var(--shadow-medium);
+
+        transition:
+                height var(--transition-1),
+                background var(--transition-1);
+
+        &:hover {
+            height: 12px;
+            background: var(--primary-color);
+        }
+    }
+
+    .indicator-progress {
+        position: absolute;
+        inset: 0;
+
+        border-radius: inherit;
+        background: var(--bg-color-1);
+
+        transform: scaleX(0);
+        transform-origin: left center;
+    }
+
+    .indicator.is-active.is-running .indicator-progress {
+        animation:
+                view-projects-progress
+                var(--project-duration)
+                linear
+                forwards;
+    }
+
+    .indicator.is-active.is-complete .indicator-progress {
+        transform: scaleX(1);
+    }
+
+    .indicator:focus-visible {
+        outline: 0.1875rem solid rgb(36 54 74 / 25%);
+        outline-offset: 0.2rem;
+        border-radius: 999rem;
+    }
+
+    .visually-hidden {
+        position: absolute;
+
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+
+        border: 0;
+    }
 }
 
 @keyframes view-projects-progress {
@@ -254,21 +235,21 @@ app-view-projects .view-projects__visually-hidden {
         min-height: auto;
     }
 
-    app-view-projects .view-projects__slide {
+    app-view-projects .slide {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
-    app-view-projects .view-projects__information {
+    app-view-projects .information {
         align-items: center;
         text-align: center;
     }
 
-    app-view-projects .view-projects__technologies {
+    app-view-projects .technologies {
         justify-content: center;
     }
 
-    app-view-projects .view-projects__description {
+    app-view-projects .description {
         max-width: 42rem;
     }
 }
@@ -278,29 +259,29 @@ app-view-projects .view-projects__visually-hidden {
         padding-inline: 1.25rem;
     }
 
-    app-view-projects .view-projects__technology {
+    app-view-projects .technology {
         min-width: auto;
         padding-inline: 1rem;
     }
 
-    app-view-projects .view-projects__indicator {
+    app-view-projects .indicator {
         width: 3.25rem;
     }
 
-    app-view-projects .view-projects__action--primary {
+    app-view-projects .action--primary {
         font-size: 1.05rem;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    app-view-projects .view-projects__slide,
-    app-view-projects .view-projects__action {
+    app-view-projects .slide,
+    app-view-projects .action {
         transition: none;
     }
 
     app-view-projects
-    .view-projects__indicator.is-active
-    .view-projects__indicator-progress {
+    .indicator.is-active
+    .indicator-progress {
         animation: none;
         transform: scaleX(1);
     }
