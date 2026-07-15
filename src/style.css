@@ -30,57 +30,9 @@ svg
     margin-block: var(--space-200) var(--space-100);
 
     .logo {
-        width: var(--size-9);
+        width: var(--size-6);
         max-width: max-content;
         fill: var(--tx-color-3);
-    }
-
-    .nav-link {
-        display: inline-block;
-        text-decoration: none;
-        font-size: var(--size-5);
-        color: var(--tx-color-3);
-        padding: var(--space-050) var(--space-100);
-
-        position: relative;
-        overflow: hidden;
-        border-radius: var(--radius-3);
-        outline: var(--solid-1) transparent;
-        box-shadow: 0 0 0 transparent;
-        transition:
-                background-color .4s ease-in-out,
-                color .4s ease-in-out,
-                outline .4s ease-in-out,
-                box-shadow .4s ease-in-out;
-
-        &:hover {
-            background-color: var(--bg-color-2);
-            color: var(--tx-color-1);
-            outline: var(--solid-1) #fff;
-            box-shadow:
-                    0 1px 1px 0 var(--bg-color-4),
-                    0 1px 10px 0 var(--bg-color-3),
-                    inset 0 -1px 10px 1px var(--bg-color-1);
-        }
-
-        &:before {
-            content: "";
-            position: absolute;
-            left: -4em;
-            width: 4em;
-            height: 100%;
-            top: 0;
-            transition: transform .4s ease-in-out;
-        }
-
-        &:hover:before {
-            background: linear-gradient(
-                    to right,
-                    transparent 1%,
-                    var(--bg-color-1) 50%,
-                    transparent 100%);
-            transform: translateX(14em);
-        }
     }
 
     .header-theme-toggle {
@@ -146,12 +98,12 @@ svg
 
     .profile {
         .username {
-            font-size: var(--size-7);
+            font-size: var(--size-5);
             color: var(--tx-color-2);
             font-weight: normal;
         }
         .profession{
-            font-size: 52px;
+            font-size: var(--size-8);
             .primary{
                 .char-face {
                     color: transparent;
@@ -206,8 +158,8 @@ svg
     color: var(--tx-color-3);
     text-transform: uppercase;
     letter-spacing: var(--space-100);
-    padding-block: var(--space-500) var(--space-300);
-    font-size: var(--size-8);
+    padding-block: var(--space-600) var(--space-300);
+    font-size: var(--size-5);
     opacity: 0.5;
 
     p {
@@ -265,16 +217,20 @@ section[id="about_me"] {
         }
 
         svg {
-            width: var(--size-7);
-            height: var(--size-7);
+            width: var(--size-5);
+            height: var(--size-5);
         }
     }
 
     .about-me_greeting {
         grid-area: area2;
-
+        h3 {
+            font-size: var(--size-5);
+            font-weight: 500;
+        }
         p {
             margin: 0;
+            font-size: var(--size-3);
         }
     }
 }

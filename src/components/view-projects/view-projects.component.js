@@ -1,3 +1,4 @@
+import '../app-button/app-button.js';
 import './view-projects.css';
 
 const PROJECT_DURATION_MS = 10000;
@@ -137,37 +138,41 @@ export class viewProjects extends HTMLElement {
      * @param {{ animate?: boolean }} options
      */
     showProject(projectIndex, { animate = true } = {}) {
-        const normalizedIndex = this.normalizeProjectIndex(projectIndex);
+        const normalizedProjectIndex =
+            this.normalizeProjectIndex(projectIndex);
 
         this.clearRotationTimer();
 
+        if (!animate) {
+            this.updateProject(normalizedProjectIndex);
+            this.scheduleNextProject();
+
+            return;
+        }
+
         if (
-            normalizedIndex === this.#currentProjectIndex
+            normalizedProjectIndex === this.#currentProjectIndex
             && !this.#isTransitioning
         ) {
             this.updateIndicators();
             this.scheduleNextProject();
+
             return;
         }
 
         if (this.#isTransitioning) {
-            this.#pendingProjectIndex = normalizedIndex;
+            this.#pendingProjectIndex = normalizedProjectIndex;
+
             return;
         }
 
-        if (!animate) {
-            this.updateProject(normalizedIndex);
-            this.scheduleNextProject();
-            return;
-        }
-
-        this.transitionToProject(normalizedIndex);
+        this.transitionToProject(normalizedProjectIndex);
     }
 
     render() {
         this.innerHTML = `
             <section
-                class="view-projects"
+                class="gap-9 view-projects"
                 aria-label="Proyectos destacados"
                 aria-roledescription="carrusel"
             >
@@ -177,14 +182,14 @@ export class viewProjects extends HTMLElement {
                     aria-live="polite"
                     aria-atomic="true"
                 >
-                    <article class="view-projects__information">
-                        <h2
+                    <article class="fx-col fx-ali_s view-projects__information">
+                        <h3
                             class="view-projects__title"
                             data-project-title
-                        >Notebook app</h2>
+                        >Notebook app</h3>
 
                         <ul
-                            class="view-projects__technologies"
+                            class="gap-3 view-projects__technologies"
                             data-project-technologies
                             aria-label="Tecnologías utilizadas"
                         >
@@ -206,69 +211,38 @@ export class viewProjects extends HTMLElement {
                         Aplicación web para crear, organizar y administrar notas personales mediante una interfaz clara, accesible y adaptable.
                         </p>
 
-                        <div class="view-projects__actions">
-                            <a
-                                class="
-                                    view-projects__action
-                                    view-projects__action--primary
-                                "
-                                href="https://example.com/notebook-app"
+                        <div class="gap-4 view-projects__actions">
+                            <app-button
+                                primary
+                                class="view-projects__action--project"
                                 data-project-link
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 Abrir proyecto
-                            </a>
-
-                            <a
-                                class="
-                                    view-projects__action
-                                    view-projects__action--repository
-                                "
-                                href="https://github.com/usuario/notebook-app"
+                            </app-button>
+                        
+                            <app-button
+                                ghost
+                                class="view-projects__action--repository"
                                 data-repository-link
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label="Abrir repositorio en GitHub"
+                                aria-label="Ver repositorio en GitHub"
                                 title="Ver repositorio en GitHub"
                             >
                                 <svg
                                     aria-hidden="true"
+                                    focusable="false"
                                     viewBox="0 0 24 24"
-                                    width="28"
-                                    height="28"
+                                    fill="currentColor"
                                 >
-                                    <path
-                                        fill="currentColor"
-                                        d="
-                                            M12 .7a11.5 11.5 0 0 0-3.64
-                                            22.41c.58.11.79-.25.79-.56
-                                            v-2.02c-3.22.7-3.9-1.37-3.9-1.37
-                                            -.53-1.34-1.29-1.7-1.29-1.7
-                                            -1.05-.72.08-.71.08-.71
-                                            1.16.08 1.77 1.19 1.77 1.19
-                                            1.03 1.77 2.7 1.26 3.36.96
-                                            .1-.75.4-1.26.73-1.55
-                                            -2.57-.29-5.27-1.28-5.27-5.69
-                                            0-1.26.45-2.29 1.19-3.09
-                                            -.12-.29-.52-1.47.11-3.05
-                                            0 0 .97-.31 3.16 1.18
-                                            a10.93 10.93 0 0 1 5.75 0
-                                            c2.19-1.49 3.16-1.18 3.16-1.18
-                                            .63 1.58.23 2.76.11 3.05
-                                            .74.8 1.19 1.83 1.19 3.09
-                                            0 4.42-2.71 5.39-5.29 5.68
-                                            .42.36.79 1.07.79 2.17
-                                            v3.22c0 .31.21.68.8.56
-                                            A11.5 11.5 0 0 0 12 .7Z
-                                        "
-                                    />
-                                </svg>
-
+                                    <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"></path>
+                                </svg>                        
                                 <span class="view-projects__visually-hidden">
                                     Ver repositorio en GitHub
                                 </span>
-                            </a>
+                            </app-button>
                         </div>
                     </article>
 
@@ -521,15 +495,25 @@ export class viewProjects extends HTMLElement {
         this.showProject(projectIndex);
     }
 
-    configureLink(linkElement, url) {
-        if (!url) {
-            linkElement.hidden = true;
-            linkElement.removeAttribute('href');
+    configureLink(buttonElement, url) {
+        const normalizedUrl = String(url ?? '').trim();
+
+        if (!normalizedUrl) {
+            buttonElement.hidden = true;
+            buttonElement.removeAttribute('href');
+            buttonElement.removeAttribute('target');
+            buttonElement.removeAttribute('rel');
+
             return;
         }
 
-        linkElement.hidden = false;
-        linkElement.href = url;
+        buttonElement.hidden = false;
+        buttonElement.setAttribute('href', normalizedUrl);
+        buttonElement.setAttribute('target', '_blank');
+        buttonElement.setAttribute(
+            'rel',
+            'noopener noreferrer'
+        );
     }
 
     preloadImages() {

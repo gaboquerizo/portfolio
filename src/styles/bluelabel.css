@@ -8,14 +8,14 @@
 
     /* Sizes */
     --size-1: 8px;
-    --size-2: 12px;
-    --size-3: 16px;
-    --size-4: 18px;
-    --size-5: 20px;
-    --size-6: 24px;
-    --size-7: 28px;
-    --size-8: 32px;
-    --size-9: 36px;
+    --size-2: 16px;
+    --size-3: 18px;
+    --size-4: 20px;
+    --size-5: 28px;
+    --size-6: 36px;
+    --size-7: 44px;
+    --size-8: 52px;
+    --size-9: 60px;
 
     /* Spacing */
     --space-025: 0.25rem;
@@ -160,6 +160,8 @@
 .fx-col { display: flex; flex-direction: column; }
 .fx-wrp { display: flex; flex-wrap: wrap; }
 .fx-ali_c { display: flex; align-items: center; }
+.fx-ali_s { display: flex; align-items: flex-start; }
+.fx-ali_e { display: flex; align-items: flex-end; }
 .fx-jsc_c { display: flex; justify-content: center; }
 .fx-jsc_sa{ display: flex; justify-content: space-around; }
 .fx-jsc_sb { display: flex; justify-content: space-between; }

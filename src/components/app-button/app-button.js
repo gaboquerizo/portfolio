@@ -145,7 +145,7 @@ export class appButton extends HTMLElement {
           user-select: none;
           
           font-family: inherit;
-          font-size: var(--size-5);
+          font-size: var(--size-4);
           color: var(--tx-color-3);
           
           position: relative;

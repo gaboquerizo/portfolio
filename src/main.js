@@ -153,9 +153,6 @@ document.querySelector('#app').innerHTML = `
 <section id="projects" class="fx-ctr fx-col">
     <div class="txt-center">
       <h2 class="heading-2">Proyectos</h2>
-      <p>
-        Una selección de mis proyectos más destacados
-      </p>
     </div>
     <div>
       <app-view-projects></app-view-projects>
