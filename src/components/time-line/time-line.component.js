@@ -64,47 +64,47 @@ export class TimeLine extends HTMLElement {
         const experiencesTemplate = EXPERIENCES.map(
             (experience, index) => `
                 <article
-                    class="time-line__item ${
+                    class="item ${
                 index % 2 === 0
-                    ? 'time-line__item--right'
-                    : 'time-line__item--left'
+                    ? 'item--right'
+                    : 'item--left'
             }"
                     role="listitem"
                 >
-                    <div class="time-line__period">
+                    <div class="period">
                         <time>${experience.period}</time>
                     </div>
 
                     <span
-                        class="time-line__marker"
+                        class="marker"
                         aria-hidden="true"
                     ></span>
 
-                    <div class="time-line__card">
-                        <header class="time-line__header">
-                            <h3 class="time-line__position">
+                    <div class="card">
+                        <header class="header">
+                            <h3 class="position">
                                 ${experience.position}
                             </h3>
 
-                            <p class="time-line__company">
+                            <p class="company">
                                 ${experience.company}
                             </p>
                         </header>
 
-                        <p class="time-line__description">
+                        <p class="description">
                             ${experience.description}
                         </p>
 
-                        <section class="time-line__achievements">
-                            <h4 class="time-line__achievements-title">
+                        <section class="achievements">
+                            <h4 class="achievements-title">
                                 Logros
                             </h4>
 
-                            <ul class="time-line__achievements-list">
+                            <ul class="achievements-list">
                                 ${experience.achievements
                 .map(
                     (achievement) => `
-                                            <li class="time-line__achievement">
+                                            <li class="achievement">
                                                 ${achievement}
                                             </li>
                                         `,
@@ -122,7 +122,7 @@ export class TimeLine extends HTMLElement {
                 class="time-line"
                 aria-label="Experiencia profesional"
             >
-                <div class="time-line__list" role="list">
+                <div class="list" role="list">
                     ${experiencesTemplate}
                 </div>
             </section>
