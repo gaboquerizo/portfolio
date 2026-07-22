@@ -5,6 +5,7 @@ import './style.css'
 import './components/app-button/app-button.js';
 import './components/theme/theme.component.js';
 import './components/view-projects/view-projects.component.js';
+import './components/time-line/time-line.component.js';
 
 // Utilities
 import { createSlotText } from './shared/text-motion/slot-text.js';
@@ -156,6 +157,14 @@ document.querySelector('#app').innerHTML = `
     </div>
     <div>
       <app-view-projects></app-view-projects>
+    </div>
+</section>
+<section id="experience" class="fx-ctr fx-col">
+    <div class="txt-center">
+      <h2 class="heading-2">Experiencia</h2>
+    </div>
+    <div>
+      <app-time-line></app-time-line>
     </div>
 </section>
           <!--

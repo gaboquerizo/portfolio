@@ -237,6 +237,8 @@ section[id="about_me"] {
 
 section[id="projects"] {
     background-color: var(--bg-color-3);
+}
 
-    padding-bottom: 100em;
+section[id="experience"] {
+    background-color: var(--bg-color-2);
 }
