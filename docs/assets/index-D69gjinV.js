@@ -300,41 +300,41 @@
             </section>
         `}cacheElements(){this.#o={root:this.querySelector(`.view-projects`),slide:this.querySelector(`[data-project-slide]`),title:this.querySelector(`[data-project-title]`),technologies:this.querySelector(`[data-project-technologies]`),description:this.querySelector(`[data-project-description]`),image:this.querySelector(`[data-project-image]`),projectLink:this.querySelector(`[data-project-link]`),repositoryLink:this.querySelector(`[data-repository-link]`),indicators:this.querySelector(`[data-project-indicators]`)},this.#o.root.style.setProperty(`--project-duration`,`${u}ms`)}renderIndicators(){let e=document.createDocumentFragment();this.#e.forEach((t,n)=>{let r=document.createElement(`button`),i=document.createElement(`span`),a=document.createElement(`span`);r.type=`button`,r.className=`indicator`,r.dataset.projectIndex=String(n),r.setAttribute(`aria-label`,`Mostrar proyecto ${n+1}: ${t.title}`),i.className=`indicator-track`,a.className=`indicator-progress`,i.append(a),r.append(i),e.append(r)}),this.#o.indicators.replaceChildren(e)}updateProject(e){let t=this.#e[e];this.#t=e,this.#o.title.textContent=t.title,this.#o.description.textContent=t.description,this.renderTechnologies(t.technologies),this.#o.image.src=t.imageUrl,this.#o.image.alt=t.imageAlt,this.configureLink(this.#o.projectLink,t.projectUrl),this.configureLink(this.#o.repositoryLink,t.repositoryUrl),this.updateIndicators(),this.dispatchEvent(new CustomEvent(`projectchange`,{bubbles:!0,detail:{projectIndex:e,project:t}}))}renderTechnologies(e){let t=document.createDocumentFragment();e.forEach(e=>{let n=document.createElement(`li`);n.className=`technology`,n.textContent=e,t.append(n)}),this.#o.technologies.replaceChildren(t)}updateIndicators(){this.#o.indicators.querySelectorAll(`.indicator`).forEach((e,t)=>{let n=t===this.#t;if(e.classList.remove(`is-active`,`is-running`,`is-complete`),e.setAttribute(`aria-pressed`,String(n)),n){if(e.classList.add(`is-active`),this.#e.length===1){e.classList.add(`is-complete`);return}e.offsetWidth,e.classList.add(`is-running`)}})}transitionToProject(e){this.#i=!0,this.#o.slide.classList.add(`is-leaving`),this.#o.slide.setAttribute(`aria-busy`,`true`),this.#r=window.setTimeout(()=>{this.updateProject(e),this.#o.slide.classList.remove(`is-leaving`),this.#o.slide.classList.add(`is-entering`),window.requestAnimationFrame(()=>{window.requestAnimationFrame(()=>{this.#o.slide.classList.remove(`is-entering`),this.#o.slide.removeAttribute(`aria-busy`),this.#i=!1,this.scheduleNextProject(),this.processPendingProject()})})},d)}processPendingProject(){if(this.#a===null)return;let e=this.#a;this.#a=null,e!==this.#t&&this.showProject(e)}scheduleNextProject(){this.clearRotationTimer(),!(this.#e.length<=1)&&(this.#n=window.setTimeout(()=>{let e=(this.#t+1)%this.#e.length;this.showProject(e)},u))}handleIndicatorClick(e){let t=e.target.closest(`[data-project-index]`);if(!t||!this.#o.indicators.contains(t))return;let n=Number(t.dataset.projectIndex);this.showProject(n)}configureLink(e,t){let n=String(t??``).trim();if(!n){e.hidden=!0,e.removeAttribute(`href`),e.removeAttribute(`target`),e.removeAttribute(`rel`);return}e.hidden=!1,e.setAttribute(`href`,n),e.setAttribute(`target`,`_blank`),e.setAttribute(`rel`,`noopener noreferrer`)}preloadImages(){this.#e.forEach(({imageUrl:e})=>{let t=new Image;t.src=e})}normalizeProjectIndex(e){let t=this.#e.length;return(Number(e)%t+t)%t}normalizeProjects(e){if(!Array.isArray(e)||e.length===0)throw TypeError(`La propiedad projects debe recibir un arreglo con al menos un proyecto.`);return e.map((e,t)=>{let n=Array.isArray(e.technologies)&&e.technologies.length>0;if(!e.title||!e.description||!e.imageUrl||!n)throw TypeError(`El proyecto ubicado en el índice ${t} no contiene la información requerida.`);return{title:String(e.title),technologies:e.technologies.map(String),description:String(e.description),imageUrl:String(e.imageUrl),imageAlt:String(e.imageAlt??`Vista previa de ${e.title}`),projectUrl:String(e.projectUrl??``),repositoryUrl:String(e.repositoryUrl??``)}})}clearRotationTimer(){this.#n!==null&&(window.clearTimeout(this.#n),this.#n=null)}clearTimers(){this.clearRotationTimer(),this.#r!==null&&(window.clearTimeout(this.#r),this.#r=null)}};customElements.get(`app-view-projects`)||customElements.define(`app-view-projects`,p);var m=[{position:`AGENTE DE SOPORTE IT`,company:`Grupo KFC Ecuador`,period:`Nov. 2024 — Actualidad`,description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam dignissimos, doloremque distinctio animi reprehenderit exercitationem.`,achievements:[`Desarrollo de componentes reutilizables con JavaScript.`,`Optimización del rendimiento general de la interfaz.`,`Implementación de estándares de accesibilidad web.`]},{position:`EJECUTIVO DE CUENTAS`,company:`Qbit`,period:`Dic. 2023 — Mar. 2024`,description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita consequatur provident molestias reiciendis veniam voluptatibus.`,achievements:[`Migración de módulos heredados a una arquitectura modular.`,`Reducción de código duplicado mediante componentes compartidos.`,`Integración de servicios REST para gestionar información.`]},{position:`ANALISTA DE DATOS`,company:`Servicobranzas S.A`,period:`Sep. 2023 — Dic. 2023`,description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam exercitationem recusandae excepturi molestiae soluta voluptatum.`,achievements:[`Automatización del registro y seguimiento de solicitudes.`,`Creación de paneles para visualizar indicadores operativos.`,`Documentación técnica de los principales módulos.`]},{position:`WEB MASTER`,company:`Credacart.com`,period:`Ago. 2021 — May. 2023`,description:`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ullam inventore praesentium atque voluptate temporibus.`,achievements:[`Construcción de interfaces responsivas.`,`Aplicación de HTML semántico y CSS modular.`,`Corrección de incompatibilidades entre navegadores.`]}],h=class extends HTMLElement{constructor(){super()}connectedCallback(){this.render()}render(){let e=m.map((e,t)=>`
                 <article
-                    class="item ${t%2==0?`item--right`:`item--left`}"
+                    class="time-line__item ${t%2==0?`time-line__item--right`:`time-line__item--left`}"
                     role="listitem"
                 >
-                    <div class="period">
+                    <div class="time-line__period">
                         <time>${e.period}</time>
                     </div>
 
                     <span
-                        class="marker"
+                        class="time-line__marker"
                         aria-hidden="true"
                     ></span>
 
-                    <div class="card">
-                        <header class="header">
-                            <h3 class="position">
+                    <div class="time-line__card">
+                        <header class="time-line__header">
+                            <h3 class="time-line__position">
                                 ${e.position}
                             </h3>
 
-                            <p class="company">
+                            <p class="time-line__company">
                                 ${e.company}
                             </p>
                         </header>
 
-                        <p class="description">
+                        <p class="time-line__description">
                             ${e.description}
                         </p>
 
-                        <section class="achievements">
-                            <h4 class="achievements-title">
+                        <section class="time-line__achievements">
+                            <h4 class="time-line__achievements-title">
                                 Logros
                             </h4>
 
-                            <ul class="achievements-list">
+                            <ul class="time-line__achievements-list">
                                 ${e.achievements.map(e=>`
-                                            <li class="achievement">
+                                            <li class="time-line__achievement">
                                                 ${e}
                                             </li>
                                         `).join(``)}
@@ -347,7 +347,7 @@
                 class="time-line"
                 aria-label="Experiencia profesional"
             >
-                <div class="list" role="list">
+                <div class="time-line__list" role="list">
                     ${e}
                 </div>
             </section>
