@@ -1,17 +1,53 @@
 @scope (app-header) {
 
+    display: inline;
+
     header {
-        margin: var(--space-100);
+        margin: 0 auto;
+        max-width: var(--xl); /* 1200px */
+        padding: var(--space-200);
+
+        @media (width < 1200px) {
+            background-color: #fff1;
+
+        }
     }
 
     .logo {
         width: var(--size-6);
-        max-width: max-content;
         fill: var(--tx-color-1);
+        max-width: max-content;
+        user-select: none;
     }
 
     li a {
         text-decoration: none;
-        color: var(--primary-color);
+        position: relative;
+        font-size: var(--size-3);
+        color: var(--tx-color-3);
+        padding-block: var(--space-025);
+        transition: color var(--transition-2);
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 1.5px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            background: currentColor;
+            transition: transform var(--transition-1);
+        }
+
+        &:hover {
+            color: var(--tx-color-1);
+        }
+
+        &:hover:before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     }
 }

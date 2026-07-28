@@ -34,7 +34,6 @@ export function applyTheme(theme) {
 }
 
 export function initTheme() {
-    const storedTheme = getStoredTheme();
-    const initialTheme = storedTheme || getSystemTheme();
+    const initialTheme = getStoredTheme() || getSystemTheme();
     return applyTheme(initialTheme);
 }

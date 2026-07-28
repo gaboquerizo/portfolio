@@ -3,7 +3,6 @@
     display: inline-block;
 
     .theme-toggle {
-        display: inline-flex;
         align-items: center;
         width: max-content;
         cursor: pointer;
@@ -43,6 +42,7 @@
         0% {
             transform: rotate(0deg);
         }
+
         25% {
             transform: rotate(-30deg);
         }

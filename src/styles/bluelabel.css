@@ -59,12 +59,17 @@
 
     /* Transitions */
     --transition-1: .2s ease-in-out;
-    --transition-2: .50s ease;
+    --transition-2: .5s ease-out;
     --transition-3: .75s ease;
     --transition-4:   1s ease;
 
-    /* Browser */
-
+    /* Media Breakpoints */
+    --xs: 0;
+    --sm: 570px;
+    --md: 770px;
+    --lg: 990px;
+    --xl: 1200px;
+    --xxl: 1400px;
 }
 
 :root[data-theme="light"] {

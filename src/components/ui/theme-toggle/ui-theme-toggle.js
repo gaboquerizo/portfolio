@@ -1,5 +1,4 @@
 import './ui-theme-toggle.css'
-
 import {
     applyTheme,
     getCurrentTheme,
@@ -98,7 +97,7 @@ export class UiThemeToggle extends HTMLElement {
                     aria-hidden="true"
                 >
                     <path
-                        class="theme-toggle__icon theme-toggle__icon--light"
+                        class="theme-toggle__icon--light"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="1.5"
@@ -106,7 +105,7 @@ export class UiThemeToggle extends HTMLElement {
                     ></path>
 
                     <path
-                        class="theme-toggle__icon theme-toggle__icon--dark"
+                        class="theme-toggle__icon--dark"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="1.5"
