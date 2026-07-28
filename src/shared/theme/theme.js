@@ -1,6 +1,6 @@
 'use strict';
 
-const THEME_STORAGE_KEY = 'app-theme';
+const THEME_STORAGE_KEY = 'prefers-color-scheme';
 
 export const THEMES = {
     LIGHT: 'light',
@@ -13,7 +13,6 @@ export function getStoredTheme() {
 
 export function getSystemTheme() {
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
     return prefersDarkMode ? THEMES.DARK : THEMES.LIGHT;
 }
 
@@ -24,13 +23,18 @@ export function getCurrentTheme() {
 export function applyTheme(theme) {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem(THEME_STORAGE_KEY, theme);
-
+    window.dispatchEvent(
+        new CustomEvent('themechange', {
+            detail: {
+                theme,
+            },
+        }),
+    );
     return theme;
 }
 
 export function initTheme() {
     const storedTheme = getStoredTheme();
     const initialTheme = storedTheme || getSystemTheme();
-
     return applyTheme(initialTheme);
 }

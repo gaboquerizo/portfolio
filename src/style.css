@@ -26,19 +26,6 @@ svg
     height: 2rem;
 }
 
-.header {
-    margin-block: var(--space-200) var(--space-100);
-
-    .logo {
-        width: var(--size-6);
-        max-width: max-content;
-        fill: var(--tx-color-3);
-    }
-
-    .header-theme-toggle {
-        color: var(--tx-color-3);
-    }
-}
 
 .main {
     max-height: 580px;

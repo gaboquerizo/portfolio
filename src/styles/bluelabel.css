@@ -81,7 +81,7 @@
     --bg-color-8: #456;
     --bg-color-9: #234;
 
-    --tx-color-1: #2f3f4f;
+    --tx-color-1: #234;
     --tx-color-2: #456;
     --tx-color-3: #789;
     --tx-cut-out: #fff;
@@ -163,9 +163,17 @@
 .fx-ali_s { display: flex; align-items: flex-start; }
 .fx-ali_e { display: flex; align-items: flex-end; }
 .fx-jsc_c { display: flex; justify-content: center; }
-.fx-jsc_sa{ display: flex; justify-content: space-around; }
-.fx-jsc_sb { display: flex; justify-content: space-between; }
+/* ░░░░░▓▓▓▓░▓▓▓▓░▓▓▓▓░░░░░ */
 .fx-jsc_se { display: flex; justify-content: space-evenly; }
+/* ░░░░▓▓▓▓░░▓▓▓▓░░▓▓▓▓░░░░ */
+.fx-jsc_sa { display: flex; justify-content: space-around; }
+/* ░░▓▓▓▓░░░░▓▓▓▓░░░░▓▓▓▓░░ */
+.fx-jsc_sb { display: flex; justify-content: space-between; }
+/* ▓▓▓▓░░░░░░▓▓▓▓░░░░░░▓▓▓▓ */
+.fx-jsc_c { display: flex; justify-content: flex-start; }
+/* ▓▓▓▓░▓▓▓▓░▓▓▓▓░░░░░░░░░░ */
+.fx-jsc_c { display: flex; justify-content: flex-end; }
+/* ░░░░░░░░░░▓▓▓▓░▓▓▓▓░▓▓▓▓ */
 .fx-ctr { display: flex; align-items: center; justify-content: center; }
 .gap-1 { gap: calc(var(--space-025) * 1); }
 .gap-2 { gap: calc(var(--space-025) * 2); }
@@ -201,7 +209,7 @@
     width: 100%;
 }
 
-[show] {
+[show],[✏️] {
     border: solid 1px #f50;
     background-color: #f503;
     *{

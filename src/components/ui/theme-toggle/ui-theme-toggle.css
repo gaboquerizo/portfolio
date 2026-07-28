@@ -1,0 +1,50 @@
+@scope (ui-theme-toggle) {
+
+    display: inline-block;
+
+    .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        width: max-content;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .theme-toggle input[type='checkbox'] {
+        display: none;
+    }
+
+    .theme-toggle svg {
+        width: 2em;
+        transform: rotate(-90deg);
+    }
+
+    .theme-toggle__icon--dark {
+        display: none;
+    }
+
+    .theme-toggle__icon--light {
+        display: block;
+        transform-origin: center;
+        animation: theme-toggle-rotate var(--transition-2);
+    }
+
+    .theme-toggle:has(input:checked) .theme-toggle__icon--light {
+        display: none;
+    }
+
+    .theme-toggle:has(input:checked) .theme-toggle__icon--dark {
+        display: block;
+        transform-origin: center;
+        animation: theme-toggle-rotate var(--transition-2);
+    }
+
+    @keyframes theme-toggle-rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-30deg);
+        }
+    }
+}

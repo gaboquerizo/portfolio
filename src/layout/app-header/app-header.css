@@ -1,0 +1,17 @@
+@scope (app-header) {
+
+    header {
+        margin: var(--space-100);
+    }
+
+    .logo {
+        width: var(--size-6);
+        max-width: max-content;
+        fill: var(--tx-color-1);
+    }
+
+    li a {
+        text-decoration: none;
+        color: var(--primary-color);
+    }
+}
