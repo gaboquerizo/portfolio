@@ -1,4 +1,5 @@
 import './app-hero.css';
+import '../../components/ui/social-media/ui-social-media.js'
 import profilePhoto from '../../assets/images/profile_photo.webp';
 import { createSlotText } from "../../lib/slot-text/slot-text.js";
 
@@ -34,8 +35,8 @@ export class AppHero extends HTMLElement {
                 </span>
               </h2>
             </div>
-            <div class="txt-center">
-              Redes Sociales
+            <div class="fx-jsc_c">
+              <ui-social-media></ui-social-media>
             </div>
         `);
     };

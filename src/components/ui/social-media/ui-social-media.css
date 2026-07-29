@@ -1,0 +1,34 @@
+@scope (ui-social-media) {
+
+    display: inline-block;
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    nav a {
+        color: var(--tx-color-3);
+        padding: var(--space-050);
+        border-radius: var(--radius-5);
+        transition:
+                background var(--transition-1),
+                color var(--transition-1);
+
+        &[alt="linkedin"]:hover {
+            background-color: #0a66c2;
+        }
+        &[alt="github"]:hover {
+            background-color: #010409;
+        }
+        &[alt="dribbble"]:hover {
+            background-color: #e04a82;
+        }
+        &[alt="pinterest"]:hover {
+            background-color: #e60023;
+        }
+        &:hover {
+            color: white;
+        }
+    }
+}

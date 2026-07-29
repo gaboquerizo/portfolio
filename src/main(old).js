@@ -7,14 +7,6 @@ import './components/ui/theme-toggle/ui-theme-toggle.js';
 import './components/view-projects/view-projects.component.js';
 import './components/time-line/time-line.component.js';
 
-// Utilities
-import { createSlotText } from './lib/slot-text/slot-text.js';
-import { initTheme } from './shared/theme/theme.js';
-initTheme();
-
-// Resources
-import profilePhoto from './assets/images/profile_photo.webp';
-
 const url = {
         linkedin: 'https://www.linkedin.com/in/gaboquerizo/',
         github: 'https://github.com/gaboquerizo/',
