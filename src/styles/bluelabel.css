@@ -175,9 +175,9 @@
 /* ░░▓▓▓▓░░░░▓▓▓▓░░░░▓▓▓▓░░ */
 .fx-jsc_sb { display: flex; justify-content: space-between; }
 /* ▓▓▓▓░░░░░░▓▓▓▓░░░░░░▓▓▓▓ */
-.fx-jsc_c { display: flex; justify-content: flex-start; }
+.fx-jsc_s { display: flex; justify-content: flex-start; }
 /* ▓▓▓▓░▓▓▓▓░▓▓▓▓░░░░░░░░░░ */
-.fx-jsc_c { display: flex; justify-content: flex-end; }
+.fx-jsc_e { display: flex; justify-content: flex-end; }
 /* ░░░░░░░░░░▓▓▓▓░▓▓▓▓░▓▓▓▓ */
 .fx-ctr { display: flex; align-items: center; justify-content: center; }
 .gap-1 { gap: calc(var(--space-025) * 1); }

@@ -6,7 +6,7 @@ import './style.css'
 /**
  * Prefers Color Scheme
  */
-import { initTheme } from './shared/theme/theme.js';
+import { initTheme } from './core/theme/theme.js';
 initTheme();
 
 /**

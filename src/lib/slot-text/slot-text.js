@@ -2,13 +2,6 @@ import 'slot-text/style.css';
 import { slotText } from 'slot-text';
 
 export function createSlotText(selector, words, options = {}) {
-    const {
-        interval = 5000,
-        direction = 'up',
-        stagger = 45,
-        duration = 300,
-        interrupt = true,
-    } = options;
 
     const element = document.querySelector(selector);
 
@@ -20,24 +13,37 @@ export function createSlotText(selector, words, options = {}) {
         throw new Error('La lista de palabras debe contener al menos una palabra.');
     }
 
+    const {
+        interval = 5000,
+        direction = 'up',
+        stagger = 100,
+        duration = 500,
+        interrupt = true,
+    } = options;
+
     let currentIndex = 0;
 
-    const animatedText = slotText(element, words[currentIndex], {
-        direction,
-        stagger,
-        duration,
-        interrupt,
-    });
-
-    const timerId = setInterval(() => {
-        currentIndex = (currentIndex + 1) % words.length;
-
-        animatedText.set(words[currentIndex], {
+    const animatedText = slotText(
+        element,
+        words[currentIndex], {
             direction,
             stagger,
             duration,
             interrupt,
-        });
+        }
+    );
+
+    const timerId = setInterval(() => {
+        currentIndex = (currentIndex + 1) % words.length;
+
+        animatedText.set(
+            words[currentIndex], {
+                direction,
+                stagger,
+                duration,
+                interrupt,
+            }
+        );
     }, interval);
 
     return {

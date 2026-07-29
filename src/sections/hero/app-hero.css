@@ -1,0 +1,121 @@
+@scope (app-hero) {
+
+    display: inline-block;
+    padding: var(--space-200);
+
+    .hero-photo {
+        width: var(--size-photo);
+        border-radius: 100%;
+        box-shadow: var(--shadow-low);
+    }
+
+    .hero-heading {
+        margin-block: var(--space-100);
+        h1 {
+            color: var(--tx-color-2);
+            font-size: var(--size-5);
+            font-weight: normal;
+        }
+        h2 {
+            color: var(--tx-color-2);
+            font-size: var(--size-7);
+            font-weight: bold;
+        }
+        .first-word {
+            .char-face {
+                color: transparent;
+                background: linear-gradient(
+                        to bottom,
+                        var(--secondary-color),
+                        var(--primary-color)
+                );
+                background-clip: text;
+            }
+        }
+    }
+
+
+
+
+    .profile-photo{
+        position: relative;
+        margin-top: var(--space-300);
+        width: max-content;
+    }
+    .profile-photo_img {
+        width: var(--size-photo);
+        border-radius: 50%;
+        aspect-ratio: 1;
+        outline: var(--solid-1) transparent;
+        transition: outline var(--transition-1);
+        &:hover {
+            outline: var(--solid-2) white;
+        }
+        box-shadow:
+                var(--shadow-low),
+                var(--shadow-medium);
+    }
+    .profile-tooltip {
+        position: absolute;
+        display: inline-block;
+        /*background: linear-gradient(to bottom, #1bf , #06d 70%);*/
+        background-color: var(--bg-color-1);
+        color: var(--tx-color-2);
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: var(--space-025) var(--space-100);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+        border-radius: 50px;
+        box-shadow:
+                var(--shadow-low),
+                var(--shadow-medium);
+    }
+    .profile-tooltip::before {
+        background-color: var(--bg-color-1);
+        position: absolute;
+        content: "";
+        height: 0.6em;
+        width: 0.6em;
+        bottom: -0.2em;
+        left: 50%;
+        transform: translate(-50%) rotate(45deg);
+    }
+    .profile-photo:hover .profile-tooltip {
+        top: -25%;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .profile {
+        .username {
+            font-size: var(--size-5);
+            color: var(--tx-color-2);
+            font-weight: normal;
+        }
+        .profession{
+            font-size: var(--size-8);
+            .primary{
+                .char-face {
+                    color: transparent;
+                    background: linear-gradient(
+                            to bottom,
+                            var(--secondary-color),
+                            var(--primary-color)
+                    );
+                    background-clip: text;
+                }
+            }
+            .secondary{
+                color: var(--tx-color-1);
+            }
+        }
+    }
+
+    .main-cta_btn {
+        margin-top: var(--space-200);
+    }
+}

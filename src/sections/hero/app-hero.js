@@ -1,0 +1,46 @@
+import './app-hero.css';
+import profilePhoto from '../../assets/images/profile_photo.webp';
+import { createSlotText } from "../../lib/slot-text/slot-text.js";
+
+export class AppHero extends HTMLElement {
+
+    connectedCallback() {
+        this.render();
+        createSlotText(
+            '.first-word',
+            ['UI/UX', 'Frontend', 'Backend'],
+        );
+        createSlotText(
+            '.last-word',
+            ['Designer', 'Developer', 'Developer'],
+        );
+    }
+
+    render() {
+        this.setHTMLUnsafe(`
+            <div class="fx-jsc_c">
+              <img src="${profilePhoto}" class="hero-photo" alt="Me">
+            </div>
+            <div class="hero-heading txt-center">
+              <h1>
+                Gabriel Baquerizo Palacios
+              </h1>
+              <h2>
+                <span class="first-word">
+                  Software
+                </span>
+                <span class="last-word">
+                  Development
+                </span>
+              </h2>
+            </div>
+            <div class="txt-center">
+              Redes Sociales
+            </div>
+        `);
+    };
+}
+
+
+
+customElements.define('app-hero', AppHero);

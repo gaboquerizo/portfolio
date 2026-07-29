@@ -1,7 +1,17 @@
 /**
+ * Styles
+ */
+import './app-root.css';
+
+/**
  * Layouts
  */
-import '../../layout/app-header/app-header.js';
+import '../../layouts/header/app-header.js';
+
+/**
+ * Sections
+ */
+import '../../sections/hero/app-hero.js';
 
 export class AppRoot extends HTMLElement {
 
@@ -11,9 +21,9 @@ export class AppRoot extends HTMLElement {
 
     render(){
         this.setHTMLUnsafe(`
-            <app-header />
-            <main>
-                Contenido principal
+            <app-header></app-header>
+            <main class="w-full fx-col fx-ali_c">
+                <app-hero></app-hero>
             </main>
             <footer>Pie de página</footer>
         `)

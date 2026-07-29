@@ -8,7 +8,7 @@ import './components/view-projects/view-projects.component.js';
 import './components/time-line/time-line.component.js';
 
 // Utilities
-import { createSlotText } from './shared/text-motion/slot-text.js';
+import { createSlotText } from './lib/slot-text/slot-text.js';
 import { initTheme } from './shared/theme/theme.js';
 initTheme();
 
@@ -60,6 +60,7 @@ document.querySelector('#app').innerHTML = `
         <theme-toggle></theme-toggle>
       </div>
     </header>
+    
     <main class="main h-full fx-col fx-ali_c fx-jsc_se">
       <div class="profile-photo fx">
         <span class="profile-tooltip">

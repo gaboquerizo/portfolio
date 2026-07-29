@@ -3,7 +3,7 @@ import {
     applyTheme,
     getCurrentTheme,
     THEMES
-} from '../../../shared/theme/theme.js';
+} from '../../../core/theme/theme.js';
 
 export class UiThemeToggle extends HTMLElement {
     constructor() {
