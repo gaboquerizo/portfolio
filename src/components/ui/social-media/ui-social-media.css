@@ -1,6 +1,8 @@
 @scope (ui-social-media) {
 
-    display: inline-block;
+    :scope {
+        display: inline-block;
+    }
 
     svg {
         width: 1.6rem;

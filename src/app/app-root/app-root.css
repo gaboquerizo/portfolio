@@ -1,4 +1,6 @@
 @scope (app-root) {
-    display: inline-block;
-    width: 100%;
+    :scope {
+        display: inline-block;
+        width: 100%;
+    }
 }

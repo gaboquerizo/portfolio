@@ -1,6 +1,8 @@
 @scope (app-header) {
 
-    display: inline;
+    :scope {
+        display: inline;
+    }
 
     header {
         margin: 0 auto;

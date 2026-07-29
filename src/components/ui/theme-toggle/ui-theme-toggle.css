@@ -1,6 +1,8 @@
 @scope (ui-theme-toggle) {
 
-    display: inline-block;
+    :scope {
+        display: inline-block;
+    }
 
     .theme-toggle {
         align-items: center;

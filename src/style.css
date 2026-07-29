@@ -20,47 +20,6 @@ body {
     height: 100dvh;
 }
 
-.scroll-animation,
-.about-me_links
-svg
-{
-    width: 2rem;
-    height: 2rem;
-}
-
-
-.main {
-
-}
-
-.footer {
-    margin-block: var(--space-100) var(--space-200);
-
-    .scroll-animation {
-        animation:
-                scroll-down-arrow 2s infinite;
-        svg {
-            width: 2rem;
-            height: 2rem;
-        }
-    }
-}
-
-@keyframes scroll-down-arrow {
-    0%, 100% {
-        transform: translateY(0rem);
-        opacity: 1;
-    }
-    33% {
-        transform: translateY(1rem);
-        opacity: 0;
-    }
-    66% {
-        transform: translateY(-1rem);
-        opacity: 0;
-    }
-}
-
 .heading-2 {
     color: var(--tx-color-3);
     text-transform: uppercase;

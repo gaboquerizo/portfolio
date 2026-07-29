@@ -1,7 +1,9 @@
 @scope (app-hero) {
 
-    display: inline-block;
-    padding: var(--space-200);
+    :scope {
+        display: inline-block;
+        padding: var(--space-200);
+    }
 
     .hero-photo {
         width: var(--size-photo);
