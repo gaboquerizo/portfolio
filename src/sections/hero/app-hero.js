@@ -9,19 +9,19 @@ export class AppHero extends HTMLElement {
         this.render();
         createSlotText(
             '.first-word',
-            ['UI/UX', 'Frontend', 'Backend'],
+            ['UI/UX', 'Frontend', 'Backend']
         );
         createSlotText(
             '.last-word',
-            ['Designer', 'Developer', 'Developer'],
+            ['Designer', 'Developer', 'Developer']
         );
     }
 
     render() {
         this.setHTMLUnsafe(`
-            <div class="fx-jsc_c">
+            <header class="fx-jsc_c">
               <img src="${profilePhoto}" class="hero-photo" alt="Me">
-            </div>
+            </header>
             <div class="hero-heading txt-center">
               <h1>
                 Gabriel Baquerizo Palacios
@@ -38,10 +38,15 @@ export class AppHero extends HTMLElement {
             <div class="fx-jsc_c">
               <ui-social-media></ui-social-media>
             </div>
+            <footer class="fx-jsc_c">
+              <div class="scroll-animation">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m7 10l5 5l5-5"></path>
+                </svg>
+              </div>
+            </footer>
         `);
     };
 }
-
-
 
 customElements.define('app-hero', AppHero);

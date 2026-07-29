@@ -25,7 +25,7 @@ export class AppRoot extends HTMLElement {
             <main class="w-full fx-col fx-ali_c">
                 <app-hero></app-hero>
             </main>
-            <footer>Pie de página</footer>
+            <app-footer></app-footer>
         `)
     };
 }

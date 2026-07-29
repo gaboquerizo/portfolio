@@ -3,8 +3,9 @@
     display: inline-block;
 
     svg {
-        width: 2rem;
-        height: 2rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        color: var(--tx-color-2);
     }
 
     nav a {
@@ -27,7 +28,7 @@
         &[alt="pinterest"]:hover {
             background-color: #e60023;
         }
-        &:hover {
+        &:hover svg {
             color: white;
         }
     }
