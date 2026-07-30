@@ -35,11 +35,9 @@ export class AppHero extends HTMLElement {
                 </span>
               </h2>
             </div>
-            <div class="fx-jsc_c">
+            <footer class="fx-col">
               <ui-social-media></ui-social-media>
-            </div>
-            <footer class="fx-jsc_c">
-              <div class="scroll-animation">
+              <div class="fx-jsc_c scroll-animation">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="m7 10l5 5l5-5"></path>
                 </svg>

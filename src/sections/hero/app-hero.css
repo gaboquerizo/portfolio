@@ -3,6 +3,12 @@
     :scope {
         display: inline-block;
         padding: var(--space-200);
+        @media (width > 1200px) {
+            margin-top: var(--space-200);
+        }
+        @media (width > 1400px) {
+            margin-top: var(--space-400);
+        }
     }
 
     .hero-photo {
@@ -37,12 +43,13 @@
         }
     }
 
-    footer {
-        margin-block: var(--space-300) var(--space-100);
-    }
-
     .scroll-animation {
+        margin-block: var(--space-300) var(--space-100);
         animation: scroll-down-arrow 2s infinite;
+
+        svg {
+            width: 2em;
+        }
     }
 
     @keyframes scroll-down-arrow {

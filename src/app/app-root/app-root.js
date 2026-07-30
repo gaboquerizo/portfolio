@@ -22,7 +22,7 @@ export class AppRoot extends HTMLElement {
     render(){
         this.setHTMLUnsafe(`
             <app-header></app-header>
-            <main class="w-full fx-col fx-ali_c">
+            <main class="w-full fx-col fx-ctr">
                 <app-hero></app-hero>
             </main>
             <app-footer></app-footer>

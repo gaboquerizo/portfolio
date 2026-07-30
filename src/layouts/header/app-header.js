@@ -43,7 +43,7 @@ export class AppHeader extends HTMLElement {
                 </ul>
               </nav>
               <div class="fx-ali_c">
-                <ui-theme-toggle />
+                <ui-theme-toggle></ui-theme-toggle>
               </div>
             </header>
         `

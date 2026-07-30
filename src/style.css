@@ -9,6 +9,16 @@
     --glass-effect-color: #F2F4F6;
 }
 
+svg {
+    color: var(--tx-color-3);
+    transition: color var(--transition-2);
+
+    &:hover {
+        color: var(--tx-color-1);
+    }
+}
+
+
 body {
     background: var(--bg-color-1);
     background: radial-gradient(
@@ -17,7 +27,6 @@ body {
             var(--bg-color-3) 100%
     );
     color: var(--tx-color-1);
-    height: 100dvh;
 }
 
 .heading-2 {
@@ -80,11 +89,6 @@ section[id="about_me"] {
         }
         &:hover {
             color: white;
-        }
-
-        svg {
-            width: var(--size-5);
-            height: var(--size-5);
         }
     }
 
