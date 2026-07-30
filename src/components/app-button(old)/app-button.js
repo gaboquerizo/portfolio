@@ -40,7 +40,7 @@ export class appButton extends HTMLElement {
     }
 
     get anchorElement() {
-        return this.shadowRoot.querySelector('.app-button');
+        return this.shadowRoot.querySelector('.app-button(old)');
     }
 
     get variant() {
@@ -277,9 +277,9 @@ export class appButton extends HTMLElement {
 customElements.define('app-button', appButton);
 
 /*
-* <app-button primary> </app-button>
-* <app-button secondary> </app-button>
-* <app-button outline> </app-button>
-* <app-button ghost href="#section"> </app-button>
-* <app-button delete> </app-button>
+* <app-button(old) primary> </app-button(old)>
+* <app-button(old) secondary> </app-button(old)>
+* <app-button(old) outline> </app-button(old)>
+* <app-button(old) ghost href="#section"> </app-button(old)>
+* <app-button(old) delete> </app-button(old)>
 * */

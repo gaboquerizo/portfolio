@@ -1,4 +1,4 @@
-import '../app-button/app-button.js';
+import '../app-button(old)/app-button.js';
 import './view-projects.css';
 
 const PROJECT_DURATION_MS = 10000;
@@ -269,7 +269,7 @@ export class viewProjects extends HTMLElement {
 
     cacheElements() {
         this.#elements = {
-            root: this.querySelector('.view-projects'),
+            root: this.querySelector('.view-projects(old)'),
             slide: this.querySelector('[data-project-slide]'),
             title: this.querySelector('[data-project-title]'),
             technologies: this.querySelector(

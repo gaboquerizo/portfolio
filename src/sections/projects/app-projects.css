@@ -1,0 +1,7 @@
+@scope (app-projects) {
+    :scope {
+        width: 100%;
+        display: inline-block;
+        background: var(--bg-color-1);
+    }
+}

@@ -2,10 +2,10 @@
 import './style.css'
 
 // Components
-import './components/app-button/app-button.js';
+import './components/app-button(old)/app-button.js';
 import './components/ui/theme-toggle/ui-theme-toggle.js';
-import './components/view-projects/view-projects.component.js';
-import './components/time-line/time-line.component.js';
+import './components/view-projects(old)/view-projects.component.js';
+import './components/time-line(old)/time-line.component.js';
 
 const url = {
         linkedin: 'https://www.linkedin.com/in/gaboquerizo/',
