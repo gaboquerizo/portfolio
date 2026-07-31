@@ -7,7 +7,7 @@
     --font-family-main: 'Exo 2';
 
     /* Sizes */
-    --size-1: 8px;
+    --size-1: 12px;
     --size-2: 16px;
     --size-3: 18px;
     --size-4: 20px;
@@ -75,8 +75,8 @@
 :root[data-theme="light"] {
     /* Blue gray */
     --bg-color-1: #F2F4F6;
-    --bg-color-2: #E2E4E6;
-    --bg-color-3: #D2D4D6;
+    --bg-color-2: #E1EBF4;
+    --bg-color-3: #D2E4F6;
 
     --bg-color-4: #a1b2c3;
     --bg-color-5: #7f8f9f;
@@ -116,7 +116,7 @@
 
 :root[data-theme="dark"] {
     /* Blue gray */
-    --bg-color-1: #161a23;
+    --bg-color-1: #191d27;
     --bg-color-2: #212532;
     --bg-color-3: #303548;
 

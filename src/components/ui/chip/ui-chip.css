@@ -1,0 +1,11 @@
+@scope (ui-chip) {
+    :scope {
+        display: inline-block;
+        padding: var(--space-025) var(--space-100);
+
+        background-color: var(--bg-color-2);
+        border-radius: var(--size-2);
+        color: var(--primary-color);
+        font-size: var(--size-1);
+    }
+}

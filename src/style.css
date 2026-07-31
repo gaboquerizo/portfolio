@@ -11,12 +11,22 @@
 
 :root[data-theme='light'] {
     --primary-body-color: var(--bg-color-1);
-    --secondary-body-color: var(--bg-color-2);
+    --secondary-body-color: var(--bg-color-3);
 }
 
 :root[data-theme='dark'] {
-    --primary-body-color: var(--bg-color-3);
+    --primary-body-color: var(--bg-color-2);
     --secondary-body-color: var(--bg-color-1);
+}
+
+body {
+    color: var(--tx-color-1);
+    background: var(--bg-color-1);
+    background: radial-gradient(
+            at center top,
+            var(--primary-body-color) 0%,
+            var(--secondary-body-color) 100%
+    );
 }
 
 svg {
@@ -28,25 +38,19 @@ svg {
     }
 }
 
-body {
-    color: var(--tx-color-1);
-    background: var(--bg-color-1);
-    background: radial-gradient(
-            circle,
-            var(--primary-body-color) 0%,
-            var(--secondary-body-color) 90%
-    );
+.section {
+    max-width: var(--xl);
+    margin: 0 auto;
 }
 
-.heading-2 {
-    color: var(--tx-color-3);
-    text-transform: uppercase;
-    letter-spacing: var(--space-100);
-    padding-block: var(--space-600) var(--space-300);
-    font-size: var(--size-5);
-    opacity: 0.5;
-
+.section-heading {
+    h2 {
+        color: var(--tx-color-2);
+        font-size: var(--size-6);
+        margin-block: var(--space-075) var(--space-025);
+    }
     p {
+        max-width: var(--sm);
         color: var(--tx-color-3);
     }
 }
@@ -55,69 +59,49 @@ section[id="about_me"] {
     background-color: var(--bg-color-3);
 }
 
-.about-me {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "area1 area2 area2";
 
-    width: 90dvw;
-    max-width: 800px;
-    padding-block: var(--space-300) var(--space-600);
-    gap: 4rem;
 
-    .about-me_img {
-        grid-area: area1;
 
-        img {
-            border-radius: var(--radius-3);
-            box-shadow:
-                    var(--shadow-low),
-                    var(--shadow-medium);
-        }
-    }
 
-    .about-me_links a {
-        color: var(--tx-color-3);
-        padding: var(--space-075);
-        border-radius: var(--radius-5);
-        transition:
-                background var(--transition-1),
-                color var(--transition-1);
 
-        &[alt="linkedin"]:hover {
-            background-color: #0a66c2;
-        }
-        &[alt="github"]:hover {
-            background-color: #010409;
-        }
-        &[alt="dribbble"]:hover {
-            background-color: #e04a82;
-        }
-        &[alt="pinterest"]:hover {
-            background-color: #e60023;
-        }
-        &:hover {
-            color: white;
-        }
-    }
 
-    .about-me_greeting {
-        grid-area: area2;
-        h3 {
-            font-size: var(--size-5);
-            font-weight: 500;
-        }
-        p {
-            margin: 0;
-            font-size: var(--size-3);
-        }
+
+
+
+
+
+.about-me_img {
+    grid-area: area1;
+
+    img {
+        border-radius: var(--radius-3);
+        box-shadow:
+                var(--shadow-low),
+                var(--shadow-medium);
     }
 }
 
-section[id="projects"] {
-    background-color: var(--bg-color-3);
-}
+.about-me_links a {
+    color: var(--tx-color-3);
+    padding: var(--space-075);
+    border-radius: var(--radius-5);
+    transition:
+            background var(--transition-1),
+            color var(--transition-1);
 
-section[id="experience"] {
-    background-color: var(--bg-color-2);
+    &[alt="linkedin"]:hover {
+        background-color: #0a66c2;
+    }
+    &[alt="github"]:hover {
+        background-color: #010409;
+    }
+    &[alt="dribbble"]:hover {
+        background-color: #e04a82;
+    }
+    &[alt="pinterest"]:hover {
+        background-color: #e60023;
+    }
+    &:hover {
+        color: white;
+    }
 }

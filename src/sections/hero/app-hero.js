@@ -26,14 +26,14 @@ export class AppHero extends HTMLElement {
               <h1>
                 Gabriel Baquerizo Palacios
               </h1>
-              <h2>
+              <p>
                 <span class="first-word">
                   Software
                 </span>
                 <span class="last-word">
                   Development
                 </span>
-              </h2>
+              </p>
             </div>
             <footer class="fx-col">
               <ui-social-media></ui-social-media>

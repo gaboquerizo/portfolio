@@ -16,7 +16,7 @@
 
     .logo {
         width: var(--size-6);
-        fill: var(--tx-color-1);
+        fill: var(--tx-color-2);
         max-width: max-content;
         user-select: none;
     }
