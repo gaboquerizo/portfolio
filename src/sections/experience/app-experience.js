@@ -1,18 +1,18 @@
-import './app-projects.css';
+import './app-experience.css';
 import '../../components/ui/chip/ui-chip.js'
 
-export class AppProjects extends HTMLElement {
+export class AppExperience extends HTMLElement {
     connectedCallback() {
         this.render();
     }
     render() {
         const HTMLContent = `
-            <section id="projects" class="fx-col section">
+            <section id="experience" class="fx-col section">
               <header class="fx-col fx-ali_c section-heading">
-                <ui-chip>Proyectos</ui-chip>
-                <h2>Trabajos destacados</h2>
+                <ui-chip>Experiencia</ui-chip>
+                <h2>Historia laboral</h2>
                 <p class="txt-center">
-                  Una selección de mis proyectos personales y empresariales que he desarrollado y he colaborado
+                  Mi trayectoria en diversas organizaciones del sector y logros de alto impacto 
                 </p>
               </header>
               <div></div>
@@ -22,4 +22,4 @@ export class AppProjects extends HTMLElement {
     }
 }
 
-customElements.define('app-projects', AppProjects);
+customElements.define('app-experience', AppExperience);

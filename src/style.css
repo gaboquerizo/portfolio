@@ -41,6 +41,7 @@ svg {
 .section {
     max-width: var(--xl);
     margin: 0 auto;
+    padding-block: var(--space-300);
 }
 
 .section-heading {
@@ -55,9 +56,6 @@ svg {
     }
 }
 
-section[id="about_me"] {
-    background-color: var(--bg-color-3);
-}
 
 
 
@@ -68,23 +66,14 @@ section[id="about_me"] {
 
 
 
-
-
-.about-me_img {
-    grid-area: area1;
-
-    img {
-        border-radius: var(--radius-3);
-        box-shadow:
-                var(--shadow-low),
-                var(--shadow-medium);
-    }
+.about-me_img img {
+    border-radius: var(--radius-3);
+    box-shadow:
+            var(--shadow-low),
+            var(--shadow-medium);
 }
 
 .about-me_links a {
-    color: var(--tx-color-3);
-    padding: var(--space-075);
-    border-radius: var(--radius-5);
     transition:
             background var(--transition-1),
             color var(--transition-1);

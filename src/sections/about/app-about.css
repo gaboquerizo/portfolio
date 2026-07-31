@@ -1,0 +1,8 @@
+@scope (app-about) {
+    :scope {
+        width: 100%;
+        display: inline-block;
+        background: var(--bg-color-1);
+        padding: var(--space-200);
+    }
+}
