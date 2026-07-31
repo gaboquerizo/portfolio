@@ -1,6 +1,16 @@
 @scope (app-root) {
+    :root {
+
+    }
     :scope {
         display: inline-block;
         width: 100%;
+        max-height: 100vh;
+        background: var(--bg-color-1);
+        background: radial-gradient(
+                at center top,
+                var(--primary-bg-color) 0%,
+                var(--secondary-bg-color) 75%
+        );
     }
 }

@@ -116,7 +116,7 @@
 
 :root[data-theme="dark"] {
     /* Blue gray */
-    --bg-color-1: #191d27;
+    --bg-color-1: #161a23;
     --bg-color-2: #212532;
     --bg-color-3: #303548;
 
@@ -128,9 +128,9 @@
     --bg-color-8: #d0e0f0;
     --bg-color-9: #f3f6f9;
 
-    --tx-color-1: #def;
-    --tx-color-2: #abc;
-    --tx-color-3: #789;
+    --tx-color-1: #fff;
+    --tx-color-2: #def;
+    --tx-color-3: #abc;
     --tx-cut-out: #000;
 
     /* Colors */

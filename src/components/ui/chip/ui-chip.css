@@ -3,9 +3,24 @@
         display: inline-block;
         padding: var(--space-025) var(--space-100);
 
-        background-color: var(--bg-color-2);
-        border-radius: var(--size-2);
         color: var(--primary-color);
         font-size: var(--size-1);
+
+        background: var(--primary-color);
+        background: linear-gradient(
+                0deg,
+                var(--bg-color-3) 0%,
+                var(--bg-color-2) 100%
+        );
+        /*
+        background: radial-gradient(
+                at center top,
+                var(--bg-color-2) 0%,
+                var(--bg-color-3) 100%
+        );
+        */
+
+        border-top: var(--solid-1) var(--bg-color-3);
+        border-radius: var(--radius-2);
     }
 }
