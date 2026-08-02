@@ -29,5 +29,9 @@
         &[alt="pinterest"]:hover {
             background-color: #e60023;
         }
+        &:focus-visible {
+            outline: var(--solid-4) var(--light-color);
+            outline-offset: 2px;
+        }
     }
 }

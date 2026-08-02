@@ -13,6 +13,7 @@ import '../../layouts/header/app-header.js';
  */
 import '../../sections/hero/app-hero.js';
 import '../../sections/projects/app-projects.js';
+import '../../sections/experience/app-experience.js';
 import '../../sections/skills/app-skills.js';
 import '../../sections/experience/app-experience.js';
 import '../../sections/about/app-about.js';

@@ -49,9 +49,9 @@
     --shadow-color-2: #abc1;
     --shadow-color-3: #7891;
 
-    --shadow-low:    0 1px 1px 0 var(--bg-color-4);
-    --shadow-medium: 0 1px 10px 0 var(--bg-color-3);
-    --shadow-high:   0 3px 20px 2px var(--shadow-color-3);
+    --shadow-low:    0 1px 1px 0 var(--bg-color-3);
+    --shadow-medium: 0 1px 10px 0 var(--bg-color-2);
+    --shadow-high:   0 3px 20px 2px var(--bg-color-2);
 
     --shadow-high-color: 0 1px 20px 5px var(--light-color);
     --shadow-inset-light: inset 0 -1px 10px 1px var(--bg-color-1);
@@ -73,12 +73,17 @@
 }
 
 :root[data-theme="light"] {
-    /* Blue gray */
+    /* Blue gray
     --bg-color-1: #F2F4F6;
     --bg-color-2: #E1EBF4;
     --bg-color-3: #D2E4F6;
+    --bg-color-4: #cfdfef;
+    */
+    --bg-color-1: #F2F4F6;
+    --bg-color-2: #E8EEF4;
+    --bg-color-3: #D1E1F1;
 
-    --bg-color-4: #a1b2c3;
+    --bg-color-4: #c0d4e9;
     --bg-color-5: #7f8f9f;
     --bg-color-6: #5e6e7e;
 
@@ -94,7 +99,7 @@
     /* Colors */
     --primary-color: #0077FF;
     --secondary-color: #11BBFF;
-    --light-color: #AACCFF;
+    --light-color: #7ab2ef;
     --dark-color: #0040AA;
     --glass-effect-color: #F2F4F6;
 
