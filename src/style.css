@@ -43,6 +43,7 @@ svg {
 
 .section-heading {
     h2 {
+        text-align: center;
         color: var(--tx-color-2);
         font-size: var(--size-6);
         margin-block: var(--space-075) var(--space-025);

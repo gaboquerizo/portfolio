@@ -1,4 +1,5 @@
 import './app-project-gallery.css';
+import { MY_PROJECTS } from '../../../data/projects.js';
 
 const PROJECT_CATEGORIES = Object.freeze([
     Object.freeze({
@@ -15,123 +16,25 @@ const PROJECT_CATEGORIES = Object.freeze([
     }),
 ]);
 
-export const DEFAULT_PROJECTS = Object.freeze([
-    Object.freeze({
-        id: 'notebook-app',
-        category: 'frontend',
-        name: 'Notebook app',
-        description:
-            'Aplicación web para crear, organizar y consultar notas personales.',
-        technologies: Object.freeze(['HTML', 'CSS', 'JavaScript']),
-        image: new URL(
-            '../../assets/images/projects/notebook-app.webp',
-            import.meta.url,
-        ).href,
-        imageAlternative: 'Vista previa del proyecto Notebook app',
-    }),
-    Object.freeze({
-        id: 'portfolio-personal',
-        category: 'frontend',
-        name: 'Portfolio personal',
-        description:
-            'Portafolio desarrollado con Web Components y JavaScript Vanilla.',
-        technologies: Object.freeze([
-            'Vite',
-            'CSS',
-            'Web Components',
-        ]),
-        image: new URL(
-            '../../assets/images/projects/portfolio.webp',
-            import.meta.url,
-        ).href,
-        imageAlternative: 'Vista previa del portafolio personal',
-    }),
-    Object.freeze({
-        id: 'inventory-api',
-        category: 'backend',
-        name: 'Inventory API',
-        description:
-            'API REST para administrar productos, categorías y existencias.',
-        technologies: Object.freeze([
-            'Node.js',
-            'Express',
-            'MySQL',
-        ]),
-        image: new URL(
-            '../../assets/images/projects/inventory-api.webp',
-            import.meta.url,
-        ).href,
-        imageAlternative: 'Vista previa del proyecto Inventory API',
-    }),
-    Object.freeze({
-        id: 'finances-api',
-        category: 'backend',
-        name: 'Finances API',
-        description:
-            'Servicio backend para gestionar cuentas y transacciones financieras.',
-        technologies: Object.freeze([
-            'TypeScript',
-            'Express',
-            'TypeORM',
-        ]),
-        image: new URL(
-            '../../assets/images/projects/finances-api.webp',
-            import.meta.url,
-        ).href,
-        imageAlternative: 'Vista previa del proyecto Finances API',
-    }),
-    Object.freeze({
-        id: 'dashboard-ui',
-        category: 'ui-ux',
-        name: 'Dashboard UI',
-        description:
-            'Diseño de una interfaz administrativa orientada a la visualización de datos.',
-        technologies: Object.freeze([
-            'Figma',
-            'UI Design',
-            'Prototyping',
-        ]),
-        image: new URL(
-            '../../assets/images/projects/dashboard-ui.webp',
-            import.meta.url,
-        ).href,
-        imageAlternative: 'Vista previa del diseño Dashboard UI',
-    }),
-    Object.freeze({
-        id: 'clock-app-ui',
-        category: 'ui-ux',
-        name: 'Clock app UI',
-        description:
-            'Diseño de interfaz para una aplicación de reloj y temporizadores.',
-        technologies: Object.freeze([
-            'Figma',
-            'Wireframe',
-            'UX',
-        ]),
-        image: new URL(
-            '../../assets/images/projects/clock-ui.webp',
-            import.meta.url,
-        ).href,
-        imageAlternative: 'Vista previa del diseño Clock app UI',
-    }),
-]);
-
 export class ProjectGallery extends HTMLElement {
     constructor() {
         super();
 
-        this.handleFilterClick = this.handleFilterClick.bind(this);
+        // this.handleFilterClick = this.handleFilterClick.bind(this);
+        this.handleFilterChange = this.handleFilterChange.bind(this)
     }
 
     connectedCallback() {
         this.render();
         this.addEventListeners();
 
+        /*
         const initialCategory =
             this.getAttribute('active-category') ??
             PROJECT_CATEGORIES[0].value;
 
         this.selectCategory(initialCategory);
+         */
     }
 
     disconnectedCallback() {
@@ -139,84 +42,64 @@ export class ProjectGallery extends HTMLElement {
     }
 
     addEventListeners() {
-        this.addEventListener('click', this.handleFilterClick);
+        // this.addEventListener('click', this.handleFilterClick);
+        this.addEventListener('change', this.handleFilterChange);
     }
 
     removeEventListeners() {
-        this.removeEventListener('click', this.handleFilterClick);
+        // this.removeEventListener('click', this.handleFilterClick);
+        this.removeEventListener('change', this.handleFilterChange);
     }
 
-    handleFilterClick(event) {
-        const filterButton = event.target.closest(
-            '[data-filter-category]',
+    handleFilterChange(event) {
+        const selectedCheckbox = event.target.closest(
+            '.project-gallery__filter-input',
         );
 
-        if (!filterButton || !this.contains(filterButton)) {
+        if (!selectedCheckbox) {
             return;
         }
 
-        const selectedCategory =
-            filterButton.dataset.filterCategory;
+        // Evita que el usuario deje todas las categorías sin seleccionar.
 
-        this.selectCategory(selectedCategory);
-    }
-
-    selectCategory(category) {
-        const categoryExists = PROJECT_CATEGORIES.some(
-            ({ value }) => value === category,
-        );
-
-        const selectedCategory = categoryExists
-            ? category
-            : PROJECT_CATEGORIES[0].value;
-
-        const galleryElement = this.querySelector(
-            '.project-gallery',
-        );
-
-        if (!galleryElement) {
+        if (!selectedCheckbox.checked) {
+            selectedCheckbox.checked = true;
             return;
         }
 
-        galleryElement.dataset.activeCategory =
-            selectedCategory;
+        // Mantiene solo una categoría seleccionada.
 
         this.querySelectorAll(
-            '[data-filter-category]',
-        ).forEach((filterButton) => {
-            const isSelected =
-                filterButton.dataset.filterCategory ===
-                selectedCategory;
-
-            filterButton.classList.toggle(
-                'project-gallery__filter--active',
-                isSelected,
-            );
-
-            filterButton.setAttribute(
-                'aria-pressed',
-                String(isSelected),
-            );
+            '.project-gallery__filter-input',
+        ).forEach((checkbox) => {
+            if (checkbox !== selectedCheckbox) {
+                checkbox.checked = false;
+            }
         });
     }
 
     renderFilters() {
         return PROJECT_CATEGORIES.map(
-            ({ value, label }) => `
-                <button
-                    class="project-gallery__filter"
-                    type="button"
-                    data-filter-category="${value}"
-                    aria-pressed="false"
-                >
-                    ${label}
-                </button>
+            ({ value, label }, index) => `
+                <label class="project-gallery__filter">
+                    <input
+                        class="project-gallery__filter-input"
+                        type="checkbox"
+                        name="project-category"
+                        value="${value}"
+                        ${index === 0 ? 'checked' : ''}
+                    >
+
+                    <span class="project-gallery__filter-label">
+                        ${label}
+                    </span>
+                </label>
             `,
         ).join('');
     }
 
     renderProjects() {
-        return DEFAULT_PROJECTS.map(
+        return MY_PROJECTS.map(
             ({
                  id,
                  category,
@@ -257,18 +140,14 @@ export class ProjectGallery extends HTMLElement {
                     </p>
 
                     <div
-                        class="project-gallery__technologies"
+                        class="project-gallery__tech"
                         aria-label="Tecnologías utilizadas"
                     >
-                        ${technologies
-                .map(
-                    (technology) => `
-                                    <span class="project-gallery__badge">
-                                        ${technology}
-                                    </span>
-                                `,
-                )
-                .join('')}
+                        ${technologies.map((technology) => `
+                            <span class="project-gallery__badge">
+                                ${technology}
+                            </span>
+                        `).join('')}
                     </div>
                 </div>
             </a>
@@ -280,7 +159,6 @@ export class ProjectGallery extends HTMLElement {
         this.setHTMLUnsafe(`
             <section
                 class="project-gallery"
-                data-active-category="frontend"
                 aria-label="Galería de proyectos"
             >
                 <div

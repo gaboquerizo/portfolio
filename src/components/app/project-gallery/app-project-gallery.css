@@ -1,6 +1,7 @@
 @scope (app-project-gallery) {
     :scope {
         display: inline-block;
+        padding-inline: var(--space-200);
     }
 
     .project-gallery {
@@ -15,6 +16,21 @@
     }
 
     .project-gallery__filter {
+        position: relative;
+        display: inline-flex;
+        cursor: pointer;
+    }
+
+    .project-gallery__filter-input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .project-gallery__filter-label {
         padding: var(--space-050) var(--space-150);
         border: var(--solid-1) var(--bg-color-4);
         border-radius: var(--radius-4);
@@ -28,23 +44,26 @@
                 border-color 160ms ease;
     }
 
-    .project-gallery__filter:hover {
+    .project-gallery__filter:hover
+    .project-gallery__filter-label {
         border-color: var(--primary-color);
         color: var(--primary-color);
     }
 
-    .project-gallery__filter:focus-visible {
-        outline: var(--solid-4) var(--light-color);
-        outline-offset: 2px;
-    }
-
-    .project-gallery__filter--active {
+    .project-gallery__filter-input:checked
+    + .project-gallery__filter-label {
         border-color: var(--primary-color);
         background: var(--primary-color);
         color: var(--tx-cut-out);
         &:hover {
             color: var(--tx-cut-out);
         }
+    }
+
+    .project-gallery__filter-input:focus-visible
+    + .project-gallery__filter-label {
+        outline: var(--solid-4) var(--light-color);
+        outline-offset: 2px;
     }
 
     .project-gallery__grid {
@@ -65,9 +84,9 @@
         cursor: pointer;
         transition: border-color var(--transition-1);
         &:hover {
-            border-color: var(--secondary-color);
+            border-color: var(--primary-color);
             .project-gallery__name {
-                color: var(--secondary-color);
+                color: var(--primary-color);
             }
         }
     }
@@ -118,7 +137,7 @@
     .project-gallery__tech {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem;
+        gap: var(--space-025) var(--space-025);
         margin-top: auto;
     }
 
@@ -131,27 +150,34 @@
         line-height: 1;
     }
 
-    /*
-     * Filtrado mediante CSS.
-     * JavaScript solamente modifica data-active-category.
+    /**
+     * Filter: Oculta todas las tarjetas que no pertenecen a la categoría seleccionada.
      */
 
-    .project-gallery[data-active-category='frontend']
+    .project-gallery:has(
+        .project-gallery__filter-input[value='frontend']:checked
+    )
     .project-gallery__card:not(
         [data-project-category='frontend']
     ),
-    .project-gallery[data-active-category='backend']
+    .project-gallery:has(
+        .project-gallery__filter-input[value='backend']:checked
+    )
     .project-gallery__card:not(
         [data-project-category='backend']
     ),
-    .project-gallery[data-active-category='ui-ux']
+    .project-gallery:has(
+        .project-gallery__filter-input[value='ui-ux']:checked
+    )
     .project-gallery__card:not(
         [data-project-category='ui-ux']
     ) {
         display: none;
     }
 
-    /* Tablet: dos tarjetas por fila */
+    /**
+     * Responsive: Presenta dos tarjetas por fila.
+     */
 
     @media (max-width: 1024px) {
         .project-gallery__grid {
@@ -159,28 +185,31 @@
         }
     }
 
-    /*
-     * Smartphone:
-     * una tarjeta por fila y composición horizontal 50/50.
+    /**
+     * Responsive: Presenta una tarjeta por fila y la composición visual es horizontal 50/50.
      */
 
     @media (max-width: 640px) {
+
+        .project-gallery__grid {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 1rem;
+        }
+
+        :scope {
+            padding-inline: 0;
+        }
 
         .project-gallery__filters {
             gap: 0.5rem;
             margin-bottom: 1.25rem;
         }
 
-        .project-gallery__filter {
-            min-width: auto;
-            flex: 1;
-            padding-inline: 0.75rem;
-            font-size: 0.875rem;
-        }
-
-        .project-gallery__grid {
-            grid-template-columns: minmax(0, 1fr);
-            gap: 1rem;
+        .project-gallery__filter-label {
+            width: 100%;
+            font-size: var(--size-2);
+            border-radius: var(--radius-3);
+            padding: var(--space-025) var(--space-100);
         }
 
         .project-gallery__card {
@@ -193,14 +222,14 @@
         .project-gallery__picture {
             height: 100%;
             min-height: 13rem;
-            padding: 0.75rem;
+            /*padding: 0.75rem;*/
             aspect-ratio: auto;
             box-sizing: border-box;
         }
 
         .project-gallery__content {
             min-width: 0;
-            padding: 1rem;
+            /*padding: 1rem;*/
         }
 
         .project-gallery__name {
@@ -219,8 +248,8 @@
         }
 
         .project-gallery__badge {
-            padding: 0.35rem 0.55rem;
-            font-size: 0.75rem;
+            /*padding: 0.35rem 0.55rem;*/
+            font-size: var(--size-1);
         }
     }
 }

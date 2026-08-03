@@ -188,12 +188,12 @@
 .gap-1 { gap: calc(var(--space-025) * 1); }
 .gap-2 { gap: calc(var(--space-025) * 2); }
 .gap-3 { gap: calc(var(--space-025) * 3); }
-.gap-4 { gap: calc(var(--space-025) * 4); }
-.gap-5 { gap: calc(var(--space-025) * 5); }
-.gap-6 { gap: calc(var(--space-025) * 6); }
-.gap-7 { gap: calc(var(--space-025) * 7); }
-.gap-8 { gap: calc(var(--space-025) * 8); }
-.gap-9 { gap: calc(var(--space-025) * 9); }
+.gap-4 { gap: calc(var(--space-050) * 4); }
+.gap-5 { gap: calc(var(--space-050) * 5); }
+.gap-6 { gap: calc(var(--space-050) * 6); }
+.gap-7 { gap: calc(var(--space-100) * 7); }
+.gap-8 { gap: calc(var(--space-100) * 8); }
+.gap-9 { gap: calc(var(--space-100) * 9); }
 
 /* Grid */
 

@@ -19,7 +19,7 @@ export class AppHeader extends HTMLElement {
                 </svg>
               </div>
               <nav class="fx-ali_c">
-                <ul class="fx-jsc_se gap-8 list-none">
+                <ul class="fx-jsc_se gap-6 list-none">
                   <li>
                     <a href="#projects">
                       Proyectos

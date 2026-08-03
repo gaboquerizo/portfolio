@@ -11,7 +11,7 @@ export class AppProjects extends HTMLElement {
     }
     render() {
         const HTMLContent = `
-            <section id="projects" class="fx-col gap-8 section">
+            <section id="projects" class="fx-col gap-6 section">
               <header class="fx-col fx-ali_c section-heading">
                 <ui-chip>Proyectos</ui-chip>
                 <h2>Trabajos destacados</h2>
