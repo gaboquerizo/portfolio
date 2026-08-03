@@ -215,64 +215,6 @@ export class ProjectGallery extends HTMLElement {
         ).join('');
     }
 
-    /*
-    renderProjects() {
-        return DEFAULT_PROJECTS.map(
-            ({
-                 id,
-                 category,
-                 name,
-                 description,
-                 technologies,
-                 image,
-                 imageAlternative,
-             }) => `
-                <article
-                    class="project-gallery__card"
-                    data-project-id="${id}"
-                    data-project-category="${category}"
-                >
-                    <div class="project-gallery__picture">
-                        <img
-                            class="project-gallery__image"
-                            src="${image}"
-                            alt="${imageAlternative}"
-                            width="640"
-                            height="400"
-                            loading="lazy"
-                        >
-                    </div>
-
-                    <div class="project-gallery__content">
-                        <h3 class="project-gallery__name">
-                            ${name}
-                        </h3>
-
-                        <p class="project-gallery__description">
-                            ${description}
-                        </p>
-
-                        <div
-                            class="project-gallery__tech"
-                            aria-label="Tecnologías utilizadas"
-                        >
-                            ${technologies
-                .map(
-                    (technology) => `
-                                        <span class="project-gallery__badge">
-                                            ${technology}
-                                        </span>
-                                    `,
-                )
-                .join('')}
-                        </div>
-                    </div>
-                </article>
-            `,
-        ).join('');
-    }
-     */
-
     renderProjects() {
         return DEFAULT_PROJECTS.map(
             ({
