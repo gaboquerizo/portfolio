@@ -1,0 +1,190 @@
+@scope (app-skills-matrix) {
+    :scope {
+        display: inline-block;
+        padding-inline: var(--space-200);
+        width: 100%;
+    }
+
+    .skills-matrix {
+        box-sizing: border-box;
+        width: 100%;
+        color: inherit;
+    }
+
+    .skills-matrix__groups,
+    .skills-matrix__technologies {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .skills-matrix__groups {
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .skills-matrix__group {
+        display: grid;
+        grid-template-columns:
+                minmax(10rem, 280px)
+                minmax(0, 1fr);
+        gap: var(--space-200);
+        align-items: start;
+        padding-block: var(--space-300);
+    }
+
+    .skills-matrix__group:first-child {
+        padding-top: 0;
+    }
+
+    .skills-matrix__group:last-child {
+        padding-bottom: 0;
+    }
+
+    .skills-matrix__group:not(:last-child) {
+        border-bottom: 1px solid var(--tx-color-2);
+    }
+
+    width: max-content;
+    .skills-matrix__heading {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        h2 {
+            width: min-content;
+        }
+    }
+
+    .skills-matrix__title {
+        width: max-content;
+        margin: 0;
+        color: var(--tx-color-2);
+        font-size: var(--size-5);
+        font-weight: normal;
+        line-height: 1.2;
+    }
+
+    .skills-matrix__technologies {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: var(--space-100);
+        min-width: 0;
+    }
+
+    .skills-matrix__technology {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-075);
+        padding:
+                var(--space-025)
+                var(--space-100)
+                var(--space-025)
+                var(--space-025);
+        color: var(--tx-cut-out);
+        background: var(--bg-color-9);
+        border-radius: var(--radius-5);
+        white-space: nowrap;
+    }
+
+    .skills-matrix__technology-icon {
+        display: inline-block;
+        width: var(--size-6);
+        height: var(--size-6);
+        padding-inline: 6px;
+        background: #fff;
+        border-radius: var(--radius-5);
+
+        img {
+            display: block;
+            width: inherit;
+            height: inherit;
+            aspect-ratio: 1;
+            object-fit: contain;
+        }
+
+        &:has(img[src*="astro"]) {
+            background: #0d1323;
+        }
+    }
+
+    .skills-matrix__technology-name {
+        font-size: var(--size-2);
+        font-weight: normal;
+        line-height: 1;
+    }
+
+    /*
+     * Tablet:
+     * el título continúa a la izquierda y las tecnologías
+     * mantienen su comportamiento flex-wrap.
+     */
+    @media (max-width: 64rem) {
+        .skills-matrix__group {
+            grid-template-columns:
+            minmax(10rem, 13rem)
+            minmax(0, 1fr);
+            gap: var(--space-100);
+        }
+    }
+
+    /*
+     * Smartphone:
+     * el título se coloca arriba.
+     * La línea situada a su derecha completa el ancho disponible.
+     */
+    @media (max-width: 48rem) {
+        :scope {
+            padding-inline: 0;
+        }
+        .skills-matrix__group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-200);
+            padding-block: var(--space-150);
+        }
+
+        .skills-matrix__group:not(:last-child) {
+            border-bottom: 0;
+        }
+
+        .skills-matrix__heading {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .skills-matrix__heading::after {
+            content: '';
+            flex: 1;
+            min-width: 2rem;
+            border-top: 1px solid var(--tx-color-2);
+        }
+
+        .skills-matrix__title {
+            width: min-content;
+            flex: 0 1 auto;
+            font-size: var(--size-4);
+        }
+
+        .skills-matrix__technologies {
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .skills-matrix__technology {
+            padding-right: var(--space-075);
+            gap: var(--space-050);
+        }
+
+        .skills-matrix__technology-icon {
+            width: var(--size-5);
+            height: var(--size-5);
+        }
+
+        .skills-matrix__technology-name {
+            font-size: var(--size-1);
+        }
+    }
+}

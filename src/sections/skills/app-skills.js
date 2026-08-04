@@ -1,5 +1,13 @@
+/**
+ * Styles
+ */
 import './app-skills.css';
+
+/**
+ * Components
+ */
 import '../../components/ui/chip/ui-chip.js'
+import '../../components/app/skills-matrix/app-skills-matrix.js'
 
 export class AppSkills extends HTMLElement {
     connectedCallback() {
@@ -7,7 +15,7 @@ export class AppSkills extends HTMLElement {
     }
     render() {
         const HTMLContent = `
-            <section id="skills" class="fx-col section">
+            <section id="skills" class="fx-col gap-7 section">
               <header class="fx-col fx-ali_c section-heading">
                 <ui-chip>Habilidades</ui-chip>
                 <h2>Stack tecnológico</h2>
@@ -15,7 +23,7 @@ export class AppSkills extends HTMLElement {
                   Las tecnologías, herramientas y patrones que utilizo a diario en el desarrollo
                 </p>
               </header>
-              <div></div>
+              <app-skills-matrix></app-skills-matrix>
             </section>
         `;
         this.setHTMLUnsafe(HTMLContent);

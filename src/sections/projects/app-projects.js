@@ -1,4 +1,8 @@
+/**
+ * Styles
+ */
 import './app-projects.css';
+
 /**
  * Components
  */

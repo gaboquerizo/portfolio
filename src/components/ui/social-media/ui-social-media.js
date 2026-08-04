@@ -1,3 +1,6 @@
+/**
+ * Styles
+ */
 import './ui-social-media.css';
 
 export class UiSocialMedia extends HTMLElement {
@@ -14,7 +17,7 @@ export class UiSocialMedia extends HTMLElement {
             pinterest : "https://es.pinterest.com/gaboquerizo/",
         }
 
-        this.setHTMLUnsafe(`
+        const HTMLContent = `
             <nav class="fx-jsc_c gap-2">
               <a href="${link.linkedin}" class="fx" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -47,7 +50,9 @@ export class UiSocialMedia extends HTMLElement {
                 </svg>
               </a>
             </nav>
-        `);
+        `;
+
+        this.setHTMLUnsafe(HTMLContent);
     }
 }
 

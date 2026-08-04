@@ -1,4 +1,11 @@
+/**
+ * Styles
+ */
 import './ui-theme-toggle.css'
+
+/**
+ * Core functions
+ */
 import {
     applyTheme,
     getCurrentTheme,
@@ -77,7 +84,7 @@ export class UiThemeToggle extends HTMLElement {
     }
 
     render() {
-        this.setHTMLUnsafe(`
+        const HTMLContent = `
             <label
                 class="theme-toggle"
                 for="theme-toggle-checkbox"
@@ -113,7 +120,8 @@ export class UiThemeToggle extends HTMLElement {
                     ></path>
                 </svg>
             </label>
-        `);
+        `;
+        this.setHTMLUnsafe(HTMLContent);
     }
 }
 

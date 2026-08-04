@@ -1,3 +1,6 @@
+/**
+ * Styles
+ */
 import './ui-chip.css';
 
 export class UiChip extends HTMLElement {

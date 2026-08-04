@@ -1,4 +1,11 @@
+/**
+ * Styles
+ */
 import './app-experience.css';
+
+/**
+ * Components
+ */
 import '../../components/ui/chip/ui-chip.js'
 
 export class AppExperience extends HTMLElement {

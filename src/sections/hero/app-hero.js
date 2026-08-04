@@ -1,6 +1,21 @@
+/**
+ * Styles
+ */
 import './app-hero.css';
+
+/**
+ * Components
+ */
 import '../../components/ui/social-media/ui-social-media.js'
+
+/**
+ * Files
+ */
 import profilePhoto from '../../assets/images/profile_photo.webp';
+
+/**
+ * libraries
+ */
 import { createSlotText } from "../../lib/slot-text/slot-text.js";
 
 export class AppHero extends HTMLElement {
@@ -18,7 +33,7 @@ export class AppHero extends HTMLElement {
     }
 
     render() {
-        this.setHTMLUnsafe(`
+        const HTMLContent = `
             <header class="fx-jsc_c">
               <img src="${profilePhoto}" class="hero-photo" alt="Me">
             </header>
@@ -43,7 +58,8 @@ export class AppHero extends HTMLElement {
                 </svg>
               </div>
             </footer>
-        `);
+        `;
+        this.setHTMLUnsafe(HTMLContent);
     };
 }
 

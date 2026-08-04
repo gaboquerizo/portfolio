@@ -1,4 +1,11 @@
+/**
+ * Styles
+ */
 import './app-project-gallery.css';
+
+/**
+ * Data
+ */
 import { MY_PROJECTS } from '../../../data/projects.js';
 
 const PROJECT_CATEGORIES = Object.freeze([
@@ -144,7 +151,7 @@ export class ProjectGallery extends HTMLElement {
     }
 
     render() {
-        this.setHTMLUnsafe(`
+        const HTMLContent = `
             <section
                 class="project-gallery"
                 aria-label="Galería de proyectos"
@@ -161,7 +168,9 @@ export class ProjectGallery extends HTMLElement {
                     ${this.renderProjects()}
                 </div>
             </section>
-        `);
+        `;
+
+        this.setHTMLUnsafe(HTMLContent);
     }
 }
 

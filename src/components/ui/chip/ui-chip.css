@@ -3,12 +3,12 @@
         display: inline-block;
         padding: var(--space-025) var(--space-100);
 
-        color: var(--secondary-color);
+        color: var(--primary-color);
         font-size: var(--size-1);
 
         background: var(--bg-color-2);
-        border-bottom: var(--solid-1) var(--bg-color-3);
-        border-radius: var(--radius-3);
+        border: var(--solid-1) var(--bg-color-3);
+        border-radius: var(--radius-4);
         letter-spacing: 1px
     }
 }

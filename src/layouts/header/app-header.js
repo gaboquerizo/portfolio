@@ -26,13 +26,13 @@ export class AppHeader extends HTMLElement {
                     </a>
                   </li>
                   <li>
-                    <a href="#experience">
-                      Experiencia
+                    <a href="#skills">
+                      Habilidades
                     </a>
                   </li>
                   <li>
-                    <a href="#skills">
-                      Habilidades
+                    <a href="#experience">
+                      Experiencia
                     </a>
                   </li>
                   <li>
