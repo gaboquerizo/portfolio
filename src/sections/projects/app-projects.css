@@ -4,5 +4,8 @@
         display: inline-block;
         background: var(--bg-color-1);
         padding: var(--space-200);
+        @media (max-width: 770px) {
+            padding: var(--space-100);
+        }
     }
 }
