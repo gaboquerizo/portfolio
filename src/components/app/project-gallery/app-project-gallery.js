@@ -3,6 +3,10 @@ import { MY_PROJECTS } from '../../../data/projects.js';
 
 const PROJECT_CATEGORIES = Object.freeze([
     Object.freeze({
+        value: 'ui-ux',
+        label: 'UI/UX',
+    }),
+    Object.freeze({
         value: 'frontend',
         label: 'Frontend',
     }),
@@ -10,31 +14,17 @@ const PROJECT_CATEGORIES = Object.freeze([
         value: 'backend',
         label: 'Backend',
     }),
-    Object.freeze({
-        value: 'ui-ux',
-        label: 'UI/UX',
-    }),
 ]);
 
 export class ProjectGallery extends HTMLElement {
     constructor() {
         super();
-
-        // this.handleFilterClick = this.handleFilterClick.bind(this);
         this.handleFilterChange = this.handleFilterChange.bind(this)
     }
 
     connectedCallback() {
         this.render();
         this.addEventListeners();
-
-        /*
-        const initialCategory =
-            this.getAttribute('active-category') ??
-            PROJECT_CATEGORIES[0].value;
-
-        this.selectCategory(initialCategory);
-         */
     }
 
     disconnectedCallback() {
@@ -42,12 +32,10 @@ export class ProjectGallery extends HTMLElement {
     }
 
     addEventListeners() {
-        // this.addEventListener('click', this.handleFilterClick);
         this.addEventListener('change', this.handleFilterChange);
     }
 
     removeEventListeners() {
-        // this.removeEventListener('click', this.handleFilterClick);
         this.removeEventListener('change', this.handleFilterChange);
     }
 
@@ -177,9 +165,4 @@ export class ProjectGallery extends HTMLElement {
     }
 }
 
-if (!customElements.get('app-project-gallery')) {
-    customElements.define(
-        'app-project-gallery',
-        ProjectGallery,
-    );
-}
+customElements.define('app-project-gallery', ProjectGallery,);
