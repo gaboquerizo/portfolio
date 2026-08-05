@@ -10,7 +10,7 @@
         background: radial-gradient(
                 at center top,
                 var(--primary-bg-color) 0%,
-                var(--secondary-bg-color) 75%
+                var(--secondary-bg-color) 70%
         );
     }
 }

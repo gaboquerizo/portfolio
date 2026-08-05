@@ -18,7 +18,7 @@
     }
 
     .hero-heading {
-        width: 420px;
+        width: 460px;
         margin-block: var(--space-100);
         h1 {
             color: var(--tx-color-2);
@@ -27,7 +27,7 @@
         }
         p {
             color: var(--tx-color-2);
-            font-size: var(--size-7);
+            font-size: var(--size-9);
             font-weight: bold;
         }
         .first-word {

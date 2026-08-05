@@ -39,9 +39,9 @@
         font-size: var(--size-3);
         cursor: pointer;
         transition:
-                color 160ms ease,
-                background-color 160ms ease,
-                border-color 160ms ease;
+                color var(--transition-1),
+                background-color var(--transition-1),
+                border-color var(--transition-1);
     }
 
     .project-gallery__filter:hover
@@ -62,14 +62,14 @@
 
     .project-gallery__filter-input:focus-visible
     + .project-gallery__filter-label {
-        outline: var(--solid-4) var(--light-color);
+        outline: var(--solid-4) var(--focus-color);
         outline-offset: 2px;
     }
 
     .project-gallery__grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1.5rem;
+        gap: var(--space-200);
     }
 
     .project-gallery__card {
@@ -85,19 +85,19 @@
         transition: border-color var(--transition-1);
         &:hover {
             border-color: var(--primary-color);
-            .project-gallery__name {
+            .project-gallery__title {
                 color: var(--primary-color);
             }
         }
     }
 
     .project-gallery__card:focus-visible {
-        outline: var(--solid-4) var(--light-color);
+        outline: var(--solid-4) var(--focus-color);
         outline-offset: 2px;
     }
 
     .project-gallery__picture {
-        padding: 1rem;
+        padding: var(--space-050);
         aspect-ratio: 16 / 10;
         overflow: hidden;
         background: var(--bg-color-1);
@@ -115,22 +115,22 @@
         display: flex;
         flex: 1;
         flex-direction: column;
-        padding: 1.25rem;
+        padding: var(--space-150);
     }
 
-    .project-gallery__name {
-        margin: 0 0 0.75rem;
-        color: var(--tx-color-1);
-        font-size: 1.5rem;
-        font-weight: 500;
+    .project-gallery__title {
+        margin-bottom: var(--space-075);
+        color: var(--tx-color-2);
+        font-size: var(--size-4);
+        font-weight: bold;
         line-height: 1.2;
         transition: color var(--transition-1);
     }
 
     .project-gallery__description {
-        margin: 0 0 1.25rem;
-        color: var(--tx-color-2);
-        font-size: 1rem;
+        margin-bottom: var(--space-100);
+        color: var(--tx-color-3);
+        font-size: var(--size-2);
         line-height: 1.5;
     }
 
@@ -142,12 +142,13 @@
     }
 
     .project-gallery__badge {
-        padding: 0.4rem 0.8rem;
-        border-radius: var(--radius-4);
-        background: var(--bg-color-3);
-        color: var(--secondary-color);
-        font-size: 0.875rem;
+        font-size: var(--size-1);
+        color: var(--primary-color);
         line-height: 1;
+        padding: var(--space-025) var(--space-050);
+        border-radius: var(--radius-4);
+        box-shadow: var(--shadow-low);
+        background: var(--bg-color-3);
     }
 
     /**
@@ -232,14 +233,14 @@
             /*padding: 1rem;*/
         }
 
-        .project-gallery__name {
+        .project-gallery__title {
             margin-bottom: 0.5rem;
             font-size: 1.125rem;
         }
 
         .project-gallery__description {
-            margin-bottom: 1rem;
-            font-size: 0.875rem;
+            margin-bottom: var(--space-100);
+            font-size: 14px;
             line-height: 1.4;
         }
 
@@ -248,8 +249,7 @@
         }
 
         .project-gallery__badge {
-            /*padding: 0.35rem 0.55rem;*/
-            font-size: var(--size-1);
+            font-size: 10px;
         }
     }
 }

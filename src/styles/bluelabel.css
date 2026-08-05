@@ -10,12 +10,12 @@
     --size-1: 12px;
     --size-2: 16px;
     --size-3: 18px;
-    --size-4: 20px;
-    --size-5: 28px;
+    --size-4: 24px;
+    --size-5: 30px;
     --size-6: 36px;
-    --size-7: 44px;
-    --size-8: 52px;
-    --size-9: 60px;
+    --size-7: 36px;
+    --size-8: 42px;
+    --size-9: 48px;
 
     /* Spacing */
     --space-025: 0.25rem;
@@ -34,6 +34,7 @@
     --solid-2: solid 2px;
     --solid-3: solid 3px;
     --solid-4: solid 4px;
+    --solid-5: solid 5px;
 
     --dashed: dashed 4px;
 
@@ -45,21 +46,24 @@
     --radius-5: 2rem;
 
     /* Box Shadow */
-    --shadow-color-1: #2342;
-    --shadow-color-2: #abc1;
-    --shadow-color-3: #7891;
 
-    --shadow-low:    0 1px 1px 0 var(--bg-color-3);
-    --shadow-medium: 0 1px 10px 0 var(--bg-color-2);
-    --shadow-high:   0 3px 20px 2px var(--bg-color-2);
-
-    --shadow-high-color: 0 1px 20px 5px var(--light-color);
+    --shadow-color: 212deg 17% 50%;
+    --shadow-low:
+            0 0.6px 0.8px hsl(var(--shadow-color) / 0.4);
+    --shadow-medium:
+            0 1px 2px -1px hsl(var(--shadow-color) / 0.2),
+            0 6px 9px -2px hsl(var(--shadow-color) / 0.2);
+    --shadow-high:
+            0 12px 16px -1px hsl(var(--shadow-color) / 0.12),
+            0 18px 28px -2px hsl(var(--shadow-color) / 0.14),
+            0 24px 46px -3px hsl(var(--shadow-color) / 0.16);
+    --shadow-with-color: 0 1px 20px 5px var(--primary-color);
     --shadow-inset-light: inset 0 -1px 10px 1px var(--bg-color-1);
     --shadow-inset-color: inset 0 -1px 10px 1px var(--secondary-color);
 
     /* Transitions */
-    --transition-1: .2s ease-in-out;
-    --transition-2: .5s ease-out;
+    --transition-1: .25s ease-in-out;    /*for hover*/
+    --transition-2: .50s ease-out;       /*for click*/
     --transition-3: .75s ease;
     --transition-4:   1s ease;
 
@@ -73,23 +77,16 @@
 }
 
 :root[data-theme="light"] {
-    /* Blue gray
-    --bg-color-1: #F2F4F6;
-    --bg-color-2: #E1EBF4;
-    --bg-color-3: #D2E4F6;
-    --bg-color-4: #cfdfef;
-    */
-    --bg-color-1: #F2F4F6;
-    --bg-color-2: #E8EEF4;
-    --bg-color-3: #D1E1F1;
 
-    --bg-color-4: #c0d4e9;
-    --bg-color-5: #7f8f9f;
-    --bg-color-6: #5e6e7e;
-
-    --bg-color-7: #3c4c5c;
-    --bg-color-8: #2b3b4b;
-    --bg-color-9: #1a2a3a;
+    --bg-color-1: #F3F6F9;
+    --bg-color-2: #E0E7F0;
+    --bg-color-3: #D0DAE7;
+    --bg-color-4: #C0CEDE;
+    --bg-color-5: #B0C0D4;
+    --bg-color-6: #A0B2C9;
+    --bg-color-7: #8299B4;
+    --bg-color-8: #6680A0;
+    --bg-color-9: #466484;
 
     --tx-color-1: #234;
     --tx-color-2: #456;
@@ -97,10 +94,11 @@
     --tx-cut-out: #fff;
 
     /* Colors */
-    --primary-color: #0077FF;
+    --primary-color: #0077EE;
     --secondary-color: #11BBFF;
-    --light-color: #7ab2ef;
-    --dark-color: #0040AA;
+    --focus-color: #8FBFF8;
+    --light-color: #D0E4F8;
+    --dark-color: #0c5cc0;
     --glass-effect-color: #F2F4F6;
 
     /* Browser */
@@ -120,15 +118,23 @@
 }
 
 :root[data-theme="dark"] {
-    /* Blue gray */
+    /* Blue gray
     --bg-color-1: #161a23;
     --bg-color-2: #212532;
     --bg-color-3: #303548;
-
     --bg-color-4: #4d5d6d;
     --bg-color-5: #5e6e7e;
     --bg-color-6: #7f8f9f;
-
+    --bg-color-7: #a1b2c3;
+    --bg-color-8: #d0e0f0;
+    --bg-color-9: #f3f6f9;
+ */
+    --bg-color-1: #07080D;
+    --bg-color-2: #0d101a;
+    --bg-color-3: #101420;
+    --bg-color-4: #162334;
+    --bg-color-5: #20384c;
+    --bg-color-6: #7f8f9f;
     --bg-color-7: #a1b2c3;
     --bg-color-8: #d0e0f0;
     --bg-color-9: #f3f6f9;
@@ -141,7 +147,8 @@
     /* Colors */
     --primary-color: #00EEFF;
     --secondary-color: #11BBFF;
-    --light-color: #88FFFF;
+    --focus-color: aqua;
+    --light-color: #11BBFF20;
     --dark-color: #00BBEE;
     --glass-effect-color: #F2F4F6;
 

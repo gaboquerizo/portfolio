@@ -20,7 +20,7 @@ export class AppSkills extends HTMLElement {
                 <ui-chip>Habilidades</ui-chip>
                 <h2>Stack tecnológico</h2>
                 <p class="txt-center">
-                  Las tecnologías, herramientas y patrones que utilizo a diario en el desarrollo
+                  Las herramientas, tecnologías y patrones que utilizo a diario en el desarrollo
                 </p>
               </header>
               <app-skills-matrix></app-skills-matrix>

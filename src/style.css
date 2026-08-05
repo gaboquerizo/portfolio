@@ -15,7 +15,7 @@
 }
 
 :root[data-theme='dark'] {
-    --primary-bg-color: var(--bg-color-2);
+    --primary-bg-color: var(--bg-color-3);
     --secondary-bg-color: var(--bg-color-1);
 }
 

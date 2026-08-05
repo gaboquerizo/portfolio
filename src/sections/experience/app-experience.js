@@ -6,7 +6,8 @@ import './app-experience.css';
 /**
  * Components
  */
-import '../../components/ui/chip/ui-chip.js'
+import '../../components/ui/chip/ui-chip.js';
+import '../../components/app/time-line/app-time-line.js';
 
 export class AppExperience extends HTMLElement {
     connectedCallback() {
@@ -14,7 +15,7 @@ export class AppExperience extends HTMLElement {
     }
     render() {
         const HTMLContent = `
-            <section id="experience" class="fx-col section">
+            <section id="experience" class="fx-col gap-6 section">
               <header class="fx-col fx-ali_c section-heading">
                 <ui-chip>Experiencia</ui-chip>
                 <h2>Historia laboral</h2>
@@ -22,7 +23,7 @@ export class AppExperience extends HTMLElement {
                   Mi trayectoria en diversas organizaciones del sector y logros de alto impacto 
                 </p>
               </header>
-              <div></div>
+              <app-time-line></app-time-line>
             </section>
         `;
         this.setHTMLUnsafe(HTMLContent);

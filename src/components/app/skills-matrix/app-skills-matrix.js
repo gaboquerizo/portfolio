@@ -1,5 +1,11 @@
+/**
+ * Styles
+ */
 import './app-skills-matrix.css';
 
+/**
+ * Data
+ */
 import { MY_SKILLS } from '../../../data/skills.js';
 
 const HTML_ENTITIES = {
@@ -45,7 +51,6 @@ export class GroupedList extends HTMLElement {
     render() {
         this.setHTMLUnsafe(`
             <section
-                class="skills-matrix"
                 aria-label="Stack tecnológico por profesión"
             >
                 <ul class="skills-matrix__groups">

@@ -30,7 +30,7 @@
             background-color: #e60023;
         }
         &:focus-visible {
-            outline: var(--solid-4) var(--light-color);
+            outline: var(--solid-4) var(--focus-color);
             outline-offset: 2px;
         }
     }

@@ -1,4 +1,11 @@
+/**
+ * Styles
+ */
 import './app-header.css';
+
+/**
+ * Components
+ */
 import '../../components/ui/theme-toggle/ui-theme-toggle.js'
 
 export class AppHeader extends HTMLElement {

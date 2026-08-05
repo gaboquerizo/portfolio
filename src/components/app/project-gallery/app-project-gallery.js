@@ -126,7 +126,7 @@ export class ProjectGallery extends HTMLElement {
                 </div>
 
                 <div class="project-gallery__content">
-                    <h3 class="project-gallery__name">
+                    <h3 class="project-gallery__title">
                         ${name}
                     </h3>
 

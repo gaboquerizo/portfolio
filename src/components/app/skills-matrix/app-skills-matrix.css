@@ -1,14 +1,8 @@
 @scope (app-skills-matrix) {
     :scope {
+        width: 100%;
         display: inline-block;
         padding-inline: var(--space-200);
-        width: 100%;
-    }
-
-    .skills-matrix {
-        box-sizing: border-box;
-        width: 100%;
-        color: inherit;
     }
 
     .skills-matrix__groups,
@@ -16,9 +10,6 @@
         padding: 0;
         margin: 0;
         list-style: none;
-    }
-
-    .skills-matrix__groups {
         width: 100%;
         margin-inline: auto;
     }
@@ -30,7 +21,13 @@
                 minmax(0, 1fr);
         gap: var(--space-200);
         align-items: start;
-        padding-block: var(--space-300);
+        padding-block: var(--space-200);
+    }
+
+    .skills-matrix__group[data-group="software-architecture"] {
+        grid-template-columns:
+                minmax(10rem, 320px)
+                minmax(0, 1fr);
     }
 
     .skills-matrix__group:first-child {
@@ -42,7 +39,7 @@
     }
 
     .skills-matrix__group:not(:last-child) {
-        border-bottom: 1px solid var(--tx-color-2);
+        border-bottom: 1px solid var(--bg-color-6);
     }
 
     .skills-matrix__heading {
@@ -74,16 +71,17 @@
     .skills-matrix__technology {
         display: inline-flex;
         align-items: center;
+        white-space: nowrap;
         gap: var(--space-075);
+        color: var(--tx-color-2);
         padding:
                 var(--space-025)
                 var(--space-100)
                 var(--space-025)
                 var(--space-025);
-        color: var(--tx-cut-out);
-        background: var(--bg-color-9);
+        background-color: var(--bg-color-3);
         border-radius: var(--radius-5);
-        white-space: nowrap;
+        outline: var(--solid-1) var(--bg-color-6);
     }
 
     .skills-matrix__technology-icon {
@@ -91,7 +89,7 @@
         width: var(--size-6);
         height: var(--size-6);
         padding-inline: 6px;
-        background: #fff;
+        background: white;
         border-radius: var(--radius-5);
 
         img {
@@ -162,7 +160,7 @@
         }
 
         .skills-matrix__title {
-            width: min-content;
+            width: max-content;
             flex: 0 1 auto;
             font-size: var(--size-4);
         }

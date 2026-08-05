@@ -16,7 +16,7 @@
     }
 
     .theme-toggle svg {
-        width: 2rem;
+        width: var(--size-5);
         transform: rotate(-90deg);
     }
 
