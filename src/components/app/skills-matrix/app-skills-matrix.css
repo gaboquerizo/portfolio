@@ -114,9 +114,7 @@
     }
 
     /*
-     * Tablet:
-     * el título continúa a la izquierda y las tecnologías
-     * mantienen su comportamiento flex-wrap. Chrome Zoom in 125%.
+     * Tablet: 125% browser zoom.
      */
     @media (max-width: 1024px) {
         .skills-matrix__group {
@@ -128,9 +126,7 @@
     }
 
     /*
-     * Smartphone:
-     * el título se coloca arriba.
-     * La línea situada a su derecha completa el ancho disponible.
+     * Smartphone: reubicación de elementos visuales
      */
     @media (max-width: 770px) {
         :scope {

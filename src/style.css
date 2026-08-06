@@ -5,7 +5,8 @@
 /*———————— Custom Property Project ————————*/
 
 :root {
-    --size-photo: 200px;
+    color-scheme: light dark;
+    --photo-size: 200px;
     --glass-effect-color: #F2F4F6;
 }
 
@@ -56,41 +57,9 @@ svg {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-.about-me_img img {
-    border-radius: var(--radius-3);
-    box-shadow:
-            var(--shadow-low),
-            var(--shadow-medium);
+@media (max-width: 1024px) {
+    /* Tablet: 125% browser zoom. */
 }
-
-.about-me_links a {
-    transition:
-            background var(--transition-1),
-            color var(--transition-1);
-
-    &[alt="linkedin"]:hover {
-        background-color: #0a66c2;
-    }
-    &[alt="github"]:hover {
-        background-color: #010409;
-    }
-    &[alt="dribbble"]:hover {
-        background-color: #e04a82;
-    }
-    &[alt="pinterest"]:hover {
-        background-color: #e60023;
-    }
-    &:hover {
-        color: white;
-    }
+@media (max-width: 770px) {
+    /* Phone: 175% browser zoom. */
 }

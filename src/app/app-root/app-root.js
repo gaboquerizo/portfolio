@@ -20,6 +20,7 @@ import '../../sections/contact/app-contact.js';
 
 // TODO: (responsive) Disminuir el tamaño de letra del título de cada sección
 // TODO: Agregar un divisor ligeramente imperceptible entre secciones
+// ☑️ TODO: Ajustar la proporcion vertical de viewport del contenido principal
 
 export class AppRoot extends HTMLElement {
 
@@ -30,7 +31,7 @@ export class AppRoot extends HTMLElement {
     render(){
         const HTMLContent = `
             <app-header></app-header>
-                <main class="w-full fx-col fx-ctr">
+                <main class="w-full fx-col">
                     <app-hero></app-hero>
                     <app-projects></app-projects>
                     <app-skills></app-skills>

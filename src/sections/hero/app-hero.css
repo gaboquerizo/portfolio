@@ -1,35 +1,64 @@
 @scope (app-hero) {
 
     :scope {
-        display: inline-block;
+        width: 100%;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: var(--space-200);
-        @media (width > 1200px) {
-            margin-top: var(--space-200);
+        padding-top: var(--space-800);
+        background: var(--bg-color-1) radial-gradient(
+                at center top,
+                var(--primary-bg-color) 0%,
+                var(--secondary-bg-color) 70%
+        );
+
+        @media (width <= 1200px) {
+            padding-top: var(--space-600);
         }
-        @media (width > 1400px) {
-            margin-top: var(--space-400);
+
+
+
+        @media (width <= 770px) {
+            padding: var(--space-100);
+            padding-top: var(--space-200);
         }
     }
 
     .hero-photo {
-        width: var(--size-photo);
-        border-radius: 100%;
-        box-shadow: var(--shadow-low);
+        width: 30vh;
+        max-width: var(--photo-size);
+        height: auto;
+        border-radius: 100%;border-top: var(--solid-1) light-dark(var(--tx-cut-out), var(--bg-color-4));
+        box-shadow:
+                var(--shadow-low),
+                var(--shadow-medium);
     }
 
     .hero-heading {
-        width: 460px;
+        width: 100%;
         margin-block: var(--space-100);
+
         h1 {
             color: var(--tx-color-2);
             font-size: var(--size-5);
             font-weight: normal;
+
+            @media (width <= 990px) {
+                font-size: var(--size-4);
+            }
         }
         p {
             color: var(--tx-color-2);
             font-size: var(--size-9);
             font-weight: bold;
+
+            @media (width <= 990px) {
+                font-size: var(--size-7);
+            }
         }
+
         .first-word {
             .char-face {
                 color: transparent;
@@ -41,14 +70,19 @@
                 background-clip: text;
             }
         }
+
+        @media (width <= 990px) {
+            margin-block: var(--space-050);
+        }
     }
 
     .scroll-animation {
-        margin-block: var(--space-300) var(--space-100);
+        width: var(--size-5);
+        margin-top: var(--space-200);
         animation: scroll-down-arrow 2s infinite;
 
-        svg {
-            width: 2em;
+        @media (width <= 990px) {
+            margin-top: var(--space-100);
         }
     }
 

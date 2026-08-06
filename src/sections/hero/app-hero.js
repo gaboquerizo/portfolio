@@ -50,7 +50,7 @@ export class AppHero extends HTMLElement {
                 </span>
               </p>
             </div>
-            <footer class="fx-col">
+            <footer class="fx-col fx-ali_c">
               <ui-social-media></ui-social-media>
               <div class="fx-jsc_c scroll-animation">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
