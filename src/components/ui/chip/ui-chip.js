@@ -3,6 +3,9 @@
  */
 import './ui-chip.css';
 
+// TODO: Cambiar nombre de componente "UiChip" -> "UiEyebrow"
+// TODO: Agregar un icono SVG antes del texto para cada sección.
+
 export class UiChip extends HTMLElement {
     connectedCallback() {
         this.render();

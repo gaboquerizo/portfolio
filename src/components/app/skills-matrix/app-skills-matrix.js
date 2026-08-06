@@ -8,6 +8,8 @@ import './app-skills-matrix.css';
  */
 import { MY_SKILLS } from '../../../data/skills.js';
 
+//TODO: Mejorar la estructura visual de cada grupo de tecnologías
+
 const HTML_ENTITIES = {
     '&': '&amp;',
     '<': '&lt;',

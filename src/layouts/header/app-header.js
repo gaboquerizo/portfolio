@@ -8,6 +8,8 @@ import './app-header.css';
  */
 import '../../components/ui/theme-toggle/ui-theme-toggle.js'
 
+// TODO: (responsive) colapsar el menú de navegación y fijarlo "sticky"
+
 export class AppHeader extends HTMLElement {
 
     connectedCallback() {

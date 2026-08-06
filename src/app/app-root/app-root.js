@@ -18,6 +18,9 @@ import '../../sections/experience/app-experience.js';
 import '../../sections/about/app-about.js';
 import '../../sections/contact/app-contact.js';
 
+// TODO: (responsive) Disminuir el tamaño de letra del título de cada sección
+// TODO: Agregar un divisor ligeramente imperceptible entre secciones
+
 export class AppRoot extends HTMLElement {
 
     connectedCallback() {
