@@ -17,7 +17,7 @@ export class AppHeader extends HTMLElement {
     }
 
     render() {
-        this.innerHTML = `
+        const HTMLContent = `
             <header class="fx-jsc_sb">
               <div>
                 <svg class="logo" viewBox="0 0 461.00 675.00">
@@ -55,7 +55,9 @@ export class AppHeader extends HTMLElement {
                 <ui-theme-toggle></ui-theme-toggle>
               </div>
             </header>
-        `
+        `;
+
+        this.setHTMLUnsafe(HTMLContent);
     }
 }
 
