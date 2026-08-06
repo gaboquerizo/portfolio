@@ -1,3 +1,4 @@
+/*
 @scope (app-root) {
 
     :scope {
@@ -8,5 +9,116 @@
 
     main > * {
         border-top: var(--solid-1) var(--primary-color);
+    }
+}
+*/
+
+:root {
+    --navigation-drawer-width:
+            clamp(16rem, 55vw, 20rem);
+
+    --navigation-drawer-offset:
+            calc(
+                    0px
+                    - var(--navigation-drawer-width)
+            );
+
+    --navigation-transition-duration:
+            300ms;
+
+    --navigation-transition-timing:
+            cubic-bezier(
+                    0.4,
+                    0,
+                    0.2,
+                    1
+            );
+}
+
+html {
+    max-width: 100%;
+    overflow-x: clip;
+    scrollbar-gutter: stable;
+}
+
+body {
+    max-width: 100%;
+
+    overflow-x: clip;
+}
+
+/*
+ * Deshabilitar el scroll
+ */
+html.has-navigation-open,
+body.has-navigation-open {
+    overflow: hidden;
+
+    overscroll-behavior: none;
+}
+
+@scope (app-root) {
+
+    :scope {
+        width: 100%;
+
+        display: block;
+
+        overflow-x: clip;
+    }
+
+    :scope > main,
+    :scope > footer,
+    :scope > app-footer {
+        transform:
+                translate3d(
+                        0,
+                        0,
+                        0
+                );
+
+        transition:
+                transform
+                var(--navigation-transition-duration)
+                var(--navigation-transition-timing);
+
+        will-change: transform;
+    }
+
+    :scope[navigation-open] > main,
+    :scope[navigation-open] > footer,
+    :scope[navigation-open] > app-footer {
+        transform:
+                translate3d(
+                        var(--navigation-drawer-offset),
+                        0,
+                        0
+                );
+
+        pointer-events: none;
+
+        user-select: none;
+    }
+
+    @media (width > 770px) {
+
+        :scope[navigation-open] > main,
+        :scope[navigation-open] > footer,
+        :scope[navigation-open] > app-footer {
+            transform: none;
+
+            pointer-events: auto;
+
+            user-select: auto;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        :scope > main,
+        :scope > footer,
+        :scope > app-footer {
+            transition: none;
+        }
     }
 }

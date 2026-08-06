@@ -31,14 +31,14 @@ export class AppRoot extends HTMLElement {
     render(){
         const HTMLContent = `
             <app-header></app-header>
-                <main class="w-full fx-col">
-                    <app-hero></app-hero>
-                    <app-projects></app-projects>
-                    <app-skills></app-skills>
-                    <app-experience></app-experience>
-                    <app-about></app-about>
-                    <app-contact></app-contact>
-                </main>
+            <main class="w-full fx-col">
+                <app-hero></app-hero>
+                <app-projects></app-projects>
+                <app-skills></app-skills>
+                <app-experience></app-experience>
+                <app-about></app-about>
+                <app-contact></app-contact>
+            </main>
             <app-footer></app-footer>
         `;
         this.setHTMLUnsafe(HTMLContent)
