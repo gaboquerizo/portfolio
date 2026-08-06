@@ -7,6 +7,7 @@
 :root {
     --size-photo: 200px;
     --glass-effect-color: #F2F4F6;
+
 }
 
 :root[data-theme='light'] {
@@ -17,6 +18,7 @@
 :root[data-theme='dark'] {
     --primary-bg-color: var(--bg-color-3);
     --secondary-bg-color: var(--bg-color-1);
+    color-scheme: light dark;
 }
 
 body {

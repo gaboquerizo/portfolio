@@ -31,7 +31,7 @@
     }
 
     .project-gallery__filter-label {
-        padding: var(--space-050) var(--space-150);
+        padding: var(--space-025) var(--space-100);
         border: var(--solid-1) var(--bg-color-4);
         border-radius: var(--radius-4);
         background: var(--bg-color-2);

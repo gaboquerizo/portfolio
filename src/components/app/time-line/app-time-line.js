@@ -1,5 +1,11 @@
+/**
+ * Styles
+ */
 import './app-time-line.css';
 
+/**
+ * Data
+ */
 import { MY_EXPERIENCES } from '../../../data/experience.js';
 
 export class TimeLine extends HTMLElement {
@@ -73,7 +79,7 @@ export class TimeLine extends HTMLElement {
                 class="time-line"
                 aria-label="Experiencia profesional"
             >
-                <div class="time-line__list" role="list">
+                <div class="time-line__list fx-col gap-6" role="list">
                     ${experiencesTemplate}
                 </div>
             </section>

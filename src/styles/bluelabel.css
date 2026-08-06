@@ -46,8 +46,6 @@
     --radius-5: 2rem;
 
     /* Box Shadow */
-
-    --shadow-color: 212deg 17% 50%;
     --shadow-low:
             0 0.6px 0.8px hsl(var(--shadow-color) / 0.4);
     --shadow-medium:
@@ -100,6 +98,7 @@
     --light-color: #D1E1F1;
     --dark-color: #0c5cc0;
     --glass-effect-color: #F2F4F6;
+    --shadow-color: 212deg 17% 50%;
 
     /* Browser */
 
@@ -128,7 +127,7 @@
     --bg-color-7: #a1b2c3;
     --bg-color-8: #d0e0f0;
     --bg-color-9: #f3f6f9;
- */
+
     --bg-color-1: #07080D;
     --bg-color-2: #0d101a;
     --bg-color-3: #101420;
@@ -138,6 +137,17 @@
     --bg-color-7: #a1b2c3;
     --bg-color-8: #d0e0f0;
     --bg-color-9: #f3f6f9;
+    */
+
+    --bg-color-1: #0d0f14;
+    --bg-color-2: #13161c;
+    --bg-color-3: #1a1d24;
+    --bg-color-4: #252930;
+    --bg-color-5: #363b44;
+    --bg-color-6: #5d6370;
+    --bg-color-7: #898f9c;
+    --bg-color-8: #a9aeb8;
+    --bg-color-9: #caced4;
 
     --tx-color-1: #fff;
     --tx-color-2: #def;
@@ -147,10 +157,11 @@
     /* Colors */
     --primary-color: #00EEFF;
     --secondary-color: #11BBFF;
-    --focus-color: aqua;
-    --light-color: #11BBFF20;
+    --focus-color: #133d50;
+    --light-color: #122430;
     --dark-color: #00BBEE;
     --glass-effect-color: #F2F4F6;
+    --shadow-color: 223deg 36% 0%;
 
     /* Browser */
 
