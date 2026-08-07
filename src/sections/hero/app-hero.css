@@ -18,8 +18,6 @@
             padding-top: var(--space-600);
         }
 
-
-
         @media (width <= 770px) {
             padding: var(--space-100);
             padding-top: var(--space-200);

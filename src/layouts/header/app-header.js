@@ -88,63 +88,6 @@ const NAVIGATION_ITEMS = Object.freeze([
     }),
 ]);
 
-const SOCIAL_LINKS = Object.freeze([
-    Object.freeze({
-        label: 'LinkedIn',
-        href: 'https://www.linkedin.com/',
-        icon: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 9v9"></path>
-                <path d="M6 6v.01"></path>
-                <path d="M10 18v-5a4 4 0 0 1 8 0v5"></path>
-                <path d="M10 9v9"></path>
-            </svg>
-        `,
-    }),
-    Object.freeze({
-        label: 'GitHub',
-        href: 'https://github.com/',
-        icon: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                    d="
-                        M15 21v-4
-                        a4.8 4.8 0 0 0-1-3.5
-                        c3.3-.4 6.7-1.6 6.7-7.3
-                        A5.7 5.7 0 0 0 19.2 2.3
-                        5.3 5.3 0 0 0 19 0
-                        s-1.3-.4-4 1.5
-                        a13.4 13.4 0 0 0-7 0
-                        C5.3-.4 4 0 4 0
-                        a5.3 5.3 0 0 0-.2 2.3
-                        A5.7 5.7 0 0 0 2.3 6.2
-                        c0 5.7 3.4 7 6.7 7.3
-                        A4.8 4.8 0 0 0 8 17v4
-                    "
-                ></path>
-                <path d="M8 18c-3 .9-3-1.5-4-2"></path>
-            </svg>
-        `,
-    }),
-    Object.freeze({
-        label: 'Pinterest',
-        href: 'https://www.pinterest.com/',
-        icon: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="9"></circle>
-                <path
-                    d="
-                        M10 19l1.3-5.5
-                        M11.3 13.5
-                        c-.8-.5-1.3-1.5-1.3-2.6
-                        a3.2 3.2 0 1 1 2.5 3.1
-                    "
-                ></path>
-            </svg>
-        `,
-    }),
-]);
-
 export class AppHeader extends HTMLElement {
 
     constructor() {
@@ -689,30 +632,9 @@ export class AppHeader extends HTMLElement {
             .join('');
     }
 
-    renderSocialLinks() {
-        return SOCIAL_LINKS
-            .map(({ label, href, icon }) => {
-                return `
-                    <a
-                        class="app-header__social-link"
-                        href="${href}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="${label}"
-                    >
-                        ${icon}
-                    </a>
-                `;
-            })
-            .join('');
-    }
-
     render() {
         const navigationItemsHTML =
             this.renderNavigationItems();
-
-        const socialLinksHTML =
-            this.renderSocialLinks();
 
         const HTMLContent = `
             <header class="app-header__bar">

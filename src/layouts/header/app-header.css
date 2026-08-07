@@ -66,18 +66,32 @@
     :scope {
         width: 100%;
         display: block;
-
         position: fixed;
         inset: 0 0 auto;
-
         z-index: 1000;
-
         pointer-events: none;
+
+        background-color: transparent;
+        animation: glass-effect-menu linear both;
+        animation-timeline: scroll();
+        animation-range: 0 100px;
+        border-bottom: var(--solid-1) transparent;
+        padding-top: var(--space-100);
+    }
+
+    @keyframes glass-effect-menu {
+        to {
+            border-bottom: var(--solid-1) var(--bg-color-3);
+            background-color: var(--bg-color-blur);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding-top: 0;
+        }
     }
 
     .app-header__bar {
         width: 100%;
-        max-width: var(--xl, 1200px);
+        max-width: var(--xl);
         min-height: 5rem;
 
         position: relative;
@@ -92,7 +106,7 @@
 
         align-items: center;
 
-        padding: var(--space-200, 2rem);
+        padding: var(--space-100) var(--space-200);
         margin-inline: auto;
 
         pointer-events: none;
@@ -125,7 +139,7 @@
 
         display: block;
 
-        fill: var(--tx-color-2, #222);
+        fill: var(--tx-color-2);
 
         user-select: none;
     }
@@ -163,9 +177,9 @@
 
         display: inline-block;
 
-        padding-block: var(--space-025, 0.25rem);
+        padding-block: var(--space-025);
 
-        color: var(--tx-color-3, #555);
+        color: var(--tx-color-2);
 
         font-size: var(--size-3, 1rem);
         font-weight: 400;
@@ -200,7 +214,7 @@
     }
 
     .app-header__navigation-link:hover {
-        color: var(--tx-color-1, #111);
+        color: var(--tx-color-1);
     }
 
     .app-header__navigation-link:hover::before {
@@ -209,13 +223,13 @@
     }
 
     .app-header__navigation-link.is-active {
-        color: var(--tx-color-1, #111);
+        color: var(--tx-color-1);
         font-weight: 700;
     }
 
     .app-header__menu-button {
-        width: 2.75rem;
-        height: 2.75rem;
+        width: var(--size-5);
+        height: var(--size-5);
 
         display: none;
 
@@ -229,12 +243,12 @@
 
         padding: 0;
 
-        border: 1px solid transparent;
-        border-radius: 0.25rem;
+        border: var(--solid-1) transparent;
+        border-radius: var(--radius-2);
 
         background: transparent;
 
-        color: var(--tx-color-2, #222);
+        color: var(--tx-color-2);
 
         cursor: pointer;
 
@@ -242,12 +256,16 @@
     }
 
     .app-header__menu-button:hover {
-        border-color: currentColor;
+        color: var(--tx-color-1);
     }
 
     .app-header__menu-button:focus-visible {
-        outline: 2px solid currentColor;
-        outline-offset: 0.2rem;
+        outline: var(--solid-4) var(--focus-color);
+        outline-offset: 2px;
+    }
+
+    .app-header__menu-button[aria-expanded="true"] {
+        color: var(--tx-color-2);
     }
 
     .app-header__menu-line {
@@ -256,7 +274,7 @@
 
         display: block;
 
-        border-radius: 999px;
+        border-radius: var(--radius-5);
 
         background: currentColor;
 
@@ -273,6 +291,7 @@
 
     .app-header__overlay {
         position: fixed;
+        height: 100dvh;
 
         inset: 0;
 
@@ -283,7 +302,7 @@
 
         border: 0;
 
-        background: transparent;
+        background: var(--bg-color-overlay);
 
         opacity: 0;
         visibility: hidden;
@@ -321,25 +340,18 @@
         flex-direction: column;
 
         padding:
-                max(
-                        var(--space-150, 1.5rem),
-                        env(safe-area-inset-top)
-                )
-                var(--space-150, 1.5rem)
-                max(
-                        var(--space-150, 1.5rem),
-                        env(safe-area-inset-bottom)
-                );
+                var(--space-100)
+                var(--space-200)
+                var(--space-150);
 
         border-left:
-                1px solid
-                var(--tx-color-2, #222);
+                var(--solid-1)
+                var(--bg-color-5);
 
-        background:
-                var(--bg-color-2, #fff);
+        background: var(--bg-color-2);
 
         color:
-                var(--tx-color-2, #222);
+                var(--tx-color-2);
 
         /*
          * Deshabilitar scroll del drawer
@@ -395,12 +407,12 @@
 
         align-items: flex-start;
 
-        gap: var(--space-300, 3rem);
+        gap: var(--space-200);
     }
 
     .app-header__drawer-list
     .app-header__navigation-link {
-        font-size: var(--size-4, 1.25rem);
+        font-size: var(--size-4);
     }
 
     .app-header__social-links {
@@ -409,55 +421,7 @@
         align-items: center;
         justify-content: center;
 
-        gap: var(--space-150, 1.5rem);
-    }
-
-    .app-header__social-link {
-        width: 2.5rem;
-        height: 2.5rem;
-
-        display: grid;
-
-        place-items: center;
-
-        border: 1px solid transparent;
-        border-radius: 50%;
-
-        color:
-                var(--tx-color-2, #222);
-
-        text-decoration: none;
-
-        transition:
-                border-color
-                var(--transition-1, 180ms ease),
-                color
-                var(--transition-1, 180ms ease);
-    }
-
-    .app-header__social-link:hover {
-        border-color: currentColor;
-
-        color:
-                var(--tx-color-1, #000);
-    }
-
-    .app-header__social-link:focus-visible {
-        outline: 2px solid currentColor;
-        outline-offset: 0.2rem;
-    }
-
-    .app-header__social-link svg {
-        width: 1.8rem;
-        height: 1.8rem;
-
-        fill: none;
-
-        stroke: currentColor;
-
-        stroke-width: 1.7;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+        gap: var(--space-150);
     }
 
     :scope[navigation-open]

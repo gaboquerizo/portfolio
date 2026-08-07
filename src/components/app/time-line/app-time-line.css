@@ -7,7 +7,10 @@
 
     .time-line {
         width: 100%;
-        padding: var(--space-200) var(--space-600) var(--space-600);
+        padding:
+                var(--space-200)
+                var(--space-400)
+                var(--space-600);
         color: var(--tx-color-1);
     }
 

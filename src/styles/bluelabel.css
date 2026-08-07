@@ -86,6 +86,9 @@
     --bg-color-8: #6680A0;
     --bg-color-9: #466484;
 
+    --bg-color-blur: #F3F6F999;
+    --bg-color-overlay: #4574;
+
     --tx-color-1: #234;
     --tx-color-2: #456;
     --tx-color-3: #789;
@@ -148,6 +151,9 @@
     --bg-color-7: #898f9c;
     --bg-color-8: #a9aeb8;
     --bg-color-9: #caced4;
+
+    --bg-color-blur: #13161c90;
+    --bg-color-overlay: #0D0F14AF;
 
     --tx-color-1: #fff;
     --tx-color-2: #def;

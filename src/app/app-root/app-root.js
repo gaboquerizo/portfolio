@@ -21,6 +21,7 @@ import '../../sections/contact/app-contact.js';
 // TODO: (responsive) Disminuir el tamaño de letra del título de cada sección
 // TODO: Agregar un divisor ligeramente imperceptible entre secciones
 // ☑️ TODO: Ajustar la proporcion vertical de viewport del contenido principal
+// TODO: Footer simple con una despedida y el componente de redes sociales
 
 export class AppRoot extends HTMLElement {
 
