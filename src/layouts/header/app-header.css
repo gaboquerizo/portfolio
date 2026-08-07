@@ -68,7 +68,7 @@
         display: block;
         position: fixed;
         inset: 0 0 auto;
-        z-index: 1000;
+        z-index: 4;
         pointer-events: none;
 
         background-color: transparent;
@@ -84,7 +84,6 @@
             border-bottom: var(--solid-1) var(--bg-color-3);
             background-color: var(--bg-color-blur);
             backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
             padding-top: 0;
         }
     }
@@ -348,7 +347,10 @@
                 var(--solid-1)
                 var(--bg-color-5);
 
-        background: var(--bg-color-2);
+        background: var(--bg-color-2)
+            radial-gradient(at top right,
+                var(--primary-bg-color) 0%,
+                var(--secondary-bg-color) 70%);;
 
         color:
                 var(--tx-color-2);
@@ -489,6 +491,9 @@
     }
 
     @media (width <= 770px) {
+        :scope {
+            padding-top: 0;
+        }
 
         .app-header__bar {
             min-height: 4.5rem;

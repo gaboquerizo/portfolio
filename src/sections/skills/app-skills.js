@@ -15,7 +15,7 @@ export class AppSkills extends HTMLElement {
     }
     render() {
         const HTMLContent = `
-            <section id="skills" class="fx-col gap-7 section">
+            <section id="skills" class="fx-col gap-6 section">
               <header class="fx-col fx-ali_c section-heading">
                 <ui-chip>Habilidades</ui-chip>
                 <h2>Stack tecnológico</h2>

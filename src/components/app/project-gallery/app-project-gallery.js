@@ -8,7 +8,7 @@ import './app-project-gallery.css';
  */
 import { MY_PROJECTS } from '../../../data/projects.js';
 
-// TODO: (responsive) disminuir el padding del contenido del CARD
+// ☑️ TODO: (responsive) disminuir el padding del contenido del CARD
 // TODO: Agregar boton para ver ir al proyecto y otro para ir al repositorio
 
 const PROJECT_CATEGORIES = Object.freeze([
