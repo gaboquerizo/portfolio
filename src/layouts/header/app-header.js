@@ -1,15 +1,9 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import './app-header.css';
 
-/**
- * Components
- */
+/*—————————— Components ——————————*/
 import '../../components/ui/theme-toggle/ui-theme-toggle.js'
 import '../../components/ui/social-media/ui-social-media.js'
-
-// ☑️ TODO: Crear un menu colapsable responsivo y fijado sticky
 
 /*
 export class AppHeader extends HTMLElement {

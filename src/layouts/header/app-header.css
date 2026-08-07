@@ -132,9 +132,12 @@
         justify-self: start;
     }
 
-    .app-header__logo {
-        width: var(--size-6, 3.5rem);
+    .app-header__logo[aria-label="Gabriel Baquerizo"] {
+        width: var(--size-6);
         max-width: max-content;
+
+        height: var(--size-6);
+        max-height: max-content;
 
         display: block;
 
@@ -348,7 +351,7 @@
                 var(--bg-color-5);
 
         background: var(--bg-color-2)
-            radial-gradient(at top right,
+            radial-gradient(at left,
                 var(--primary-bg-color) 0%,
                 var(--secondary-bg-color) 70%);;
 
@@ -517,7 +520,7 @@
 
         .app-header__logo {
             width:
-                    var(--size-5, 3rem);
+                    var(--size-5);
         }
     }
 

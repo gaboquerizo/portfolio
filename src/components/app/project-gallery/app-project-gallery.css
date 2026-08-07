@@ -13,6 +13,7 @@
         display: flex;
         gap: var(--space-050);
         margin-bottom: var(--space-200);
+        align-items: center;
     }
 
     .project-gallery__filter {
@@ -33,7 +34,7 @@
     .project-gallery__filter-label {
         padding: var(--space-025) var(--space-100);
         border: var(--solid-1) var(--bg-color-4);
-        border-radius: var(--radius-4);
+        border-radius: var(--radius-3);
         background: var(--bg-color-2);
         color: var(--tx-color-2);
         font-size: var(--size-3);
@@ -77,14 +78,14 @@
         min-width: 0;
         overflow: hidden;
         flex-direction: column;
-        border: var(--solid-1) var(--bg-color-4);
+        outline: var(--solid-1) var(--bg-color-4);
         border-radius: var(--radius-4);
         background: var(--bg-color-2);
         text-decoration: none;
         cursor: pointer;
-        transition: border-color var(--transition-1);
+        transition: outline-color var(--transition-1);
         &:hover {
-            border-color: var(--primary-color);
+            outline-color: var(--primary-color);
             .project-gallery__title {
                 color: var(--primary-color);
             }
@@ -120,7 +121,10 @@
 
     .project-gallery__title {
         margin-bottom: var(--space-075);
-        color: var(--tx-color-2);
+        color: light-dark(
+                var(--tx-color-2),
+                var(--tx-color-1)
+        );
         font-size: var(--size-4);
         font-weight: bold;
         line-height: 1.2;
@@ -129,7 +133,10 @@
 
     .project-gallery__description {
         margin-bottom: var(--space-100);
-        color: var(--tx-color-3);
+        color: light-dark(
+                var(--tx-color-3),
+                var(--tx-color-2)
+        );
         font-size: var(--size-2);
         line-height: 1.5;
     }
@@ -146,9 +153,9 @@
         color: var(--primary-color);
         line-height: 1;
         padding: var(--space-025) var(--space-050);
+        border: var(--solid-1) var(--focus-color);
         border-radius: var(--radius-4);
         background: var(--light-color);
-        box-shadow: var(--shadow-low);
     }
 
     /**
@@ -190,11 +197,11 @@
      * Responsive: Presenta una tarjeta por fila y la composición visual es horizontal 50/50.
      */
 
-    @media (max-width: 770px) {
+    @media (max-width: 760px) {
 
         .project-gallery__grid {
             grid-template-columns: minmax(0, 1fr);
-            gap: 1rem;
+            gap: var(--space-100);
         }
 
         :scope {
@@ -202,14 +209,13 @@
         }
 
         .project-gallery__filters {
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
+            gap: var(--space-050);
+            margin-bottom: var(--space-100);
         }
 
         .project-gallery__filter-label {
             width: 100%;
             font-size: var(--size-2);
-            border-radius: var(--radius-3);
             padding: var(--space-025) var(--space-100);
         }
 
@@ -217,13 +223,11 @@
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             min-height: 13rem;
-            border-radius: 1rem;
+            border-radius: var(--radius-4);
         }
 
         .project-gallery__picture {
             height: 100%;
-            min-height: 13rem;
-            /*padding: 0.75rem;*/
             aspect-ratio: auto;
             box-sizing: border-box;
         }
@@ -234,12 +238,11 @@
         }
 
         .project-gallery__title {
-            margin-bottom: 0.5rem;
             font-size: 1.125rem;
         }
 
         .project-gallery__description {
-            margin-bottom: var(--space-100);
+            margin-bottom: var(--space-075);
             font-size: 14px;
             line-height: 1.4;
         }

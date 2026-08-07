@@ -69,8 +69,8 @@
             }
         }
 
-        @media (width <= 990px) {
-            margin-block: var(--space-050);
+        @media (width <= 570px) {
+            margin-block: var(--space-200) var(--space-400);
         }
     }
 

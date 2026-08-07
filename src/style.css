@@ -30,11 +30,19 @@ body {
 }
 
 svg {
+    width: var(--size-5);
+    height: var(--size-5);
     color: var(--tx-color-3);
     transition: color var(--transition-2);
 
     &:hover {
         color: var(--tx-color-1);
+    }
+
+    &.svg-static {
+        color: var(--bg-color-6);
+        width: var(--size-5);
+        height: var(--size-5);
     }
 }
 
@@ -47,19 +55,33 @@ svg {
 .section-heading {
     h2 {
         text-align: center;
-        color: var(--tx-color-2);
         font-size: var(--size-6);
+        color: light-dark(
+                var(--tx-color-2),
+                var(--tx-color-1)
+        );
         margin-block: var(--space-075) var(--space-025);
+
+        @media (max-width: 760px) {
+            font-size: var(--size-5);
+        }
     }
+
     p {
         max-width: var(--sm);
         color: var(--tx-color-3);
+        font-size: var(--size-2);
+        line-height: 1.2;
+
+        @media (max-width: 760px) {
+            font-size: var(--size-1);
+        }
     }
 }
 
 @media (max-width: 1024px) {
     /* Tablet: 125% browser zoom. */
 }
-@media (max-width: 770px) {
+@media (max-width: 760px) {
     /* Phone: 175% browser zoom. */
 }

@@ -1,11 +1,7 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import './app-projects.css';
 
-/**
- * Components
- */
+/*—————————— Components ——————————*/
 import '../../components/ui/chip/ui-chip.js'
 import '../../components/app/project-gallery/app-project-gallery.js';
 
