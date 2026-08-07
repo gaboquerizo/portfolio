@@ -2,7 +2,7 @@
 import './app-projects.css';
 
 /*—————————— Components ——————————*/
-import '../../components/ui/chip/ui-chip.js'
+import '../../components/ui/chip/ui-eyebrow.js'
 import '../../components/app/project-gallery/app-project-gallery.js';
 
 export class AppProjects extends HTMLElement {
@@ -13,7 +13,7 @@ export class AppProjects extends HTMLElement {
         const HTMLContent = `
             <section id="projects" class="fx-col gap-6 section">
               <header class="fx-col fx-ali_c section-heading">
-                <ui-chip>Proyectos</ui-chip>
+                <ui-eyebrow>Proyectos</ui-eyebrow>
                 <h2>Trabajos destacados</h2>
                 <p class="txt-center">
                   Una selección de mis proyectos personales y empresariales que he desarrollado y he colaborado

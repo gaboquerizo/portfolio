@@ -1,5 +1,5 @@
 import './app-about.css';
-import '../../components/ui/chip/ui-chip.js'
+import '../../components/ui/chip/ui-eyebrow.js'
 
 export class AppAbout extends HTMLElement {
     connectedCallback() {
@@ -9,7 +9,7 @@ export class AppAbout extends HTMLElement {
         const HTMLContent = `
             <section id="about" class="fx-col section">
               <header class="fx-col fx-ali_c section-heading">
-                <ui-chip>Resumen</ui-chip>
+                <ui-eyebrow>Resumen</ui-eyebrow>
                 <h2>Quién soy</h2>
                 <p class="txt-center">
                   A continuación, me presento brevemente. 

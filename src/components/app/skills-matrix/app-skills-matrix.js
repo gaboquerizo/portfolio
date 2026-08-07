@@ -1,14 +1,10 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import './app-skills-matrix.css';
 
-/**
- * Data
- */
+/*—————————— Data ——————————*/
 import { MY_SKILLS } from '../../../data/skills.js';
 
-//TODO: Mejorar la estructura visual de cada grupo de tecnologías
+// TODO: Mejorar la estructura visual de cada grupo de tecnologías y cambiar el fondo a bg-color-1
 
 const HTML_ENTITIES = {
     '&': '&amp;',

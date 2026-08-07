@@ -1,12 +1,10 @@
-/**
- * Styles
- */
-import './ui-chip.css';
+/*—————————— Styles ——————————*/
+import './ui-eyebrow.css';
 
-// TODO: Cambiar nombre de componente "UiChip" -> "UiEyebrow"
+// ☑️ TODO: Cambiar nombre de componente "UiChip" -> "UiEyebrow"
 // TODO: Agregar un icono SVG antes del texto para cada sección.
 
-export class UiChip extends HTMLElement {
+export class UiEyebrow extends HTMLElement {
     connectedCallback() {
         this.render();
     }
@@ -32,4 +30,4 @@ export class UiChip extends HTMLElement {
     }
 }
 
-customElements.define('ui-chip', UiChip);
+customElements.define('ui-eyebrow', UiEyebrow);

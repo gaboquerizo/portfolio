@@ -1,4 +1,4 @@
-@scope (ui-chip) {
+@scope (ui-eyebrow) {
     :scope {
         display: inline-block;
         padding: var(--space-025) var(--space-075);

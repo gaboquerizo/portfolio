@@ -1,5 +1,5 @@
 import './app-contact.css';
-import '../../components/ui/chip/ui-chip.js'
+import '../../components/ui/chip/ui-eyebrow.js'
 
 export class AppContact extends HTMLElement {
     connectedCallback() {
@@ -9,7 +9,7 @@ export class AppContact extends HTMLElement {
         const HTMLContent = `
             <section id="contact" class="fx-col section">
               <header class="fx-col fx-ali_c section-heading">
-                <ui-chip>Contacto</ui-chip>
+                <ui-eyebrow>Contacto</ui-eyebrow>
                 <h2>Contáctame</h2>
                 <p class="txt-center">
                   Si tienes algun proyecto en mente o te gustaría una colaboración, házmelo saber.

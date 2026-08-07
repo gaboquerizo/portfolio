@@ -6,7 +6,7 @@ import './app-experience.css';
 /**
  * Components
  */
-import '../../components/ui/chip/ui-chip.js';
+import '../../components/ui/chip/ui-eyebrow.js';
 import '../../components/app/time-line/app-time-line.js';
 
 export class AppExperience extends HTMLElement {
@@ -17,7 +17,7 @@ export class AppExperience extends HTMLElement {
         const HTMLContent = `
             <section id="experience" class="fx-col gap-6 section">
               <header class="fx-col fx-ali_c section-heading">
-                <ui-chip>Experiencia</ui-chip>
+                <ui-eyebrow>Experiencia</ui-eyebrow>
                 <h2>Historia laboral</h2>
                 <p class="txt-center">
                   Mi trayectoria en diversas organizaciones del sector y logros de alto impacto 
