@@ -120,13 +120,17 @@
             gap: 2.5rem;
         }
 
+        .contact-me__list {
+            gap: var(--space-075);
+        }
+
         .contact-me__item {
             background-color: var(--light-color);
             svg {
                 color: var(--primary-color);
             }
             .contact-me__icon {
-                outline: var(--solid-1) var(--primary-color);
+                outline: var(--solid-1) var(--light-color);
             }
         }
 
