@@ -1,10 +1,11 @@
+/*—————————— Tasks ——————————*/
+// TODO: Mejorar la estructura visual de cada grupo de tecnologías y cambiar el fondo a bg-color-1
+
 /*—————————— Styles ——————————*/
 import './app-skills-matrix.css';
 
 /*—————————— Data ——————————*/
 import { MY_SKILLS } from '../../../data/skills.js';
-
-// TODO: Mejorar la estructura visual de cada grupo de tecnologías y cambiar el fondo a bg-color-1
 
 const HTML_ENTITIES = {
     '&': '&amp;',
@@ -47,7 +48,7 @@ export class GroupedList extends HTMLElement {
     }
 
     render() {
-        this.setHTMLUnsafe(`
+        const HTMLContent = `
             <section
                 aria-label="Stack tecnológico por profesión"
             >
@@ -55,7 +56,9 @@ export class GroupedList extends HTMLElement {
                     ${this.#createGroupsTemplate()}
                 </ul>
             </section>
-        `);
+        `;
+
+        this.setHTMLUnsafe(HTMLContent);
     }
 
     #createGroupsTemplate() {

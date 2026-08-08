@@ -1,14 +1,9 @@
-/*—————————— Tasks ——————————*/
-
-// ☑️ TODO: (responsive) Disminuir el tamaño de letra del título de cada sección
-// ☑️ TODO: Ajustar la proporcion vertical de viewport del contenido principal
-// TODO: Footer simple con una despedida y el componente de redes sociales
-
 /*—————————— Styles ——————————*/
 import './app-root.css';
 
 /*—————————— Layouts ——————————*/
 import '../../layouts/header/app-header.js';
+import '../../layouts/footer/app-footer.js';
 
 /*—————————— Sections ——————————*/
 import '../../sections/hero/app-hero.js';
@@ -31,7 +26,6 @@ export class AppRoot extends HTMLElement {
                 <app-projects></app-projects>
                 <app-skills></app-skills>
                 <app-experience></app-experience>
-                <app-about></app-about>
                 <app-contact></app-contact>
             </main>
             <app-footer></app-footer>

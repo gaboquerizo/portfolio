@@ -1,6 +1,4 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import './ui-social-media.css';
 
 export class UiSocialMedia extends HTMLElement {

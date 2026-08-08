@@ -1,5 +1,9 @@
+/*—————————— Styles ——————————*/
 import './app-contact.css';
-import '../../components/ui/chip/ui-eyebrow.js'
+
+/*—————————— Components ——————————*/
+import '../../components/ui/eyebrow/ui-eyebrow.js'
+import '../../components/app/contact-me/app-contact-me.js';
 
 export class AppContact extends HTMLElement {
     connectedCallback() {
@@ -7,15 +11,12 @@ export class AppContact extends HTMLElement {
     }
     render() {
         const HTMLContent = `
-            <section id="contact" class="fx-col section">
+            <section id="contact" class="fx-col gap-6 section">
               <header class="fx-col fx-ali_c section-heading">
                 <ui-eyebrow data-icon="contact">Contacto</ui-eyebrow>
-                <h2>Contáctame</h2>
-                <p class="txt-center">
-                  Si tienes algun proyecto en mente o te gustaría una colaboración, házmelo saber.
-                </p>
+                <h2>Escríbeme</h2>
               </header>
-              <div></div>
+              <app-contact-me></app-contact-me>
             </section>
         `;
         this.setHTMLUnsafe(HTMLContent);

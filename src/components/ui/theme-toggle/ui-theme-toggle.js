@@ -1,11 +1,7 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import './ui-theme-toggle.css'
 
-/**
- * Core functions
- */
+/*—————————— Core ——————————*/
 import {
     applyTheme,
     getCurrentTheme,

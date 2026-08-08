@@ -3,7 +3,7 @@
         display: inline-flex;
         align-items: center;
         gap: var(--space-050);
-        padding: var(--space-025) var(--space-075);
+        padding: var(--space-050) var(--space-075);
 
         color: var(--primary-color);
         font-size: var(--size-1);

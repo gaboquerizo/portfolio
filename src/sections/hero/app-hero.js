@@ -1,21 +1,13 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import './app-hero.css';
 
-/**
- * Components
- */
+/*—————————— Components ——————————*/
 import '../../components/ui/social-media/ui-social-media.js'
 
-/**
- * Files
- */
+/*—————————— Files ——————————*/
 import profilePhoto from '../../assets/images/profile_photo.webp';
 
-/**
- * libraries
- */
+/*—————————— libraries ——————————*/
 import { createSlotText } from "../../lib/slot-text/slot-text.js";
 
 export class AppHero extends HTMLElement {

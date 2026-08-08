@@ -91,7 +91,6 @@
     .app-header__bar {
         width: 100%;
         max-width: var(--xl);
-        min-height: 5rem;
 
         position: relative;
         z-index: 3;

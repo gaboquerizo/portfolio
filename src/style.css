@@ -50,6 +50,10 @@ svg {
     max-width: var(--xl);
     margin: 0 auto;
     padding-block: var(--space-600);
+
+    &[id="experience"] {
+        padding-bottom: var(--space-300);
+    }
 }
 
 .section-heading {

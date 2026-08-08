@@ -2,7 +2,7 @@
     :scope {
         width: 100%;
         display: inline-block;
-        background: var(--bg-color-1);
+        background: var(--bg-color-2);
         padding-inline: var(--space-200);
         @media (max-width: 770px) {
             padding-inline: var(--space-100);

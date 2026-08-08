@@ -2,15 +2,11 @@
 
     :scope {
         display: block;
-        width: 100%;
     }
 
     .time-line {
         width: 100%;
-        padding:
-                var(--space-200)
-                var(--space-400)
-                var(--space-600);
+        padding-inline: var(--space-400);
         color: var(--tx-color-1);
     }
 
@@ -29,6 +25,7 @@
         background-color: var(--bg-color-4);
         content: '';
         transform: translateX(-50%);
+        border-radius: var(--radius-1);
     }
 
     .time-line__item {
@@ -155,14 +152,11 @@
 
     @media (max-width: 1200px) {
         .time-line {
-            padding: var(--space-300) var(--space-200);
+            padding-inline: var(--space-100);
         }
     }
 
     @media (max-width: 770px) {
-        .time-line {
-            padding: var(--space-300) var(--space-100);
-        }
 
         .time-line__list::before {
             left: 0.5rem;

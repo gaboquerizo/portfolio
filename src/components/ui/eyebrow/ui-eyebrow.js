@@ -3,8 +3,6 @@ import './ui-eyebrow.css';
 
 /*—————————— Data ——————————*/
 import { ICONS } from '../../../data/icons.js';
-// ☑️ TODO: Cambiar nombre de componente "UiChip" -> "UiEyebrow"
-// ☑️ TODO: Agregar un icono SVG antes del texto para cada sección.
 
 export class UiEyebrow extends HTMLElement {
 

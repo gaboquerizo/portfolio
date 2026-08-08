@@ -75,6 +75,7 @@
 }
 
 :root[data-theme="light"] {
+    /* Soft Blue */
 
     --bg-color-1: #F3F6F9;
     --bg-color-2: #E0E7F0;
@@ -120,27 +121,7 @@
 }
 
 :root[data-theme="dark"] {
-    /* Blue gray
-    --bg-color-1: #161a23;
-    --bg-color-2: #212532;
-    --bg-color-3: #303548;
-    --bg-color-4: #4d5d6d;
-    --bg-color-5: #5e6e7e;
-    --bg-color-6: #7f8f9f;
-    --bg-color-7: #a1b2c3;
-    --bg-color-8: #d0e0f0;
-    --bg-color-9: #f3f6f9;
-
-    --bg-color-1: #07080D;
-    --bg-color-2: #0d101a;
-    --bg-color-3: #101420;
-    --bg-color-4: #162334;
-    --bg-color-5: #20384c;
-    --bg-color-6: #7f8f9f;
-    --bg-color-7: #a1b2c3;
-    --bg-color-8: #d0e0f0;
-    --bg-color-9: #f3f6f9;
-    */
+    /* Dark Grey Blue */
 
     --bg-color-1: #0d0f14;
     --bg-color-2: #13161c;
@@ -215,9 +196,9 @@
 .gap-4 { gap: calc(var(--space-050) * 4); }
 .gap-5 { gap: calc(var(--space-050) * 5); }
 .gap-6 { gap: calc(var(--space-050) * 6); }
-.gap-7 { gap: calc(var(--space-100) * 7); }
-.gap-8 { gap: calc(var(--space-100) * 8); }
-.gap-9 { gap: calc(var(--space-100) * 9); }
+.gap-7 { gap: calc(var(--space-075) * 7); }
+.gap-8 { gap: calc(var(--space-075) * 8); }
+.gap-9 { gap: calc(var(--space-075) * 9); }
 
 /* Grid */
 

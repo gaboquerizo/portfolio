@@ -1,11 +1,7 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import './app-time-line.css';
 
-/**
- * Data
- */
+/*—————————— Data ——————————*/
 import { MY_EXPERIENCES } from '../../../data/experience.js';
 
 export class TimeLine extends HTMLElement {

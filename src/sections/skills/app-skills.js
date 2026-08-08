@@ -2,7 +2,7 @@
 import './app-skills.css';
 
 /*—————————— Components ——————————*/
-import '../../components/ui/chip/ui-eyebrow.js'
+import '../../components/ui/eyebrow/ui-eyebrow.js'
 import '../../components/app/skills-matrix/app-skills-matrix.js'
 
 export class AppSkills extends HTMLElement {
@@ -11,7 +11,7 @@ export class AppSkills extends HTMLElement {
     }
     render() {
         const HTMLContent = `
-            <section id="skills" class="fx-col gap-6 section">
+            <section id="skills" class="fx-col gap-7 section">
               <header class="fx-col fx-ali_c section-heading">
                 <ui-eyebrow data-icon="skills">Habilidades</ui-eyebrow>
                 <h2>Stack tecnológico</h2>

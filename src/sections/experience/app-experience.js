@@ -1,12 +1,8 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import './app-experience.css';
 
-/**
- * Components
- */
-import '../../components/ui/chip/ui-eyebrow.js';
+/*—————————— Components ——————————*/
+import '../../components/ui/eyebrow/ui-eyebrow.js';
 import '../../components/app/time-line/app-time-line.js';
 
 export class AppExperience extends HTMLElement {
@@ -15,7 +11,7 @@ export class AppExperience extends HTMLElement {
     }
     render() {
         const HTMLContent = `
-            <section id="experience" class="fx-col gap-6 section">
+            <section id="experience" class="fx-col gap-7 section">
               <header class="fx-col fx-ali_c section-heading">
                 <ui-eyebrow data-icon="experience">Experiencia</ui-eyebrow>
                 <h2>Historia laboral</h2>

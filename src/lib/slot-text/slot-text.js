@@ -1,11 +1,7 @@
-/**
- * Styles
- */
+/*—————————— Styles ——————————*/
 import 'slot-text/style.css';
 
-/**
- * Node Modules
- */
+/*—————————— Node Module ——————————*/
 import { slotText } from 'slot-text';
 
 export function createSlotText(selector, words, options = {}) {

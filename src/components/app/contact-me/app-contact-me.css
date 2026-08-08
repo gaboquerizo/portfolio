@@ -1,0 +1,138 @@
+@scope (app-contact-me) {
+    :scope {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .contact-me {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr);
+        gap: var(--space-600);
+        width: 100%;
+        padding-inline: var(--space-800);
+    }
+
+    .contact-me__content {
+        display: flex;
+        align-items: center;
+    }
+
+    .contact-me__description {
+        max-width: 34rem;
+        margin: 0;
+
+        color: var(--tx-color-2);
+        font-size: 1rem;
+    }
+
+    .contact-me__list {
+        display: flex;
+        flex-direction: column;
+
+        list-style: none;
+    }
+
+    .contact-me__item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        padding: var(--space-100);
+        border-radius: 0.75rem;
+        transition: background-color var(--transition-1);
+    }
+
+    .contact-me__item:hover {
+        background-color: var(--light-color);
+        svg {
+            color: var(--primary-color);
+        }
+        .contact-me__icon {
+            outline: var(--solid-1) var(--focus-color);
+        }
+    }
+
+    .contact-me__icon {
+        padding: var(--space-075);
+
+        outline: var(--solid-1) transparent;
+        border-radius: var(--radius-3);
+
+        background: light-dark(
+            var(--bg-color-1),
+            var(--bg-color-3)
+        );
+        transition: outline-color var(--transition-1);
+        border-top: var(--solid-1) light-dark(var(--tx-cut-out), var(--bg-color-4));
+        box-shadow: var(--shadow-medium);
+    }
+
+    .contact-me__icon svg {
+        width: var(--size-4);
+        height: var(--size-4);
+
+        color: var(--tx-color-3);
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .contact-me__info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .contact-me__label {
+        color: var(--tx-color-3);
+        font-size: var(--size-2);
+    }
+
+    .contact-me__value,
+    .contact-me__link {
+        color: var(--tx-color-1);
+        font-size: var(--size-2);
+        text-decoration: none;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-me__link:hover {
+        text-decoration: underline;
+        color: var(--primary-color);
+    }
+
+    .contact-me__link:focus-visible {
+        outline: 2px solid #111;
+        outline-offset: 0.25rem;
+    }
+
+    @media (max-width: 990px) {
+        .contact-me {
+            padding-inline: var(--space-400);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .contact-me {
+            padding-inline: var(--space-100);
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .contact-me__item {
+            background-color: var(--light-color);
+            svg {
+                color: var(--primary-color);
+            }
+            .contact-me__icon {
+                outline: var(--solid-1) var(--primary-color);
+            }
+        }
+
+        .contact-me__description {
+            max-width: none;
+        }
+    }
+
+}

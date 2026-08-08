@@ -81,7 +81,7 @@
                 var(--space-025);
 
         border-radius: var(--radius-5);
-        background: light-dark(var(--bg-color-3), var(--bg-color-3));
+        background: light-dark(var(--bg-color-2), var(--bg-color-3));
         border-top: var(--solid-1) light-dark(var(--tx-cut-out), var(--bg-color-4));
         box-shadow: var(--shadow-low), var(--shadow-medium);
     }
