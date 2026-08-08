@@ -3,6 +3,7 @@
         width: 100%;
         display: inline-block;
         background: var(--bg-color-3);
+        border-top: var(--solid-1) var(--bg-color-4);
     }
 
     footer {
