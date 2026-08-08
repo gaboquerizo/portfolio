@@ -15,7 +15,6 @@ import '../../sections/hero/app-hero.js';
 import '../../sections/projects/app-projects.js';
 import '../../sections/skills/app-skills.js';
 import '../../sections/experience/app-experience.js';
-import '../../sections/about/app-about.js';
 import '../../sections/contact/app-contact.js';
 
 export class AppRoot extends HTMLElement {

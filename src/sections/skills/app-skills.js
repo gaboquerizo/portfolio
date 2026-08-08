@@ -13,7 +13,7 @@ export class AppSkills extends HTMLElement {
         const HTMLContent = `
             <section id="skills" class="fx-col gap-6 section">
               <header class="fx-col fx-ali_c section-heading">
-                <ui-eyebrow>Habilidades</ui-eyebrow>
+                <ui-eyebrow data-icon="skills">Habilidades</ui-eyebrow>
                 <h2>Stack tecnológico</h2>
                 <p class="txt-center">
                   Las herramientas, tecnologías y patrones que utilizo a diario en el desarrollo

@@ -1,10 +1,25 @@
 /*—————————— Styles ——————————*/
 import './ui-eyebrow.css';
 
+/*—————————— Data ——————————*/
+import { ICONS } from '../../../data/icons.js';
 // ☑️ TODO: Cambiar nombre de componente "UiChip" -> "UiEyebrow"
-// TODO: Agregar un icono SVG antes del texto para cada sección.
+// ☑️ TODO: Agregar un icono SVG antes del texto para cada sección.
 
 export class UiEyebrow extends HTMLElement {
+
+    static get observedAttributes() {
+        return ['data-icon'];
+    }
+
+    attributeChangedCallback() {
+        if (!this.isConnected) {
+            return;
+        }
+
+        this.render();
+    }
+
     connectedCallback() {
         this.render();
     }
@@ -23,10 +38,17 @@ export class UiEyebrow extends HTMLElement {
     }
 
     render() {
-        const chipText = this.escapeHTML(
+        const iconName = this.dataset.icon;
+        const icon = ICONS[iconName] ?? '';
+        const text = this.escapeHTML(
             this.getTextContent()
         );
-        this.setHTMLUnsafe(chipText)
+        const HTMLContent = `
+            ${icon}
+            <span>${text}</span>
+        `;
+
+        this.setHTMLUnsafe(HTMLContent);
     }
 }
 

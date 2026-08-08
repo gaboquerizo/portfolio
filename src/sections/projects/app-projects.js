@@ -13,7 +13,7 @@ export class AppProjects extends HTMLElement {
         const HTMLContent = `
             <section id="projects" class="fx-col gap-6 section">
               <header class="fx-col fx-ali_c section-heading">
-                <ui-eyebrow>Proyectos</ui-eyebrow>
+                <ui-eyebrow data-icon="projects">Proyectos</ui-eyebrow>
                 <h2>Trabajos destacados</h2>
                 <p class="txt-center">
                   Una selección de mis proyectos personales y empresariales que he desarrollado y he colaborado

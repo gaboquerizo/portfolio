@@ -1,6 +1,8 @@
 @scope (ui-eyebrow) {
     :scope {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-050);
         padding: var(--space-025) var(--space-075);
 
         color: var(--primary-color);
@@ -10,5 +12,23 @@
         background: var(--light-color);
         border: var(--solid-1) var(--focus-color);
         border-radius: var(--radius-4);
+
+        font-weight: 600;
+        line-height: 1.2;
     }
+
+    svg {
+        color: var(--primary-color);
+        width: 1lh;
+        height: 1lh;
+        flex: 0 0 1lh;
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+
+    span {
+        line-height: inherit;
+    }
+
 }
